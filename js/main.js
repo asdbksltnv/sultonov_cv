@@ -21,15 +21,35 @@
   /* ---------------- Mobile nav ---------------- */
   var navToggle = document.getElementById("navToggle");
   var mainNav = document.getElementById("mainNav");
-  navToggle.addEventListener("click", function(){
-    var isOpen = mainNav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+  function setNav(open){
+    mainNav.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  navToggle.addEventListener("click", function(e){
+    e.stopPropagation();
+    setNav(!mainNav.classList.contains("open"));
   });
+
   mainNav.querySelectorAll("a").forEach(function(link){
-    link.addEventListener("click", function(){
-      mainNav.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", function(){ setNav(false); });
+  });
+
+  // tapping anywhere outside the open menu dismisses it
+  document.addEventListener("click", function(e){
+    if(!mainNav.classList.contains("open")) return;
+    if(mainNav.contains(e.target) || navToggle.contains(e.target)) return;
+    setNav(false);
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") setNav(false);
+  });
+
+  // a resize past the breakpoint should never leave the panel stuck open
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 760) setNav(false);
   });
 
   /* ---------------- Reveal on scroll ---------------- */
@@ -47,15 +67,25 @@
     });
   });
 
-  var revealObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
-  revealEls.forEach(function(el){ revealObserver.observe(el); });
+  function revealAll(){
+    revealEls.forEach(function(el){ el.classList.add("visible"); });
+  }
+
+  // Content is hidden until revealed, so never leave it hidden if the
+  // observer is unavailable — better to show everything unanimated.
+  if(!("IntersectionObserver" in window)){
+    revealAll();
+  } else {
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  }
 
   /* ---------------- Stat counters ---------------- */
   var statEls = document.querySelectorAll(".stat-num");
@@ -182,6 +212,8 @@
         xLabel.setAttribute("x", cx);
         xLabel.setAttribute("y", H - 8);
         xLabel.setAttribute("text-anchor", "middle");
+        // tagged so narrow screens can thin the axis out via CSS
+        xLabel.setAttribute("data-idx", i);
         xLabel.textContent = d.short;
         labelsFrag.appendChild(xLabel);
       }

@@ -1111,9 +1111,20 @@ a.contact-card:hover{
    ============================================================ */
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; }
-  .hero-portrait{ order: -1; margin-bottom: 10px; }
+  .hero-portrait{ order: -1; margin-bottom: 0; }
   .portrait-frame{ width: 220px; margin: 0 auto; }
-  .portrait-badge{ left: 50%; transform: translateX(-50%); bottom: -18px; }
+  /* Once the portrait stacks above the copy the badge has nothing to
+     anchor against — floating it just covers the photo. Sit it below. */
+  .portrait-badge{
+    position: static;
+    transform: none;
+    margin: 16px auto 0;
+    width: max-content;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    padding: 9px 16px;
+  }
   .about-grid{ grid-template-columns: 1fr; gap: 34px; }
   .about-cards{ grid-template-columns: 1fr; }
   .research-card.featured{ grid-column: span 1; }
@@ -1124,19 +1135,25 @@ a.contact-card:hover{
   .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 760px){
+/* The inline nav needs room for the brand, six links and the CTA. Below
+   ~900px they collide, so the hamburger has to take over here — not at
+   the phone breakpoint. */
+@media (max-width: 900px){
   .main-nav{
     position: fixed;
-    top: 78px; left: 20px; right: 20px;
-    background: var(--glass-light-bg-strong);
+    top: calc(74px + env(safe-area-inset-top));
+    left: 20px; right: 20px;
+    /* dropdown overlays the hero portrait; keep it near-opaque so the
+       photo can't read through the link text */
+    background: rgba(252,251,249,0.97);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-    border: 1px solid var(--glass-light-border);
+    border: 1px solid rgba(12,21,36,0.1);
     border-radius: var(--radius);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 24px;
-    gap: 16px;
+    align-items: stretch;
+    padding: 12px 20px 16px;
+    gap: 2px;
     box-shadow: var(--glass-shadow);
     transform: translateY(-14px);
     opacity: 0;
@@ -1145,8 +1162,13 @@ a.contact-card:hover{
     transition: transform .3s var(--ease), opacity .3s var(--ease), visibility .3s var(--ease);
   }
   .main-nav.open{ transform: translateY(0); opacity: 1; visibility: visible; }
+  .main-nav a{ font-size: 16px; padding: 12px 0; width: 100%; }
+  .main-nav a::after{ display: none; }
   .nav-toggle{ display: flex; }
-  .nav-cta{ width: 100%; text-align: center; }
+  .nav-cta{ width: 100%; text-align: center; margin-top: 8px; padding: 14px 18px !important; }
+}
+
+@media (max-width: 760px){
   .stats-grid{ grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .section{ padding: 76px 0; }
   .gallery-grid{ grid-template-columns: 1fr 1fr; }
@@ -1155,6 +1177,159 @@ a.contact-card:hover{
 @media (max-width: 520px){
   .gallery-grid{ grid-template-columns: 1fr; }
   .hero-meta{ flex-direction: column; gap: 8px; }
+}
+
+/* ============================================================
+   Mobile experience
+   ============================================================ */
+
+/* Kill the 300ms tap delay artefacts and grey flash on touch */
+@media (hover: none){
+  a, button, summary, .gallery-item{ -webkit-tap-highlight-color: transparent; }
+  /* hover styling shouldn't stick after a tap on touch devices */
+  .research-card:hover, .skill-card:hover{ transform: none; }
+  .btn:hover{ transform: none; }
+  a.contact-card:hover{ transform: none; }
+  .gallery-item:hover img{ transform: none; }
+  .btn:hover::before{ transform: translateX(-120%); }
+}
+
+/* Anchor links must not land under the fixed header */
+:where(#about, #experience, #research, #achievements, #skills, #contact){
+  scroll-margin-top: 92px;
+}
+
+/* ---- Performance -------------------------------------------
+   A blurred backdrop layer is one of the most expensive things a
+   mobile GPU can composite, and the glass design puts ~50 of them
+   on screen at once. Below the desktop breakpoint (phones and
+   tablets alike) keep the effect only where an element genuinely
+   floats over moving content — the nav, the menu, the lightbox and
+   the gallery captions — and swap everything else for a more opaque
+   background that reads the same but costs nothing to paint. */
+@media (max-width: 1024px){
+  .stat,
+  .mini-card,
+  .chart-card,
+  .research-card,
+  .skill-card,
+  .contact-card,
+  .pill-item,
+  .interest-tags span,
+  .btn-ghost{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255,255,255,0.9);
+  }
+  .timeline-card,
+  .achieve-row,
+  .research-card.featured{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(24,40,64,0.92);
+  }
+  .btn-ghost{ background: rgba(255,255,255,0.14); }
+  .hero .btn-ghost{ color: var(--text-on-dark); border-color: rgba(255,255,255,0.4); }
+}
+
+/* Touch ergonomics follow the pointer, not the viewport — a 768px
+   tablet is still a finger. 44px is the Apple/WCAG minimum. */
+@media (pointer: coarse){
+  .nav-toggle{ width: 44px; height: 44px; align-items: center; justify-content: center; padding: 0; }
+  .chart-table summary{ padding: 12px 0; }
+  .footer-inner a{ padding: 12px 16px; }
+  .research-card a{ display: inline-block; padding: 11px 0; }
+  .brand{ padding: 5px 0; }
+  .main-nav a{ padding: 10px 0; }
+  .nav-cta{ padding: 13px 18px !important; }
+  .gallery-item{ min-height: 44px; }
+}
+
+@media (max-width: 760px){
+
+  /* Decorative glows are large blurred paint regions — shrink them */
+  .section::before, .section::after{ width: 300px; height: 300px; }
+  .hero-orb-gold{ width: 300px; height: 300px; }
+  .hero-orb-teal{ width: 320px; height: 320px; }
+  .hero-cross{ width: 380px; height: 380px; }
+
+  /* ---- Hero ---- */
+  .hero{ padding-top: 92px; }
+  .hero-inner{ padding-top: 8px; padding-bottom: 48px; gap: 26px; }
+  .portrait-frame{ width: 180px; }
+  .hero h1{ margin-bottom: 14px; }
+  .hero-role{ margin-bottom: 26px; }
+  .hero-actions{ margin-bottom: 26px; gap: 12px; }
+  .hero-actions .btn{ flex: 1 1 auto; min-height: 50px; }
+  .scroll-cue{ display: none; }
+
+  .nav-toggle{ margin-right: -4px; }
+
+  /* ---- GPA chart: the SVG scales down ~2.6x on a phone, so
+     type set for desktop lands at ~4px. Scale it back up in
+     viewBox units and thin the axis so labels don't collide. ---- */
+  .gpa-grid-label{ font-size: 25px; }
+  .gpa-axis-labels text{ font-size: 25px; }
+  .gpa-peak-label{ font-size: 27px; }
+  /* push the x-axis clear of the lowest y-tick so "3.4" and "F19" don't collide.
+     Only the x labels carry data-idx, so the peak callout stays put. */
+  .gpa-axis-labels text[data-idx]{ transform: translateY(16px); }
+  .gpa-axis-labels text[data-idx="2"],
+  .gpa-axis-labels text[data-idx="6"],
+  .gpa-axis-labels text[data-idx="10"]{ display: none; }
+  .gpa-line{ stroke-width: 5; }
+  .gpa-dot{ r: 9; stroke-width: 5; }
+  .gpa-grid-line{ stroke-width: 2; }
+  .chart-card{ padding: 24px 20px; }
+  .chart-head h3{ font-size: 19px; }
+  .chart-table{ overflow-x: auto; }
+
+  /* ---- Spacing & type ---- */
+  .section-head{ margin-bottom: 36px; }
+  .lede{ font-size: 17px; }
+  .research-card{ padding: 24px 22px; }
+  .timeline-card{ padding: 22px 20px; }
+  .timeline-item{ padding-left: 30px; margin-bottom: 30px; }
+  .research-group + .research-group{ margin-top: 34px; padding-top: 34px; }
+  .achieve-list{ gap: 12px; margin-bottom: 40px; }
+  .achieve-row{ padding: 18px 18px; gap: 14px; }
+  .about-cards{ gap: 16px; }
+  .contact-grid{ gap: 30px; }
+  .cred-list{ gap: 10px 20px; }
+
+  /* ---- Lightbox: full-bleed on a phone ---- */
+  .lightbox{ padding: 16px; overscroll-behavior: contain; }
+  .lightbox figure{ padding: 10px; max-height: 92vh; }
+  .lightbox img{ max-height: 66vh; }
+  .lightbox figcaption{ font-size: 13px; margin-top: 12px; }
+  .lightbox-close{
+    top: max(14px, env(safe-area-inset-top));
+    right: 14px;
+    width: 46px; height: 46px;
+  }
+
+  /* ---- Notch / home-indicator safe areas ---- */
+  .site-header{
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+  /* .header-inner is also a .wrap, but it's a pill with its own padding */
+  .wrap:not(.header-inner){
+    padding-left: max(22px, env(safe-area-inset-left));
+    padding-right: max(22px, env(safe-area-inset-right));
+  }
+  .site-footer{ padding-bottom: max(26px, env(safe-area-inset-bottom)); }
+  .footer-inner{ flex-direction: column; gap: 4px; text-align: center; }
+}
+
+@media (max-width: 400px){
+  .header-inner{ padding-left: 14px; }
+  .brand-name{ font-size: 15px; }
+  .brand-mark{ width: 34px; height: 34px; font-size: 13px; }
+  .hero-actions{ flex-direction: column; }
+  .hero-actions .btn{ width: 100%; }
+  .stats-grid{ grid-template-columns: 1fr 1fr; }
 }
 
 /* -------------------- Reduced motion -------------------- */
