@@ -479,6 +479,9 @@ p{ margin: 0 0 1em; }
   position: relative;
   overflow: hidden;
 }
+/* first section on a secondary page (no full hero above it) needs
+   extra clearance so the floating header doesn't sit on top of it */
+.gallery-hero{ padding-top: 168px; }
 .section::before, .section::after{
   content: "";
   position: absolute;
@@ -904,6 +907,10 @@ p{ margin: 0 0 1em; }
   gap: 18px;
   margin-bottom: 40px;
 }
+/* the gallery page's own grid: denser, and its photos run mostly
+   portrait rather than the achievements section's landscape scans */
+.gallery-grid-large{ grid-template-columns: repeat(4, 1fr); }
+.gallery-grid-large .gallery-item{ aspect-ratio: 3/4; }
 .gallery-item{
   position: relative;
   border: none;
@@ -914,6 +921,26 @@ p{ margin: 0 0 1em; }
   aspect-ratio: 4/3;
   background: var(--ink-2);
 }
+.gallery-item-video::after{
+  content: "▶";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px; height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  border-radius: 50%;
+  background: rgba(12,21,36,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 19px;
+  pointer-events: none;
+  transition: transform .3s var(--ease), background .3s var(--ease);
+}
+.gallery-item-video:hover::after{ background: var(--gold); transform: translate(-50%, -50%) scale(1.08); }
 .gallery-item img{
   width: 100%; height: 100%; object-fit: cover;
   transition: transform .5s var(--ease), filter .5s var(--ease);
@@ -1081,13 +1108,21 @@ a.contact-card:hover{
   border: 1px solid var(--glass-dark-border);
   box-shadow: var(--glass-shadow-dark);
 }
-.lightbox img{
+.lightbox img,
+.lightbox video{
   max-height: 74vh;
+  max-width: 100%;
   width: auto;
   margin: 0 auto;
+  display: block;
   border-radius: calc(var(--radius) - 8px);
   box-shadow: 0 30px 80px rgba(0,0,0,0.5);
 }
+/* our own `display: block` above outranks the browser's default
+   [hidden]{display:none} UA rule, so the hidden media element was
+   still rendering underneath the visible one — restore it explicitly */
+.lightbox img[hidden],
+.lightbox video[hidden]{ display: none; }
 .lightbox figcaption{
   color: var(--text-on-dark-muted);
   text-align: center;
@@ -1117,6 +1152,10 @@ a.contact-card:hover{
 /* ============================================================
    Responsive
    ============================================================ */
+@media (max-width: 1240px){
+  .gallery-grid-large{ grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-portrait{ order: -1; margin-bottom: 0; }
@@ -1179,6 +1218,8 @@ a.contact-card:hover{
 @media (max-width: 760px){
   .stats-grid{ grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .section{ padding: 76px 0; }
+  .gallery-hero{ padding-top: 128px; }
+  .gallery-grid-large{ grid-template-columns: repeat(2, 1fr); }
   .gallery-grid{ grid-template-columns: 1fr 1fr; }
 }
 
@@ -1308,7 +1349,7 @@ a.contact-card:hover{
   /* ---- Lightbox: full-bleed on a phone ---- */
   .lightbox{ padding: 16px; overscroll-behavior: contain; }
   .lightbox figure{ padding: 10px; max-height: 92vh; }
-  .lightbox img{ max-height: 66vh; }
+  .lightbox img, .lightbox video{ max-height: 66vh; }
   .lightbox figcaption{ font-size: 13px; margin-top: 12px; }
   .lightbox-close{
     top: max(14px, env(safe-area-inset-top));

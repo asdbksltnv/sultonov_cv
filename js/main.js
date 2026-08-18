@@ -246,12 +246,27 @@
   /* ---------------- Lightbox ---------------- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");
+  var lightboxVideo = document.getElementById("lightboxVideo");
   var lightboxCaption = document.getElementById("lightboxCaption");
   var lightboxClose = document.getElementById("lightboxClose");
 
-  function openLightbox(src, caption){
-    lightboxImg.src = src;
-    lightboxImg.alt = caption;
+  function openLightbox(btn){
+    var caption = btn.getAttribute("data-caption");
+    var videoSrc = btn.getAttribute("data-video");
+
+    if(videoSrc && lightboxVideo){
+      lightboxImg.hidden = true;
+      lightboxImg.removeAttribute("src");
+      lightboxVideo.hidden = false;
+      lightboxVideo.src = videoSrc;
+      lightboxVideo.poster = btn.getAttribute("data-full") || "";
+      lightboxVideo.play().catch(function(){});
+    } else {
+      if(lightboxVideo){ lightboxVideo.hidden = true; lightboxVideo.pause(); lightboxVideo.removeAttribute("src"); lightboxVideo.load(); }
+      lightboxImg.hidden = false;
+      lightboxImg.src = btn.getAttribute("data-full");
+      lightboxImg.alt = caption;
+    }
     lightboxCaption.textContent = caption;
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
@@ -261,12 +276,15 @@
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    if(lightboxVideo && !lightboxVideo.hidden){
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute("src");
+      lightboxVideo.load();
+    }
   }
 
   document.querySelectorAll(".gallery-item").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      openLightbox(btn.getAttribute("data-full"), btn.getAttribute("data-caption"));
-    });
+    btn.addEventListener("click", function(){ openLightbox(btn); });
   });
   lightboxClose.addEventListener("click", closeLightbox);
   lightbox.addEventListener("click", function(e){
