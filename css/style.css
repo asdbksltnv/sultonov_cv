@@ -1001,6 +1001,14 @@ p{ margin: 0 0 1em; }
   display: grid;
   gap: 14px;
 }
+/* only the email card remains — give it a bit more presence than a
+   leftover row from a taller stack */
+.contact-cards-single .contact-card{
+  padding: 28px 26px;
+}
+.contact-cards-single .contact-icon{ font-size: 28px; }
+.contact-cards-single strong{ font-size: 17px; }
+.contact-cards-single em{ font-size: 14.5px; }
 .contact-card{
   position: relative;
   overflow: hidden;
