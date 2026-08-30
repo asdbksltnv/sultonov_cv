@@ -624,74 +624,6 @@ p{ margin: 0 0 1em; }
 .lang-list li:nth-child(3) em{ --fill: 4; }
 .lang-list li:nth-child(4) em{ --fill: 2; }
 
-/* -------------------- Chart card -------------------- */
-.chart-card{
-  position: relative;
-  overflow: hidden;
-  margin-top: 56px;
-  background: var(--glass-light-bg-strong);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-  border: 1px solid var(--glass-light-border);
-  border-radius: var(--radius);
-  padding: 36px;
-  box-shadow: var(--glass-shadow);
-
-  color-scheme: light;
-  --surface-1: #ffffff;
-  --text-primary: #1b2230;
-  --text-secondary: #626a7a;
-  --grid-line: #e7e4da;
-  --series-1: #b9852f;
-  --series-1-fill: rgba(185,133,47,0.14);
-}
-.chart-card::before{
-  content: "";
-  position: absolute; inset: 0;
-  background: var(--glass-shine-light);
-  pointer-events: none;
-}
-.chart-card > *{ position: relative; }
-.chart-head h3{ font-size: 20px; margin-bottom: 8px; }
-.chart-head p{ font-size: 14px; margin-bottom: 26px; }
-.gpa-chart{ width: 100%; height: auto; overflow: visible; }
-.gpa-grid-line{ stroke: var(--grid-line); stroke-width: 1; }
-.gpa-grid-label{ fill: var(--text-secondary); font-size: 11px; font-family: var(--font-body); }
-.gpa-area{ fill: var(--series-1-fill); stroke: none; }
-.gpa-line{ fill: none; stroke: var(--series-1); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-.gpa-dot{ fill: var(--surface-1); stroke: var(--series-1); stroke-width: 2.5; cursor: pointer; }
-.gpa-dot:hover, .gpa-dot.active{ fill: var(--series-1); }
-.gpa-axis-labels text{ fill: var(--text-secondary); font-size: 11px; font-family: var(--font-body); }
-.gpa-peak-label{ fill: var(--text-primary); font-weight: 600; font-size: 12px; font-family: var(--font-body); }
-.chart-tooltip{
-  position: relative;
-  min-height: 20px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-primary);
-  font-weight: 600;
-  margin-top: 6px;
-}
-.chart-table{ margin-top: 22px; font-size: 13.5px; }
-.chart-table summary{
-  cursor: pointer;
-  color: var(--gold);
-  font-weight: 600;
-  outline: none;
-}
-.chart-table table{
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 14px;
-}
-.chart-table th, .chart-table td{
-  text-align: left;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--line);
-  font-variant-numeric: tabular-nums;
-}
-.chart-table th{ color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
-
 /* -------------------- Timeline -------------------- */
 .timeline{
   list-style: none;
@@ -1259,7 +1191,6 @@ a.contact-card:hover{
 @media (max-width: 1024px){
   .stat,
   .mini-card,
-  .chart-card,
   .research-card,
   .skill-card,
   .contact-card,
@@ -1285,7 +1216,6 @@ a.contact-card:hover{
    tablet is still a finger. 44px is the Apple/WCAG minimum. */
 @media (pointer: coarse){
   .nav-toggle{ width: 44px; height: 44px; align-items: center; justify-content: center; padding: 0; }
-  .chart-table summary{ padding: 12px 0; }
   .footer-inner a{ padding: 12px 16px; }
   .research-card a{ display: inline-block; padding: 11px 0; }
   .brand{ padding: 5px 0; }
@@ -1313,25 +1243,6 @@ a.contact-card:hover{
   .scroll-cue{ display: none; }
 
   .nav-toggle{ margin-right: -4px; }
-
-  /* ---- GPA chart: the SVG scales down ~2.6x on a phone, so
-     type set for desktop lands at ~4px. Scale it back up in
-     viewBox units and thin the axis so labels don't collide. ---- */
-  .gpa-grid-label{ font-size: 25px; }
-  .gpa-axis-labels text{ font-size: 25px; }
-  .gpa-peak-label{ font-size: 27px; }
-  /* push the x-axis clear of the lowest y-tick so "3.4" and "F19" don't collide.
-     Only the x labels carry data-idx, so the peak callout stays put. */
-  .gpa-axis-labels text[data-idx]{ transform: translateY(16px); }
-  .gpa-axis-labels text[data-idx="2"],
-  .gpa-axis-labels text[data-idx="6"],
-  .gpa-axis-labels text[data-idx="10"]{ display: none; }
-  .gpa-line{ stroke-width: 5; }
-  .gpa-dot{ r: 9; stroke-width: 5; }
-  .gpa-grid-line{ stroke-width: 2; }
-  .chart-card{ padding: 24px 20px; }
-  .chart-head h3{ font-size: 19px; }
-  .chart-table{ overflow-x: auto; }
 
   /* ---- Spacing & type ---- */
   .section-head{ margin-bottom: 36px; }
