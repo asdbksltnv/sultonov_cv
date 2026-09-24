@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of Asadbek Sultonov, PGY-2 Orthopedic Surgery Resident at Akfa Medline University Hospital — clinical work, applied AI research, publications, and achievements.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Asadbek Sultonov">
-<meta name="theme-color" content="#0c1524">
+<meta name="theme-color" content="#f4f1ea">
 <link rel="canonical" href="https://asadbeksultonov.com/">
 
 <!-- Open Graph / social sharing -->
@@ -25,15 +25,15 @@
 <meta name="twitter:description" content="PGY-2 Orthopedic Surgery Resident at Akfa Medline University Hospital — clinical work, applied AI research, publications, and achievements.">
 <meta name="twitter:image" content="https://asadbeksultonov.com/assets/img/profile.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230c1524'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23c8973f' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f1a2a'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23c8973f' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <noscript>
   <!-- Scroll reveals are JS-driven; without JS every section would stay at
        opacity 0 and the page would render blank. Show everything instead. -->
-  <style>.reveal{ opacity:1 !important; transform:none !important; }</style>
+  <style>.reveal{ opacity:1 !important; transform:none !important; } .chart-plot{ display:none; } .chart-table{ display:block; }</style>
 </noscript>
 <script type="application/ld+json">
 {
@@ -68,8 +68,6 @@
 </head>
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
-
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
     <a href="#top" class="brand">
@@ -95,93 +93,78 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <svg class="hero-cross" viewBox="0 0 200 200" aria-hidden="true"><path d="M85 0h30v85h85v30h-85v85H85v-85H0V85h85z"/></svg>
-      <div class="hero-orb hero-orb-gold"></div>
-      <div class="hero-orb hero-orb-teal"></div>
-      <div class="hero-grain"></div>
-    </div>
-    <div class="wrap hero-inner">
-      <div class="hero-text reveal">
-        <p class="eyebrow">Orthopedic Surgery · Research · Medical Education</p>
-        <h1>Asadbek <span>Sultonov</span></h1>
-        <p class="hero-role">PGY-2 Orthopedic Surgery Resident at Akfa&nbsp;Medline University Hospital — building a career at the intersection of trauma care, evidence-based medicine, and applied clinical AI research.</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Orthopedic surgery · Tashkent, Uzbekistan</p>
+        <h1>Asadbek <em>Sultonov</em></h1>
+        <p class="hero-role">PGY-2 orthopedic surgery resident at Akfa&nbsp;Medline University Hospital, working where trauma care, evidence-based medicine and applied clinical AI meet.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get in touch</a>
-        </div>
-        <div class="hero-meta">
-          <span>✉️ asadbeksltnv90@gmail.com</span>
+          <a href="mailto:asadbeksltnv90@gmail.com" class="btn btn-primary">Email me</a>
+          <a href="#research" class="btn btn-quiet">See the research <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="hero-portrait reveal">
-        <div class="portrait-frame">
-          <img src="assets/img/profile.png" alt="Portrait of Asadbek Sultonov">
-        </div>
-        <div class="portrait-badge">
-          <strong>USMLE Step&nbsp;1</strong>
-          <span>PASS · 2024</span>
-        </div>
-      </div>
+      <figure class="hero-portrait reveal">
+        <img src="assets/img/gallery/gallery-portrait.jpg" alt="Portrait of Asadbek Sultonov in scrubs with a stethoscope" width="853" height="1280" fetchpriority="high">
+        <figcaption>PGY-2 · Akfa Medline University Hospital</figcaption>
+      </figure>
     </div>
-    <a class="scroll-cue" href="#about" aria-label="Scroll to about section"><span></span></a>
-  </section>
 
-  <!-- STATS -->
-  <section class="stats-strip">
-    <div class="wrap stats-grid">
-      <div class="stat reveal">
-        <span class="stat-num" data-count="3.81">0</span>
-        <span class="stat-label">MD&nbsp;Overall GPA</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-num" data-count="2">0</span>
-        <span class="stat-label">Published Papers</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-num" data-count="4">0</span>
-        <span class="stat-label">Competition Wins</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-num" data-count="4">0</span>
-        <span class="stat-label">Languages Spoken</span>
-      </div>
+    <div class="wrap">
+      <dl class="facts reveal">
+        <div><dt>MD overall GPA</dt><dd>3.81</dd></div>
+        <div><dt>Published papers</dt><dd>2</dd></div>
+        <div><dt>Competition awards</dt><dd>4</dd></div>
+        <div><dt>Languages</dt><dd>4</dd></div>
+        <div><dt>USMLE Step&nbsp;1</dt><dd>Pass</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="wrap about-grid">
-      <div class="section-head reveal">
-        <p class="kicker">01 — About</p>
-        <h2>Clinician first, <br>researcher by habit.</h2>
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <span class="sec-label">About</span>
       </div>
-      <div class="about-body reveal">
-        <p class="lede">PGY-2 orthopedic surgery resident at Akfa Medline University Hospital with a strong interest in trauma and orthopedics, evidence-based medicine, and clinical research. Experienced in journal club preparation, literature appraisal, patient-facing educational materials, and medical website content.</p>
-        <p>Practical background in conference organization, data handling, and Python-based research workflows — now extending into applied machine learning, including a calibrated deep learning model for automated knee osteoarthritis grading. Motivated to develop as an academic orthopedic surgeon combining clinical practice, research, and medical education.</p>
-
-        <div class="interest-tags">
-          <span>Trauma &amp; Orthopedics</span>
-          <span>Evidence-Based Medicine</span>
-          <span>Arthroplasty &amp; Arthroscopy</span>
-          <span>PubMed / NEJM research</span>
-          <span>Applied AI &amp; Deep Learning</span>
-          <span>Medical Telegram bots</span>
-          <span>Data visualization</span>
+      <div class="sec-body">
+        <h2 class="reveal">Clinician first, researcher by habit.</h2>
+        <div class="about-text reveal">
+          <p class="lede">PGY-2 orthopedic surgery resident at Akfa Medline University Hospital with a strong interest in trauma and orthopedics, evidence-based medicine, and clinical research. Experienced in journal club preparation, literature appraisal, patient-facing educational materials, and medical website content.</p>
+          <p>Practical background in conference organization, data handling, and Python-based research workflows — now extending into applied machine learning, including a calibrated deep learning model for automated knee osteoarthritis grading. Motivated to develop as an academic orthopedic surgeon combining clinical practice, research, and medical education.</p>
         </div>
 
-        <div class="about-cards">
-          <div class="mini-card">
-            <h3>Education</h3>
-            <p><strong>Doctor of Medicine (MD)</strong><br>Central Asian University, Tashkent<br><span class="muted">2019 – 2025 · GPA 3.81</span></p>
-            <p><strong>High School</strong><br>1-maktab, Andijan shahar<br><span class="muted">2008 – 2019</span></p>
+        <ul class="interests reveal" aria-label="Interests">
+          <li>Trauma &amp; orthopedics</li>
+          <li>Evidence-based medicine</li>
+          <li>Arthroplasty &amp; arthroscopy</li>
+          <li>PubMed / NEJM research</li>
+          <li>Applied AI &amp; deep learning</li>
+          <li>Medical Telegram bots</li>
+          <li>Data visualization</li>
+        </ul>
+
+        <div class="about-cols">
+          <div class="block reveal">
+            <h3 class="block-title">Education</h3>
+            <dl class="edu">
+              <div>
+                <dt>2019 – 2025</dt>
+                <dd><strong>Doctor of Medicine (MD)</strong>Central Asian University, Tashkent · GPA 3.81</dd>
+              </div>
+              <div>
+                <dt>2008 – 2019</dt>
+                <dd><strong>High school</strong>1-maktab, Andijan shahar</dd>
+              </div>
+            </dl>
           </div>
-          <div class="mini-card">
-            <h3>Languages</h3>
+          <div class="block reveal">
+            <h3 class="block-title">Languages</h3>
             <ul class="lang-list">
-              <li><span>Uzbek</span><em class="dots" data-level="5"></em><b>Native</b></li>
-              <li><span>English</span><em class="dots" data-level="4"></em><b>Advanced</b></li>
-              <li><span>Russian</span><em class="dots" data-level="4"></em><b>Advanced</b></li>
-              <li><span>German</span><em class="dots" data-level="2"></em><b>Basic</b></li>
+              <li><span class="lang-name">Uzbek</span><span class="meter" role="img" aria-label="Native, 5 of 5" data-level="5"><i></i><i></i><i></i><i></i><i></i></span><span class="lang-level">Native</span></li>
+              <li><span class="lang-name">English</span><span class="meter" role="img" aria-label="Advanced, 4 of 5" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="lang-level">Advanced</span></li>
+              <li><span class="lang-name">Russian</span><span class="meter" role="img" aria-label="Advanced, 4 of 5" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="lang-level">Advanced</span></li>
+              <li><span class="lang-name">German</span><span class="meter" role="img" aria-label="Basic, 2 of 5" data-level="2"><i></i><i></i><i></i><i></i><i></i></span><span class="lang-level">Basic</span></li>
             </ul>
           </div>
         </div>
@@ -190,331 +173,388 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="section section-dark">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">02 — Experience</p>
-        <h2>Clinical &amp; professional path</h2>
+  <section id="experience" class="section section-alt">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <span class="sec-label">Experience</span>
       </div>
+      <div class="sec-body">
+        <h2 class="reveal">Clinical &amp; professional path</h2>
 
-      <ol class="timeline">
-        <li class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Current</span>
-            <h3>Orthopedic Surgery Resident — PGY-2</h3>
-            <p class="timeline-org">Akfa Medline University Hospital, Tashkent, Uzbekistan</p>
-            <ul>
-              <li>Participate in orthopedic inpatient, outpatient, and operative care under supervision.</li>
-              <li>Assist with clinical assessment, perioperative workflow, documentation, and patient education.</li>
-              <li>Developing focused interests in trauma, arthroplasty, arthroscopy, and evidence-based orthopedic practice.</li>
-              <li>Helped optimize hospital operations planning using AI-driven scheduling and workflow tools.</li>
-              <li>Developing a calibrated deep learning model for automated knee osteoarthritis grading, accepted as a poster at the 2026 AAHKS Annual Meeting.</li>
+        <figure class="chart reveal" aria-labelledby="careerTitle">
+          <div class="chart-head">
+            <div>
+              <h3 id="careerTitle">Roles over time, 2019 to today</h3>
+              <p>Medical school, clinical work, research and teaching. Three roles are running in parallel today.</p>
+            </div>
+            <ul class="chart-legend" aria-hidden="true">
+              <li><i class="key key-bar"></i>Ongoing</li>
+              <li><i class="key key-bar key-muted"></i>Completed</li>
             </ul>
           </div>
-        </li>
+          <div class="chart-plot" data-chart="career" data-source="careerData"></div>
+          <details class="chart-table">
+            <summary>View as table</summary>
+            <table id="careerData">
+              <thead><tr><th scope="col">Role</th><th scope="col">Organisation</th><th scope="col">Dates</th></tr></thead>
+              <tbody>
+                <tr data-start="2019-09" data-end="2025-07"><td>MD student</td><td>Central Asian University</td><td>2019 – 2025</td></tr>
+                <tr data-start="2022-09" data-end="now"><td>Teacher</td><td>Muzaffar Online Education</td><td>Sep 2022 – present</td></tr>
+                <tr data-start="2024-06" data-end="2024-09"><td>Physician assistant</td><td>Neuronet Ultra</td><td>Jun – Aug 2024</td></tr>
+                <tr data-start="2025-04" data-end="2025-06"><td>Call centre agent</td><td>CAU Pulse</td><td>Apr – May 2025</td></tr>
+                <tr data-start="2025-04" data-end="now"><td>Research assistant</td><td>Akfa Medline</td><td>Apr 2025 – present</td></tr>
+                <tr data-start="2025-09" data-end="now"><td>Orthopedic resident</td><td>Akfa Medline University Hospital</td><td>2025 – present</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
 
-        <li class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Apr 2025 – Present</span>
-            <h3>Research Assistant</h3>
-            <p class="timeline-org">Akfa Medline, Tashkent, Uzbekistan</p>
-            <ul>
-              <li>Conduct literature reviews on PubMed and Google Scholar for journal club sessions.</li>
-              <li>Develop patient education materials, including surgery information brochures.</li>
-              <li>Publish medical articles and educational content on the Akfa Medline website.</li>
-            </ul>
-          </div>
-        </li>
+        <ol class="roles">
+          <li class="role reveal">
+            <p class="role-date">Current</p>
+            <div>
+              <h3>Orthopedic Surgery Resident — PGY-2</h3>
+              <p class="role-org">Akfa Medline University Hospital, Tashkent</p>
+              <ul>
+                <li>Participate in orthopedic inpatient, outpatient, and operative care under supervision.</li>
+                <li>Assist with clinical assessment, perioperative workflow, documentation, and patient education.</li>
+                <li>Developing focused interests in trauma, arthroplasty, arthroscopy, and evidence-based orthopedic practice.</li>
+                <li>Helped optimize hospital operations planning using AI-driven scheduling and workflow tools.</li>
+                <li>Developing a calibrated deep learning model for automated knee osteoarthritis grading, accepted as a poster at the 2026 AAHKS Annual Meeting.</li>
+              </ul>
+            </div>
+          </li>
 
-        <li class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Apr 2025 – May 2025</span>
-            <h3>Call Centre Agent</h3>
-            <p class="timeline-org">CAU Pulse, Tashkent, Uzbekistan</p>
-            <ul>
-              <li>Collaborated with team members to streamline processes and improve service delivery.</li>
-            </ul>
-          </div>
-        </li>
+          <li class="role reveal">
+            <p class="role-date">Apr 2025 – Present</p>
+            <div>
+              <h3>Research Assistant</h3>
+              <p class="role-org">Akfa Medline, Tashkent</p>
+              <ul>
+                <li>Conduct literature reviews on PubMed and Google Scholar for journal club sessions.</li>
+                <li>Develop patient education materials, including surgery information brochures.</li>
+                <li>Publish medical articles and educational content on the Akfa Medline website.</li>
+              </ul>
+            </div>
+          </li>
 
-        <li class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Jun 2024 – Aug 2024</span>
-            <h3>Physician Assistant</h3>
-            <p class="timeline-org">Neuronet Ultra, Andijan, Uzbekistan</p>
-            <ul>
-              <li>Conducted supervised patient assessments to support diagnosis and treatment planning.</li>
-              <li>Assisted in management of patients with back pain and medication administration.</li>
-              <li>Created a patient record management platform.</li>
-            </ul>
-          </div>
-        </li>
+          <li class="role reveal">
+            <p class="role-date">Apr – May 2025</p>
+            <div>
+              <h3>Call Centre Agent</h3>
+              <p class="role-org">CAU Pulse, Tashkent</p>
+              <ul>
+                <li>Collaborated with team members to streamline processes and improve service delivery.</li>
+              </ul>
+            </div>
+          </li>
 
-        <li class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Sep 2022 – Present</span>
-            <h3>Teacher</h3>
-            <p class="timeline-org">Muzaffar Online Education, Andijan, Uzbekistan</p>
-            <ul>
-              <li>Helped cofound one of the largest English learning platforms in Uzbekistan.</li>
-              <li>Interacted with students and provided structured feedback on writing.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
+          <li class="role reveal">
+            <p class="role-date">Jun – Aug 2024</p>
+            <div>
+              <h3>Physician Assistant</h3>
+              <p class="role-org">Neuronet Ultra, Andijan</p>
+              <ul>
+                <li>Conducted supervised patient assessments to support diagnosis and treatment planning.</li>
+                <li>Assisted in management of patients with back pain and medication administration.</li>
+                <li>Created a patient record management platform.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="role reveal">
+            <p class="role-date">Sep 2022 – Present</p>
+            <div>
+              <h3>Teacher</h3>
+              <p class="role-org">Muzaffar Online Education, Andijan</p>
+              <ul>
+                <li>Helped cofound one of the largest English learning platforms in Uzbekistan.</li>
+                <li>Interacted with students and provided structured feedback on writing.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <!-- RESEARCH -->
   <section id="research" class="section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">03 — Research</p>
-        <h2>Research &amp; scholarly work</h2>
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <span class="sec-label">Research</span>
       </div>
+      <div class="sec-body">
+        <h2 class="reveal">Research &amp; scholarly work</h2>
 
-      <div class="research-group">
-        <p class="group-title reveal">Publications</p>
-        <div class="research-grid">
-          <article class="research-card reveal featured">
-            <span class="research-tag">Published paper · Q1 journal</span>
+        <div class="entry-group">
+          <h3 class="block-title reveal">Publications</h3>
+          <article class="lead-paper reveal">
+            <p class="tag">Published paper · Q1 journal · Aug 2026</p>
             <h3>Piezoelectric Biomaterials for Bone Regeneration: Mechanistic Insights and Preclinical Evidence — A Systematic Review of In Vitro and In Vivo Studies</h3>
-            <p class="muted">13 authors, including Asadbek Sultonov, Nozimjon Tuygunov, Akbarjon Mirzayev, Matluba Akbarali kizi Mirzaeva, and James Tsoi</p>
-            <p class="muted">Biomedical Materials &amp; Devices · Q1 journal, 2026 · August 2026 · DOI: <a href="https://doi.org/10.1007/s44174-026-00757-3" target="_blank" rel="noopener">10.1007/s44174-026-00757-3</a></p>
+            <p class="meta">13 authors, including Asadbek Sultonov, Nozimjon Tuygunov, Akbarjon Mirzayev, Matluba Akbarali kizi Mirzaeva, and James Tsoi</p>
+            <p class="meta"><em>Biomedical Materials &amp; Devices</em> · DOI <a href="https://doi.org/10.1007/s44174-026-00757-3" target="_blank" rel="noopener">10.1007/s44174-026-00757-3</a></p>
           </article>
-
-          <article class="research-card reveal">
-            <span class="research-tag">Published paper</span>
-            <h3>Assessing medication adherence and identifying barriers to adherence among patients with type 2 diabetes mellitus in Uzbekistan</h3>
-            <p class="muted">Asadbek Sultonov, Mukhammadbektosh Khaydarov, Malika Oblokulova, Zulaykho Shamansurova, Zamira Khalimova</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="research-group">
-        <p class="group-title reveal">Conference Abstracts</p>
-        <div class="research-grid">
-          <article class="research-card reveal featured">
-            <span class="research-tag">Oral presentation · Travel grant</span>
-            <h3>Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases</h3>
-            <p class="muted">Abstract O-087 · Podium Session 8: Pediatrics · KAU 2025, Seoul · October 23, 2025, Room B(201), COEX (North)</p>
-            <p class="muted">Submitted as a medical student; abstract accepted for oral presentation. Awarded a KAU travel grant and traveled to the congress with Dr. Azimdjon Tursunkulov, a prominent endourologist in Tashkent.</p>
-          </article>
-
-          <article class="research-card reveal">
-            <span class="research-tag">Poster · Accepted</span>
-            <h3>Transfer Learning for Automated KL Grading of Knee Osteoarthritis: A Calibrated Deep Learning Study</h3>
-            <p class="muted">Abstract A574 · Accepted as a poster at the 2026 AAHKS Annual Meeting, Nov 5–8, Gaylord Texan Resort &amp; Convention Center, Grapevine, TX</p>
-            <p class="muted">Selected as 1 of 355 posters from over 2,400 submitted abstracts; presented as an ePoster with recorded audio/video.</p>
-          </article>
-
-          <article class="research-card reveal">
-            <span class="research-tag">Poster presentation</span>
-            <h3>Telemedicine in the Treatment and Control of Diabetes</h3>
-            <p class="muted">Presented at an endocrinology conference, Central Asian University</p>
+          <article class="entry reveal">
+            <p class="tag">Published paper</p>
+            <h4>Assessing medication adherence and identifying barriers to adherence among patients with type 2 diabetes mellitus in Uzbekistan</h4>
+            <p class="meta">Asadbek Sultonov, Mukhammadbektosh Khaydarov, Malika Oblokulova, Zulaykho Shamansurova, Zamira Khalimova</p>
           </article>
         </div>
-      </div>
 
-      <div class="research-group">
-        <p class="group-title reveal">Applied AI Projects</p>
-        <div class="research-grid">
-          <article class="research-card reveal">
-            <span class="research-tag">Applied AI project</span>
-            <h3>Automated KL Grading for Knee Osteoarthritis</h3>
-            <p class="muted">Trained and calibrated a transfer-learning deep learning model to grade knee osteoarthritis severity from X-rays on the Kellgren-Lawrence scale — the work behind the AAHKS 2026 accepted abstract.</p>
-          </article>
+        <div class="entry-group">
+          <h3 class="block-title reveal">Conference abstracts</h3>
+          <div class="entry-grid">
+            <article class="entry reveal">
+              <p class="tag">Oral presentation · Travel grant · Oct 2025</p>
+              <h4>Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases</h4>
+              <p class="meta">Abstract O-087 · Podium Session 8: Pediatrics · KAU 2025, Seoul · October 23, 2025, Room B(201), COEX (North)</p>
+              <p class="meta">Submitted as a medical student; accepted for oral presentation. Awarded a KAU travel grant and traveled to the congress with Dr. Azimdjon Tursunkulov, a prominent endourologist in Tashkent.</p>
+            </article>
 
-          <article class="research-card reveal">
-            <span class="research-tag">Applied AI project</span>
-            <h3>AI-Assisted Operations Planning</h3>
-            <p class="muted">Helped optimize clinical operations planning at Akfa Medline University Hospital using AI-driven scheduling and workflow tools.</p>
-          </article>
+            <article class="entry reveal">
+              <p class="tag">Poster · Accepted · Nov 2026</p>
+              <h4>Transfer Learning for Automated KL Grading of Knee Osteoarthritis: A Calibrated Deep Learning Study</h4>
+              <p class="meta">Abstract A574 · 2026 AAHKS Annual Meeting, Nov 5–8, Gaylord Texan Resort &amp; Convention Center, Grapevine, TX. Presented as an ePoster with recorded audio/video.</p>
+              <div class="ratio" role="img" aria-label="355 posters were selected from more than 2,400 submitted abstracts, an acceptance rate under 15 percent">
+                <div class="ratio-bar"><span style="--pct:14.8%"></span></div>
+                <div class="ratio-labels">
+                  <span><b>355</b> posters selected</span>
+                  <span><b>2,400+</b> abstracts submitted</span>
+                </div>
+                <p class="ratio-note">Acceptance rate under 15%</p>
+              </div>
+            </article>
+
+            <article class="entry reveal">
+              <p class="tag">Poster presentation</p>
+              <h4>Telemedicine in the Treatment and Control of Diabetes</h4>
+              <p class="meta">Presented at an endocrinology conference, Central Asian University</p>
+            </article>
+          </div>
         </div>
-      </div>
 
-      <div class="research-group">
-        <p class="group-title reveal">Innovation &amp; Examinations</p>
-        <div class="research-grid">
-          <article class="research-card reveal">
-            <span class="research-tag">Group innovation project</span>
-            <h3>Using Telegram Bots and 3D-Printed Pill Boxes to Improve Medication Adherence</h3>
-            <p class="muted">Group leader · Gold Medal, AKFA MEDINNOVA Expo 2023</p>
-          </article>
-
-          <article class="research-card reveal">
-            <span class="research-tag">Examination</span>
-            <h3>USMLE Step 1 — Passed</h3>
-            <p class="muted">Test date: September 3, 2024</p>
-          </article>
+        <div class="entry-group">
+          <h3 class="block-title reveal">Applied AI projects</h3>
+          <div class="entry-grid">
+            <article class="entry reveal">
+              <p class="tag">Deep learning</p>
+              <h4>Automated KL Grading for Knee Osteoarthritis</h4>
+              <p class="meta">Trained and calibrated a transfer-learning model to grade knee osteoarthritis severity from X-rays on the Kellgren-Lawrence scale — the work behind the AAHKS 2026 accepted abstract.</p>
+            </article>
+            <article class="entry reveal">
+              <p class="tag">Operations</p>
+              <h4>AI-Assisted Operations Planning</h4>
+              <p class="meta">Helped optimize clinical operations planning at Akfa Medline University Hospital using AI-driven scheduling and workflow tools.</p>
+            </article>
+          </div>
         </div>
-      </div>
 
-      <div class="extra-block reveal">
-        <h3>Extracurricular &amp; organizing</h3>
-        <div class="pill-grid">
-          <div class="pill-item">
-            <strong>CAEC25 Congress</strong>
-            <span>Website management, doctor registration support, programme brochure, and logo design support.</span>
+        <div class="entry-group">
+          <h3 class="block-title reveal">Innovation &amp; examinations</h3>
+          <div class="entry-grid">
+            <article class="entry reveal">
+              <p class="tag">Group innovation project</p>
+              <h4>Using Telegram Bots and 3D-Printed Pill Boxes to Improve Medication Adherence</h4>
+              <p class="meta">Group leader · Gold Medal, AKFA MEDINNOVA Expo 2023</p>
+            </article>
+            <article class="entry reveal">
+              <p class="tag">Examination</p>
+              <h4>USMLE Step 1 — Passed</h4>
+              <p class="meta">Test date: September 3, 2024</p>
+            </article>
           </div>
-          <div class="pill-item">
-            <strong>Center of Endocrinology</strong>
-            <span>Volunteer medical interpreter and case presenter.</span>
-          </div>
-          <div class="pill-item">
-            <strong>“Oddiy Talaba”</strong>
-            <span>Interviewer and social media manager, voluntary organization.</span>
-          </div>
-          <div class="pill-item">
-            <strong>Harvard Business Case Competition</strong>
-            <span>Participated and qualified for the semifinals.</span>
-          </div>
+        </div>
+
+        <div class="entry-group">
+          <h3 class="block-title reveal">Extracurricular &amp; organizing</h3>
+          <dl class="side-list reveal">
+            <div><dt>CAEC25 Congress</dt><dd>Website management, doctor registration support, programme brochure, and logo design support.</dd></div>
+            <div><dt>Center of Endocrinology</dt><dd>Volunteer medical interpreter and case presenter.</dd></div>
+            <div><dt>“Oddiy Talaba”</dt><dd>Interviewer and social media manager, voluntary organization.</dd></div>
+            <div><dt>Harvard Business Case Competition</dt><dd>Participated and qualified for the semifinals.</dd></div>
+          </dl>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ACHIEVEMENTS / CERTIFICATES -->
-  <section id="achievements" class="section section-dark">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">04 — Achievements</p>
-        <h2>Awards &amp; certifications</h2>
+  <section id="achievements" class="section section-alt">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <span class="sec-label">Achievements</span>
       </div>
+      <div class="sec-body">
+        <h2 class="reveal">Awards &amp; certifications</h2>
 
-      <div class="achieve-list">
-        <div class="achieve-row reveal">
-          <span class="achieve-rank">🥇</span>
-          <div>
-            <h3>1st Place — Medical Olympiad “Medicine of the Future 2024”</h3>
-            <p class="muted">Central Asian University</p>
+        <figure class="chart reveal" aria-labelledby="recordTitle">
+          <div class="chart-head">
+            <div>
+              <h3 id="recordTitle">Milestones, 2023 – 2026</h3>
+              <p>Dated awards, presentations, publications and credentials, by month.</p>
+            </div>
+            <ul class="chart-legend" aria-hidden="true">
+              <li><i class="key key-dot"></i>Done</li>
+              <li><i class="key key-dot key-hollow"></i>Scheduled</li>
+            </ul>
           </div>
+          <div class="chart-plot" data-chart="milestones" data-source="milestoneData"></div>
+          <details class="chart-table">
+            <summary>View as table</summary>
+            <table id="milestoneData">
+              <thead><tr><th scope="col">Date</th><th scope="col">Type</th><th scope="col">Milestone</th></tr></thead>
+              <tbody>
+                <tr data-date="2023-06" data-lane="Awards"><td>2023</td><td>Award</td><td>Gold Medal, AKFA MEDINNOVA Expo</td></tr>
+                <tr data-date="2023-12" data-lane="Awards"><td>Dec 2023</td><td>Award</td><td>3rd place, Samarkand-2020 Olympiad (Neurology)</td></tr>
+                <tr data-date="2024-09" data-lane="Exams &amp; credentials"><td>Sep 2024</td><td>Exam</td><td>USMLE Step 1 passed</td></tr>
+                <tr data-date="2024-10" data-lane="Awards"><td>Oct 2024</td><td>Award</td><td>1st place, Medicine of the Future 2024</td></tr>
+                <tr data-date="2024-12" data-lane="Awards"><td>Dec 2024</td><td>Award</td><td>1st place, Samarkand-2020 Olympiad (Neurology)</td></tr>
+                <tr data-date="2025-05" data-lane="Exams &amp; credentials"><td>May 2025</td><td>Credential</td><td>AHA ACLS &amp; BLS provider</td></tr>
+                <tr data-date="2025-10" data-lane="Presentations"><td>Oct 2025</td><td>Presentation</td><td>Oral presentation, KUA 2025, Seoul</td></tr>
+                <tr data-date="2025-10" data-lane="Exams &amp; credentials"><td>Oct 2025</td><td>Credential</td><td>UpToDate CME, AMA PRA Category 1</td></tr>
+                <tr data-date="2026-08" data-lane="Publications"><td>Aug 2026</td><td>Publication</td><td>Q1 systematic review, Biomedical Materials &amp; Devices</td></tr>
+                <tr data-date="2026-11" data-lane="Presentations" data-upcoming><td>Nov 2026</td><td>Presentation</td><td>ePoster, AAHKS 2026 Annual Meeting (scheduled)</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
+
+        <ol class="awards">
+          <li class="award reveal">
+            <span class="place">1st</span>
+            <div>
+              <h3>Samarkand-2020 Olympiad (Neurology)</h3>
+              <p>V International Olympiad for Medical Students · Samarkand State Medical University</p>
+            </div>
+            <span class="award-year">2024</span>
+          </li>
+          <li class="award reveal">
+            <span class="place">1st</span>
+            <div>
+              <h3>Medical Olympiad “Medicine of the Future 2024”</h3>
+              <p>Central Asian University</p>
+            </div>
+            <span class="award-year">2024</span>
+          </li>
+          <li class="award reveal">
+            <span class="place">3rd</span>
+            <div>
+              <h3>Samarkand-2020 Olympiad (Neurology)</h3>
+              <p>IV International Olympiad for Medical Students · Samarkand State Medical University</p>
+            </div>
+            <span class="award-year">2023</span>
+          </li>
+          <li class="award reveal">
+            <span class="place">Gold</span>
+            <div>
+              <h3>AKFA MEDINNOVA Expo 2023</h3>
+              <p>Best science project &amp; poster, group leader</p>
+            </div>
+            <span class="award-year">2023</span>
+          </li>
+        </ol>
+
+        <h3 class="block-title reveal">Certificates</h3>
+        <div class="gallery-grid cert-grid">
+          <button class="gallery-item reveal" data-full="assets/img/cert-samarkand-1st.jpg" data-caption="Diploma I — 1st place, V International Olympiad of Medical Students “Samarkand-2020”, December 13–14 2024">
+            <img src="assets/img/cert-samarkand-1st.jpg" alt="First place diploma from the V International Olympiad of Medical Students, Samarkand 2024" loading="lazy" decoding="async" width="1400" height="988">
+            <span>Samarkand Olympiad, 1st place</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-medicine-future.jpg" data-caption="Certificate — Medical Olympiad “Medicine of the Future 2024”, Central Asian University, Tashkent, October 26–27 2024">
+            <img src="assets/img/cert-medicine-future.jpg" alt="Certificate for the Medicine of the Future 2024 olympiad at Central Asian University" loading="lazy" decoding="async" width="988" height="1400">
+            <span>Medicine of the Future 2024</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-samarkand-3rd.jpg" data-caption="Diploma III — 3rd place, IV International Olympiad of Medical Students “Samarkand-2020”, December 15–16 2023">
+            <img src="assets/img/cert-samarkand-3rd.jpg" alt="Third place diploma from the IV International Olympiad of Medical Students, Samarkand 2023" loading="lazy" decoding="async" width="1400" height="988">
+            <span>Samarkand Olympiad, 3rd place</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-medinnova-gold.jpg" data-caption="Gold Medal — AKFA MEDINNOVA Expo 2023, group project on Telegram bots &amp; 3D-printed pill boxes">
+            <img src="assets/img/cert-medinnova-gold.jpg" alt="Gold medal project award certificate from AKFA Medinnova Expo 2023" loading="lazy" decoding="async" width="1400" height="988">
+            <span>AKFA Medinnova, gold medal</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-healthcare-future.jpg" data-caption="Certificate — 12-hour international medical conference “Healthcare of the Future”, Central Asian University, Tashkent, October 25–26 2024">
+            <img src="assets/img/cert-healthcare-future.jpg" alt="Certificate of participation in the Healthcare of the Future medical conference" loading="lazy" decoding="async" width="1400" height="988">
+            <span>Healthcare of the Future</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-acls.jpg" data-caption="AHA Advanced Cardiovascular Life Support (ACLS) Provider — issued 19 May 2025, renew by May 2027">
+            <img src="assets/img/cert-acls.jpg" alt="American Heart Association ACLS provider certificate" loading="lazy" decoding="async" width="988" height="1400">
+            <span>AHA ACLS provider</span>
+          </button>
+          <button class="gallery-item reveal" data-full="assets/img/cert-bls.jpg" data-caption="AHA Basic Life Support (BLS) Provider — issued 14 May 2025, renew by May 2027">
+            <img src="assets/img/cert-bls.jpg" alt="American Heart Association BLS provider certificate" loading="lazy" decoding="async" width="988" height="1400">
+            <span>AHA BLS provider</span>
+          </button>
         </div>
-        <div class="achieve-row reveal">
-          <span class="achieve-rank">🥇</span>
-          <div>
-            <h3>Gold Medal — AKFA MEDINNOVA Expo 2023</h3>
-            <p class="muted">Best science project &amp; poster, group leader</p>
-          </div>
-        </div>
-        <div class="achieve-row reveal">
-          <span class="achieve-rank">🥇</span>
-          <div>
-            <h3>1st Place — Samarkand-2020 Olympiad (Neurology), 2024</h3>
-            <p class="muted">V International Olympiad for Medical Students · Samarkand State Medical University</p>
-          </div>
-        </div>
-        <div class="achieve-row reveal">
-          <span class="achieve-rank">🥉</span>
-          <div>
-            <h3>3rd Place — Samarkand-2020 Olympiad (Neurology), 2023</h3>
-            <p class="muted">IV International Olympiad for Medical Students · Samarkand State Medical University</p>
-          </div>
-        </div>
+
+        <h3 class="block-title reveal">Other training</h3>
+        <ul class="cred-list reveal">
+          <li>Meta-analysis Academy graduate</li>
+          <li>Introduction to Machine Learning — SoloLearn</li>
+          <li>UpToDate CME — AMA PRA Category 1 Credit, Oct 2025</li>
+          <li>“Healthcare of the Future” conference (12 h), CAU 2024</li>
+          <li>Regular attendance at Healio &amp; Cleveland Clinic webinars</li>
+        </ul>
       </div>
-
-      <div class="gallery-grid">
-        <button class="gallery-item reveal" data-full="assets/img/cert-medicine-future.jpg" data-caption="Certificate — Medical Olympiad “Medicine of the Future 2024”, Central Asian University, Tashkent, October 26–27 2024">
-          <img src="assets/img/cert-medicine-future.jpg" alt="Certificate for the Medicine of the Future 2024 olympiad at Central Asian University" loading="lazy" decoding="async" width="988" height="1400">
-          <span>Medicine of the Future 2024</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-medinnova-gold.jpg" data-caption="Gold Medal — AKFA MEDINNOVA Expo 2023, group project on Telegram bots &amp; 3D-printed pill boxes">
-          <img src="assets/img/cert-medinnova-gold.jpg" alt="Gold medal project award certificate from AKFA Medinnova Expo 2023" loading="lazy" decoding="async" width="1400" height="988">
-          <span>AKFA Medinnova — Gold Medal</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-samarkand-1st.jpg" data-caption="Diploma I — 1st place, V International Olympiad of Medical Students “Samarkand-2020”, December 13–14 2024">
-          <img src="assets/img/cert-samarkand-1st.jpg" alt="First place diploma from the V International Olympiad of Medical Students, Samarkand 2024" loading="lazy" decoding="async" width="1400" height="988">
-          <span>Samarkand Olympiad — 1st Place</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-samarkand-3rd.jpg" data-caption="Diploma III — 3rd place, IV International Olympiad of Medical Students “Samarkand-2020”, December 15–16 2023">
-          <img src="assets/img/cert-samarkand-3rd.jpg" alt="Third place diploma from the IV International Olympiad of Medical Students, Samarkand 2023" loading="lazy" decoding="async" width="1400" height="988">
-          <span>Samarkand Olympiad — 3rd Place</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-healthcare-future.jpg" data-caption="Certificate — 12-hour international medical conference “Healthcare of the Future”, Central Asian University, Tashkent, October 25–26 2024">
-          <img src="assets/img/cert-healthcare-future.jpg" alt="Certificate of participation in the Healthcare of the Future medical conference" loading="lazy" decoding="async" width="1400" height="988">
-          <span>Healthcare of the Future</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-acls.jpg" data-caption="AHA Advanced Cardiovascular Life Support (ACLS) Provider — issued 19 May 2025, renew by May 2027">
-          <img src="assets/img/cert-acls.jpg" alt="American Heart Association ACLS provider certificate" loading="lazy" decoding="async" width="988" height="1400">
-          <span>AHA ACLS Provider</span>
-        </button>
-        <button class="gallery-item reveal" data-full="assets/img/cert-bls.jpg" data-caption="AHA Basic Life Support (BLS) Provider — issued 14 May 2025, renew by May 2027">
-          <img src="assets/img/cert-bls.jpg" alt="American Heart Association BLS provider certificate" loading="lazy" decoding="async" width="988" height="1400">
-          <span>AHA BLS Provider</span>
-        </button>
-      </div>
-
-      <ul class="cred-list reveal">
-        <li>Meta-analysis Academy graduate</li>
-        <li>Introduction to Machine Learning — SoloLearn</li>
-        <li>UpToDate CME — AMA PRA Category 1 Credit, Oct 2025</li>
-        <li>“Healthcare of the Future” conference (12 h), CAU 2024</li>
-        <li>Regular attendance at Healio &amp; Cleveland Clinic webinars</li>
-      </ul>
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills" class="section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">05 — Skills</p>
-        <h2>Tools of the trade</h2>
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <span class="sec-label">Skills</span>
       </div>
-
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3>Clinical</h3>
-          <ul class="tag-list">
-            <li>Patient interaction</li>
-            <li>Clinical communication</li>
-            <li>Evidence-based medicine</li>
-            <li>Perioperative documentation</li>
-          </ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Research</h3>
-          <ul class="tag-list">
-            <li>Literature review (PubMed / Google Scholar)</li>
-            <li>Meta-analysis</li>
-            <li>Data visualization</li>
-            <li>Journal club preparation</li>
-          </ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Technical</h3>
-          <ul class="tag-list">
-            <li>Python</li>
-            <li>NumPy / SciPy / Pandas</li>
-            <li>Statistical software</li>
-            <li>Canva design</li>
-          </ul>
+      <div class="sec-body">
+        <h2 class="reveal">Tools of the trade</h2>
+        <div class="skills-grid">
+          <div class="block reveal">
+            <h3 class="block-title">Clinical</h3>
+            <ul class="rule-list">
+              <li>Patient interaction</li>
+              <li>Clinical communication</li>
+              <li>Evidence-based medicine</li>
+              <li>Perioperative documentation</li>
+            </ul>
+          </div>
+          <div class="block reveal">
+            <h3 class="block-title">Research</h3>
+            <ul class="rule-list">
+              <li>Literature review (PubMed / Google Scholar)</li>
+              <li>Meta-analysis</li>
+              <li>Data visualization</li>
+              <li>Journal club preparation</li>
+            </ul>
+          </div>
+          <div class="block reveal">
+            <h3 class="block-title">Technical</h3>
+            <ul class="rule-list">
+              <li>Python</li>
+              <li>NumPy / SciPy / Pandas</li>
+              <li>Statistical software</li>
+              <li>Canva design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section section-contact">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <p class="kicker">06 — Contact</p>
+  <section id="contact" class="contact">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <span class="sec-num">06</span>
+        <span class="sec-label">Contact</span>
+      </div>
+      <div class="sec-body reveal">
         <h2>Let's connect.</h2>
         <p class="lede">Open to conversations on orthopedic research, trauma care, and collaborative clinical projects.</p>
-      </div>
-      <div class="contact-cards contact-cards-single reveal">
-        <a class="contact-card" href="mailto:asadbeksltnv90@gmail.com">
-          <span class="contact-icon">✉️</span>
-          <span>
-            <strong>Email</strong>
-            <em>asadbeksltnv90@gmail.com</em>
-          </span>
-        </a>
+        <a class="contact-mail" href="mailto:asadbeksltnv90@gmail.com">asadbeksltnv90@gmail.com</a>
       </div>
     </div>
   </section>
@@ -523,7 +563,7 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>&copy; <span id="year"></span> Asadbek Sultonov. Built with care.</p>
+    <p>&copy; <span id="year"></span> Asadbek Sultonov</p>
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>
