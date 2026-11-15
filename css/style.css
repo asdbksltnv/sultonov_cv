@@ -371,6 +371,7 @@ em, i, cite{ font-style: normal; }
 .brand-name{ font: var(--title-4); white-space: nowrap; }
 
 .nav-links{ display: flex; align-items: center; gap: var(--s-25); }
+.nav-links a{ white-space: nowrap; }
 .nav-links a{
   display: inline-flex;
   padding: var(--s-75) var(--s-100);
@@ -1003,6 +1004,48 @@ html:not(.js) .chart-table{ display: block; }
 @media (max-width: 960px){ .page-links{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px){ .page-links{ grid-template-columns: 1fr; } }
 
+/* Projects card on the home page: spans the whole row, preview image beside the text */
+.page-link-wide{ grid-column: 1 / -1; }
+.page-link-feature{ flex-direction: row; align-items: center; gap: var(--s-300); }
+.page-link-feature img{
+  width: 40%;
+  max-width: 360px;
+  height: auto;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+}
+.page-link-text{ display: flex; flex-direction: column; gap: var(--s-75); align-self: stretch; }
+@media (max-width: 600px){
+  .page-link-feature{ flex-direction: column; align-items: stretch; }
+  .page-link-feature img{ width: 100%; max-width: none; }
+}
+
+/* ---------- Projects ---------- */
+.project{
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--s-500);
+  align-items: center;
+}
+.project-media{
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-2xl);
+}
+.project-media img{ display: block; width: 100%; height: auto; transition: transform var(--dur) var(--ease); }
+.project-media:hover img{ transform: scale(1.02); }
+.project-sub{ margin-top: var(--s-100); }
+.project-actions{ display: flex; flex-wrap: wrap; gap: var(--s-100); margin-top: var(--s-300); }
+.project-label{ margin-top: var(--s-300); margin-bottom: var(--s-100); color: var(--text-secondary); }
+.chip-link{ transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease); }
+.chip-link:hover{ background: var(--surface-hover); color: var(--text-primary); }
+.project-credit{ margin-top: var(--s-300); }
+@media (max-width: 960px){
+  .project{ grid-template-columns: 1fr; gap: var(--s-300); }
+}
+
 /* ---------- Blog: list ---------- */
 .blog-list{ padding-top: 0; }
 .post-featured{ margin-bottom: var(--s-200); }
@@ -1252,13 +1295,14 @@ section[id]{ scroll-margin-top: var(--s-800); }
   .media-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-/* The pill needs room for brand, six links, the language switch and the CTA */
-@media (max-width: 1040px){
+/* The pill needs room for brand, seven links, the language switch and the CTA
+   (Russian labels are the longest) */
+@media (max-width: 1140px){
   .nav-bar{ width: 100%; }
   .nav-links, .nav-bar > .nav-cta, .nav-bar > .lang-switch{ display: none; }
   .nav-toggle{ display: block; }
 }
-@media (min-width: 1041px){
+@media (min-width: 1141px){
   .nav-panel{ display: none; }
 }
 

@@ -34,7 +34,7 @@ VIDEO_EXT = (".mp4", ".webm", ".mov", ".m4v")
 UI = {
     "en": dict(
         about="About", experience="Experience", research="Research", achievements="Achievements",
-        skills="Skills", blog="Blog", contact="Contact", skip="Skip to content", main="Main",
+        skills="Skills", projects="Projects", blog="Blog", contact="Contact", skip="Skip to content", main="Main",
         menu_open="Open menu", menu_close="Close menu", language="Language", home="Asadbek Sultonov, home",
         blog_title="Notes along<br> the way",
         blog_sub="Conferences, clinical training and moments from my medical career, in photos and a few words.",
@@ -50,7 +50,7 @@ UI = {
     ),
     "uz": dict(
         about="Men haqimda", experience="Tajriba", research="Tadqiqotlar", achievements="Yutuqlar",
-        skills="Koʻnikmalar", blog="Blog", contact="Aloqa", skip="Asosiy matnga oʻtish", main="Asosiy menyu",
+        skills="Koʻnikmalar", projects="Loyihalar", blog="Blog", contact="Aloqa", skip="Asosiy matnga oʻtish", main="Asosiy menyu",
         menu_open="Menyuni ochish", menu_close="Menyuni yopish", language="Til", home="Asadbek Sultonov, bosh sahifa",
         blog_title="Yoʻldagi<br> qaydlar",
         blog_sub="Konferensiyalar, klinik tayyorgarlik va tibbiy faoliyatimdagi lahzalar: suratlar va qisqa hikoyalar.",
@@ -66,7 +66,7 @@ UI = {
     ),
     "ru": dict(
         about="Обо мне", experience="Опыт", research="Исследования", achievements="Достижения",
-        skills="Навыки", blog="Блог", contact="Контакты", skip="Перейти к содержанию", main="Основное меню",
+        skills="Навыки", projects="Проекты", blog="Блог", contact="Контакты", skip="Перейти к содержанию", main="Основное меню",
         menu_open="Открыть меню", menu_close="Закрыть меню", language="Язык", home="Asadbek Sultonov, главная",
         blog_title="Заметки<br> в пути",
         blog_sub="Конференции, клиническая подготовка и моменты из моей медицинской карьеры в фотографиях и коротких заметках.",

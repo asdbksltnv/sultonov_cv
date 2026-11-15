@@ -45,11 +45,14 @@ PAGES = [
     dict(file="skills.html", key="skills", name="Skills",
          title="Skills · Asadbek Sultonov",
          desc="Clinical, research and technical skills of Asadbek Sultonov, from evidence based medicine and meta-analysis to data analysis in Python."),
+    dict(file="projects.html", key="projects", name="Projects",
+         title="Projects · Asadbek Sultonov",
+         desc="Software by Asadbek Sultonov, including 3D Anatomiya Laboratoriyasi, a free interactive 3D anatomy atlas for Uzbek-speaking medical students."),
     dict(file="contact.html", key="contact", name="Contact",
          title="Contact · Asadbek Sultonov",
          desc="Contact Asadbek Sultonov, orthopedic surgery resident at Akfa Medline University Hospital in Tashkent, about research collaborations and clinical projects."),
 ]
-MENU = ["about", "experience", "research", "achievements", "skills"]
+MENU = ["about", "experience", "research", "achievements", "skills", "projects"]
 BLOG = dict(file="blog/", key="blog", name="Blog")
 
 PERSON_ID = BASE + "#person"
@@ -84,6 +87,19 @@ PAPER = {
     "isPartOf": {"@type": "Periodical", "name": "Biomedical Materials & Devices"},
     "sameAs": "https://doi.org/10.1007/s44174-026-00757-3",
     "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1007/s44174-026-00757-3"},
+}
+ANATOMY_APP = {
+    "@type": "WebApplication",
+    "name": "3D Anatomiya Laboratoriyasi",
+    "url": "https://anatomiya-lab.onrender.com/",
+    "image": "https://anatomiya-lab.onrender.com/og.png",
+    "description": "An interactive 3D anatomy atlas for Uzbek-speaking medical students.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any (web browser)",
+    "inLanguage": "uz",
+    "isAccessibleForFree": True,
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "author": {"@id": PERSON_ID},
 }
 
 ICONS = {
@@ -133,6 +149,8 @@ def structured(p):
         ]})
         if p["key"] == "research":
             graph.append(PAPER)
+        if p["key"] == "projects":
+            graph.append(ANATOMY_APP)
     return jsonld({"@context": "https://schema.org", "@graph": graph})
 
 

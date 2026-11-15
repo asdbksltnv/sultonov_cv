@@ -10,6 +10,7 @@ Each page of the portfolio is built from one file in this folder:
 | `research.html`     | `research.html`     |
 | `achievements.html` | `achievements.html` |
 | `skills.html`       | `skills.html`       |
+| `projects.html`     | `projects.html`     |
 | `contact.html`      | `contact.html`      |
 
 These files hold only the page content. The menu, footer and everything in

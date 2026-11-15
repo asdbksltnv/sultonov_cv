@@ -37,6 +37,7 @@ NAMES = [
     ("Achievements", "Yutuqlar", "Достижения"),
     ("Skills", "Koʻnikmalar", "Навыки"),
     ("Contact", "Aloqa", "Контакты"),
+    ("Projects", "Loyihalar", "Проекты"),
     ("Blog", "Blog", "Блог"),
 ]
 
@@ -79,6 +80,12 @@ T = [
     ("Contact Asadbek Sultonov, orthopedic surgery resident at Akfa Medline University Hospital in Tashkent, about research collaborations and clinical projects.",
      "Ilmiy hamkorlik va klinik loyihalar boʻyicha Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori Asadbek Sultonov bilan bogʻlaning.",
      "Свяжитесь с Асадбеком Султоновым, ординатором по ортопедии в Akfa Medline University Hospital в Ташкенте, по вопросам научного сотрудничества и клинических проектов."),
+    ("Projects · Asadbek Sultonov",
+     "Loyihalar · Asadbek Sultonov",
+     "Проекты · Асадбек Султонов"),
+    ("Software by Asadbek Sultonov, including 3D Anatomiya Laboratoriyasi, a free interactive 3D anatomy atlas for Uzbek-speaking medical students.",
+     "Asadbek Sultonov yaratgan dasturlar, jumladan 3D Anatomiya Laboratoriyasi – oʻzbek tilida oʻqiydigan tibbiyot talabalari uchun bepul interaktiv 3D anatomiya atlasi.",
+     "Программы Асадбека Султонова, в том числе 3D Anatomiya Laboratoriyasi – бесплатный интерактивный 3D атлас анатомии для студентов медицинских вузов, обучающихся на узбекском языке."),
 
     # ---------- page headers, home page cards, previous/next ----------
     ("Who I am, where I trained and the languages I work in.",
@@ -99,6 +106,7 @@ T = [
     ("Publications, conference presentations and applied AI projects.", "Nashrlar, konferensiyalardagi maʼruzalar va amaliy AI loyihalari.", "Публикации, доклады на конференциях и прикладные проекты ИИ."),
     ("Olympiad awards, certificates and life support credentials.", "Olimpiada mukofotlari, sertifikatlar va hayotni qoʻllab-quvvatlash guvohnomalari.", "Награды олимпиад, сертификаты и удостоверения по реанимации."),
     ("Clinical, research and technical skills.", "Klinik, ilmiy va texnik koʻnikmalar.", "Клинические, исследовательские и технические навыки."),
+    ("A free 3D anatomy atlas I built for medical students.", "Tibbiyot talabalari uchun yaratgan bepul 3D anatomiya atlasim.", "Бесплатный 3D атлас анатомии, который я создал для студентов медицинских вузов."),
     ("Conferences, clinical training and moments from my medical career.", "Konferensiyalar, klinik tayyorgarlik va tibbiy faoliyatimdagi lahzalar.", "Конференции, клиническая подготовка и моменты из моей медицинской карьеры."),
     ("<span>Contact details</span>", "<span>Aloqa maʼlumotlari</span>", "<span>Контакты</span>"),
     ('aria-label="More pages"', 'aria-label="Boshqa sahifalar"', 'aria-label="Другие страницы"'),
@@ -109,7 +117,7 @@ T = [
     for pat, names in (
         ('<span class="title-3">%s</span>', NAMES),                        # previous/next links
         ('<h3 class="title-1">%s</h3>', [n for n in NAMES if n[0] not in ("Home", "Contact")]),  # home page cards
-        ('"name": "%s"', NAMES[:7]),                                         # breadcrumbs
+        ('"name": "%s"', NAMES[:8]),                                         # breadcrumbs
     )
     for n in names
 ] + [
@@ -140,6 +148,7 @@ T = [
     (">Research</a>", ">Tadqiqotlar</a>", ">Исследования</a>"),
     (">Achievements</a>", ">Yutuqlar</a>", ">Достижения</a>"),
     (">Skills</a>", ">Koʻnikmalar</a>", ">Навыки</a>"),
+    (">Projects</a>", ">Loyihalar</a>", ">Проекты</a>"),
     (">Blog</a>", ">Blog</a>", ">Блог</a>"),
     (">Contact</a>", ">Aloqa</a>", ">Контакты</a>"),
     ("<span>Blog</span>", "<span>Blog</span>", "<span>Блог</span>"),
@@ -453,6 +462,36 @@ T = [
     (">Statistical software<", ">Statistik dasturlar<", ">Статистическое ПО<"),
     (">Canva design<", ">Canva dizayn<", ">Дизайн в Canva<"),
 
+    # ---------- projects ----------
+    ("<h1 class=\"heading-2 hero-title\">Things I've built</h1>",
+     "<h1 class=\"heading-2 hero-title\">Yaratgan loyihalarim</h1>",
+     "<h1 class=\"heading-2 hero-title\">Мои проекты</h1>"),
+    ("Free tools for medical students, built alongside my clinical work. They run in the browser, with nothing to install.",
+     "Klinik ishim bilan bir qatorda tibbiyot talabalari uchun yaratgan bepul vositalarim. Ular brauzerda ishlaydi, hech narsa oʻrnatish shart emas.",
+     "Бесплатные инструменты для студентов медицинских вузов, которые я создаю параллельно с клинической работой. Они работают в браузере, ничего устанавливать не нужно."),
+    ('"badge">Web app<', '"badge">Veb ilova<', '"badge">Браузерное приложение<'),
+    (">Free to use<", ">Bepul<", ">Бесплатно<"),
+    (">Interface in Uzbek<", ">Interfeys oʻzbek tilida<", ">Интерфейс на узбекском<"),
+    ("An interactive 3D anatomy atlas for Uzbek-speaking medical students.",
+     "Oʻzbek tilida oʻqiydigan tibbiyot talabalari uchun interaktiv 3D anatomiya atlasi.",
+     "Интерактивный 3D атлас анатомии для студентов медицинских вузов, обучающихся на узбекском языке."),
+    ("Rotate real scanned human anatomy, click any structure for its name and a short description, hide or isolate parts to see what lies beneath, then test yourself in quiz mode. It works on phones and computers.",
+     "Haqiqiy skanerlangan inson anatomiyasini aylantiring, istalgan tuzilmani bosib uning nomi va qisqa tavsifini koʻring, ostidagi qismlarni koʻrish uchun tuzilmalarni yashiring yoki alohida ajrating, soʻng test rejimida oʻzingizni sinang. Telefon va kompyuterda ishlaydi.",
+     "Вращайте реальную отсканированную анатомию человека, нажмите на любую структуру, чтобы увидеть её название и краткое описание, скрывайте или выделяйте части, чтобы рассмотреть то, что под ними, а затем проверьте себя в режиме теста. Работает на телефоне и компьютере."),
+    ("<span>Open the app</span>", "<span>Ilovani ochish</span>", "<span>Открыть приложение</span>"),
+    (">Or go straight to a body system<", ">Yoki kerakli tana tizimini darhol oching<", ">Или сразу откройте нужную систему<"),
+    ('aria-label="Body systems"', 'aria-label="Tana tizimlari"', 'aria-label="Системы организма"'),
+    (">Skeleton</a>", ">Skelet</a>", ">Скелет</a>"),
+    (">Internal organs</a>", ">Ichki aʼzolar</a>", ">Внутренние органы</a>"),
+    (">Heart</a>", ">Yurak</a>", ">Сердце</a>"),
+    (">Brain</a>", ">Bosh miya</a>", ">Головной мозг</a>"),
+    (">Lower limb</a>", ">Oyoq</a>", ">Нижняя конечность</a>"),
+    (">Knee joint</a>", ">Tizza boʻgʻimi</a>", ">Коленный сустав</a>"),
+    (">Digestive tract</a>", ">Hazm qilish tizimi</a>", ">Пищеварительный тракт</a>"),
+    ("Built with React and Three.js on anatomical scans from BodyParts3D (DBCLS) and Z-Anatomy, shared under CC BY-SA licences.",
+     "React va Three.js yordamida BodyParts3D (DBCLS) va Z-Anatomy anatomik skanerlari asosida yaratilgan; ular CC BY-SA litsenziyalari ostida tarqatiladi.",
+     "Создано на React и Three.js на основе анатомических сканов BodyParts3D (DBCLS) и Z-Anatomy, которые распространяются по лицензиям CC BY-SA."),
+
     # ---------- contact ----------
     ("Open to research collaborations and clinical projects", "Ilmiy hamkorlik va klinik loyihalar uchun ochiqman", "Открыт к научному сотрудничеству и клиническим проектам"),
     ("I'm happy to talk about orthopedic research, trauma care and collaborative clinical projects.",
@@ -479,7 +518,7 @@ SAME = re.compile(
     r"^(Asadbek Sultonov|Asadbek|Sultonov|English|I|III|AS|EN|UZ|RU|Python|NumPy|SciPy|Pandas|ePoster|AAHKS 2026|"
     r"Harvard Business Case Competition|AKFA MEDINNOVA Expo 2023|Central Asian University|"
     r"Medicine of the Future 2024|Healthcare of the Future|CAU Tech Summit '25|USMLE Step 1|"
-    r"Biomedical Materials & Devices|“Oddiy Talaba”|asadbeksltnv90@gmail\.com|DOI .*|"
+    r"Biomedical Materials & Devices|“Oddiy Talaba”|3D Anatomiya Laboratoriyasi|asadbeksltnv90@gmail\.com|DOI .*|"
     r"[\d.,%<+ –—·()]+|.*\b(Studies|Study|Uzbekistan|Cases|Diabetes)$|"
     r"Asadbek Sultonov, Mukhammadbektosh.*)$"
 )
