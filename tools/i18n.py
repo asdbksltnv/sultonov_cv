@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the Uzbek (uz/) and Russian (ru/) pages from the English source.
 
-The English pages (index.html, gallery.html) are the single source of truth.
+The English homepage (index.html) is the single source of truth.
 After editing them, run from the site folder:
 
     python3 tools/i18n.py
@@ -20,7 +20,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES = ["index.html", "gallery.html"]
+PAGES = ["index.html"]  # the blog has its own builder: tools/blog.py
 LANGS = {"uz": "uz_UZ", "ru": "ru_RU"}
 BASE = "https://asadbeksultonov.com/"
 
@@ -36,22 +36,14 @@ T = [
     ("PGY2 orthopedic surgery resident at Akfa Medline University Hospital. Clinical work, applied AI research, publications and awards.",
      "Akfa Medline University Hospital ortopediya ordinatori. Klinik ish, amaliy AI tadqiqotlari, nashrlar va mukofotlar.",
      "Ординатор по ортопедии в Akfa Medline University Hospital. Клиническая работа, прикладные исследования ИИ, публикации и награды."),
-    ('content="Portrait of Asadbek Sultonov"',
-     'content="Asadbek Sultonov portreti"',
-     'content="Портрет Асадбека Султонова"'),
-    ("Photos and video from Asadbek Sultonov's medical career: conferences in Seoul and Tashkent, robotic surgery training, clinical rotations and graduation.",
-     "Asadbek Sultonovning tibbiy faoliyatidan foto va video: Seul va Toshkentdagi konferensiyalar, robotik jarrohlik mashgʻulotlari, klinik rotatsiyalar va bitiruv.",
-     "Фото и видео из медицинской карьеры Асадбека Султонова: конференции в Сеуле и Ташкенте, обучение роботической хирургии, клинические ротации и выпускной."),
-    ("Conferences, clinical training and milestones from Asadbek Sultonov's medical career.",
-     "Asadbek Sultonovning tibbiy faoliyatidagi konferensiyalar, klinik tayyorgarlik va muhim voqealar.",
-     "Конференции, клиническая подготовка и важные события медицинской карьеры Асадбека Султонова."),
-    ("Gallery · Asadbek Sultonov", "Galereya · Asadbek Sultonov", "Галерея · Asadbek Sultonov"),
+    ('content="Asadbek Sultonov logo: a letter A formed by a knee joint, with the words Orthopaedic surgeon"',
+     'content="Asadbek Sultonov logotipi: tizza boʻgʻimidan hosil boʻlgan A harfi va Orthopaedic surgeon yozuvi"',
+     'content="Логотип Асадбека Султонова: буква A, образованная коленным суставом, и надпись Orthopaedic surgeon"'),
 
     # ---------- navigation and shared UI ----------
     (">Skip to content<", ">Asosiy matnga oʻtish<", ">Перейти к содержанию<"),
     ('aria-label="Main"', 'aria-label="Asosiy menyu"', 'aria-label="Основное меню"'),
     ('aria-label="Asadbek Sultonov, back to top"', 'aria-label="Asadbek Sultonov, yuqoriga"', 'aria-label="Asadbek Sultonov, наверх"'),
-    ('aria-label="Asadbek Sultonov, home"', 'aria-label="Asadbek Sultonov, bosh sahifa"', 'aria-label="Asadbek Sultonov, главная"'),
     ('aria-label="Language"', 'aria-label="Til"', 'aria-label="Язык"'),
     ('aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"',
      'aria-label="Menyuni ochish" data-label-open="Menyuni ochish" data-label-close="Menyuni yopish"',
@@ -61,11 +53,10 @@ T = [
     (">Research</a>", ">Tadqiqotlar</a>", ">Исследования</a>"),
     (">Achievements</a>", ">Yutuqlar</a>", ">Достижения</a>"),
     (">Skills</a>", ">Koʻnikmalar</a>", ">Навыки</a>"),
-    (">Gallery</a>", ">Galereya</a>", ">Галерея</a>"),
+    (">Blog</a>", ">Blog</a>", ">Блог</a>"),
     (">Contact</a>", ">Aloqa</a>", ">Контакты</a>"),
-    ("<span>Gallery</span>", "<span>Galereya</span>", "<span>Галерея</span>"),
+    ("<span>Blog</span>", "<span>Blog</span>", "<span>Блог</span>"),
     ("<span>Back to top</span>", "<span>Yuqoriga</span>", "<span>Наверх</span>"),
-    ("<span>Back to portfolio</span>", "<span>Portfolioga qaytish</span>", "<span>Вернуться к портфолио</span>"),
     ('aria-label="Image viewer"', 'aria-label="Rasmni koʻrish"', 'aria-label="Просмотр изображения"'),
     ('aria-label="Close"', 'aria-label="Yopish"', 'aria-label="Закрыть"'),
     ("(opens in a new tab)", "(yangi oynada ochiladi)", "(откроется в новой вкладке)"),
@@ -385,83 +376,6 @@ T = [
      'data-msg-ok="Email manzil nusxalandi." data-msg-error="Nusxalab boʻlmadi. Yuqoridagi manzilni qoʻlda belgilang." data-msg-unavailable="Bu brauzerda nusxalash imkoni yoʻq. Yuqoridagi manzilni qoʻlda belgilang."',
      'data-msg-ok="Адрес почты скопирован." data-msg-error="Не удалось скопировать. Выделите адрес выше вручную." data-msg-unavailable="В этом браузере копирование недоступно. Выделите адрес выше вручную."'),
 
-    # ---------- gallery ----------
-    ("Moments along the way", "Yoʻldagi lahzalar", "Моменты на пути"),
-    ("Conferences, clinical training and a few milestones, from Central Asian University's lecture halls to a surgical robot console and a podium in Seoul.",
-     "Konferensiyalar, klinik tayyorgarlik va bir nechta muhim voqealar: Central Asian University auditoriyalaridan jarrohlik roboti pultigacha va Seuldagi minbargacha.",
-     "Конференции, клиническая подготовка и несколько важных событий: от аудиторий Central Asian University до консоли хирургического робота и трибуны в Сеуле."),
-    ("<span>10 photos and 1 video</span>", "<span>10 ta foto va 1 ta video</span>", "<span>10 фото и 1 видео</span>"),
-    ('aria-label="Photos and video"', 'aria-label="Foto va video"', 'aria-label="Фото и видео"'),
-    ("Receiving his MD diploma at the Central Asian University Medical School graduation ceremony, presented by Tashkent City Hokim Jahongir Artikhodjayev, 2025.",
-     "Central Asian University tibbiyot maktabi bitiruv marosimida MD diplomini Toshkent shahar hokimi Jahongir Artikxodjayev topshirmoqda, 2025.",
-     "Вручение диплома MD на выпускной церемонии медицинской школы Central Asian University, диплом вручает хоким Ташкента Жахонгир Артикходжаев, 2025."),
-    ("Asadbek Sultonov receiving his MD diploma on stage at the Central Asian University graduation ceremony",
-     "Asadbek Sultonov Central Asian University bitiruv marosimida sahnada MD diplomini olmoqda",
-     "Асадбек Султонов получает диплом MD на сцене выпускной церемонии Central Asian University"),
-    (">MD graduation, 2025<", ">MD bitiruvi, 2025<", ">Выпуск MD, 2025<"),
-    ("With classmates at Central Asian University's Medical School Graduation 2025.",
-     "Central Asian University tibbiyot maktabining 2025 yilgi bitiruvida kursdoshlar bilan.",
-     "С однокурсниками на выпускном медицинской школы Central Asian University, 2025."),
-    ("Asadbek Sultonov with two classmates in white coats at Central Asian University's Medical School Graduation 2025",
-     "Asadbek Sultonov oq xalatdagi ikki kursdoshi bilan Central Asian University tibbiyot maktabining 2025 yilgi bitiruvida",
-     "Асадбек Султонов с двумя однокурсниками в белых халатах на выпускном медицинской школы Central Asian University, 2025"),
-    (">Graduating with classmates<", ">Kursdoshlar bilan bitiruv<", ">Выпускной с однокурсниками<"),
-    ("Delivering an oral presentation, “Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases,” at KUA 2025, the 77th Annual Meeting of the Korean Urological Association, COEX, Seoul.",
-     "KUA 2025 (Koreya urologiya assotsiatsiyasining yetmish yettinchi yillik yigʻilishi), COEX, Seul: “Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases” mavzusida ogʻzaki maʼruza.",
-     "Устный доклад «Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases» на KUA 2025, семьдесят седьмом ежегодном собрании Корейской урологической ассоциации, COEX, Сеул."),
-    ("Asadbek Sultonov delivering an oral presentation at the podium at KUA 2025 in Seoul",
-     "Asadbek Sultonov Seuldagi KUA 2025 da minbarda ogʻzaki maʼruza qilmoqda",
-     "Асадбек Султонов выступает с устным докладом на KUA 2025 в Сеуле"),
-    (">Oral presentation, KUA 2025<", ">Ogʻzaki maʼruza, KUA 2025<", ">Устный доклад, KUA 2025<"),
-    ("At COEX in Seoul for KUA 2025, with travel supported by a Korean Urological Association travel grant.",
-     "KUA 2025 uchun Seuldagi COEXda; safar Koreya urologiya assotsiatsiyasining granti hisobidan.",
-     "В COEX в Сеуле на KUA 2025; поездка за счёт гранта Корейской урологической ассоциации."),
-    ("Asadbek Sultonov at COEX convention center in Seoul, South Korea, for KUA 2025",
-     "Asadbek Sultonov KUA 2025 uchun Seuldagi (Janubiy Koreya) COEX koʻrgazma markazida",
-     "Асадбек Султонов в выставочном центре COEX в Сеуле, Южная Корея, на KUA 2025"),
-    (">KUA 2025, Seoul<", ">KUA 2025, Seul<", ">KUA 2025, Сеул<"),
-    ("With Prof. Peter Alken at CAEC25, the Central Asian Endourology Congress in Tashkent, an event he helped organize.",
-     "Toshkentdagi Markaziy Osiyo endourologiya kongressi CAEC25 da prof. Peter Alken bilan; Asadbek ushbu tadbirni tashkil etishda yordam bergan.",
-     "С профессором Петером Алькеном на CAEC25, Центральноазиатском конгрессе по эндоурологии в Ташкенте; Асадбек помогал в его организации."),
-    ("Asadbek Sultonov with Prof. Peter Alken at the CAEC25 Central Asian Endourology Congress in Tashkent",
-     "Asadbek Sultonov Toshkentdagi CAEC25 Markaziy Osiyo endourologiya kongressida prof. Peter Alken bilan",
-     "Асадбек Султонов с профессором Петером Алькеном на конгрессе CAEC25 в Ташкенте"),
-    (">With Prof. Peter Alken, CAEC25<", ">Prof. Peter Alken bilan, CAEC25<", ">С проф. Петером Алькеном, CAEC25<"),
-    ("With Steve Wozniak and fellow students at the CAU Tech Summit '25, Tashkent.",
-     "Toshkentdagi CAU Tech Summit '25 da Steve Wozniak va talabalar bilan.",
-     "Со Стивом Возняком и студентами на CAU Tech Summit '25, Ташкент."),
-    ("Group photo with Steve Wozniak and students at the CAU Tech Summit 2025 in Tashkent",
-     "Toshkentdagi CAU Tech Summit 2025 da Steve Wozniak va talabalar bilan guruh surati",
-     "Групповое фото со Стивом Возняком и студентами на CAU Tech Summit 2025 в Ташкенте"),
-    ("Steve Wozniak speaking on stage at the CAU Tech Summit '25 in Tashkent.",
-     "Steve Wozniak Toshkentdagi CAU Tech Summit '25 sahnasida nutq soʻzlamoqda.",
-     "Стив Возняк выступает на сцене CAU Tech Summit '25 в Ташкенте."),
-    ("Steve Wozniak speaking on stage at the CAU Tech Summit 2025 in Tashkent",
-     "Steve Wozniak Toshkentdagi CAU Tech Summit 2025 sahnasida",
-     "Стив Возняк на сцене CAU Tech Summit 2025 в Ташкенте"),
-    (">Steve Wozniak on stage<", ">Steve Wozniak sahnada<", ">Стив Возняк на сцене<"),
-    ("Training on a surgical robot console during a clinical rotation.",
-     "Klinik rotatsiya davomida jarrohlik roboti pultida mashgʻulot.",
-     "Тренировка за консолью хирургического робота во время клинической ротации."),
-    ("Asadbek Sultonov training at a surgical robot console",
-     "Asadbek Sultonov jarrohlik roboti pultida mashgʻulot qilmoqda",
-     "Асадбек Султонов тренируется за консолью хирургического робота"),
-    (">Robotic surgery training<", ">Robotik jarrohlik mashgʻuloti<", ">Обучение роботической хирургии<"),
-    ("Working with the latest da Vinci surgical system.", "Eng soʻnggi da Vinci jarrohlik tizimi bilan ishlash.", "Работа с новейшей хирургической системой da Vinci."),
-    ("Video still of Asadbek Sultonov with the da Vinci surgical robot",
-     "Videodan kadr: Asadbek Sultonov da Vinci jarrohlik roboti bilan",
-     "Кадр из видео: Асадбек Султонов с хирургическим роботом da Vinci"),
-    ("<span>Video</span>", "<span>Video</span>", "<span>Видео</span>"),
-    (">Da Vinci surgical robot<", ">Da Vinci jarrohlik roboti<", ">Хирургический робот da Vinci<"),
-    ("With the operating theatre team during an anesthesiology rotation at Akfa Medline University Hospital.",
-     "Akfa Medline University Hospitalda anesteziologiya rotatsiyasi paytida operatsion jamoa bilan.",
-     "С операционной бригадой во время ротации по анестезиологии в Akfa Medline University Hospital."),
-    ("Asadbek Sultonov with the operating theatre team during an anesthesiology rotation at Akfa Medline University Hospital",
-     "Asadbek Sultonov Akfa Medline University Hospitalda anesteziologiya rotatsiyasi paytida operatsion jamoa bilan",
-     "Асадбек Султонов с операционной бригадой во время ротации по анестезиологии в Akfa Medline University Hospital"),
-    (">Anesthesiology rotation<", ">Anesteziologiya rotatsiyasi<", ">Ротация по анестезиологии<"),
-    ('data-caption="Asadbek Sultonov, MD."', 'data-caption="Asadbek Sultonov, MD."', 'data-caption="Асадбек Султонов, MD."'),
-    (">Portrait</span>", ">Portret</span>", ">Портрет</span>"),
 ]
 
 MONTHS = {

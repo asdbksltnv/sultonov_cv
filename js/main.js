@@ -164,6 +164,77 @@
     });
   }
 
+  /* ---------------- Blog: view counts ----------------
+     Each post lists its page in every language (data-paths); the counts
+     from GoatCounter's public counter are added up. Needs "Allow adding
+     visitor counts on your website" switched on in GoatCounter settings.
+     Anything that fails, or a total of zero, keeps the count hidden. */
+  var viewEls = document.querySelectorAll("[data-views]");
+  if(viewEls.length && window.fetch && !/^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname)){
+    var gcScript = document.querySelector("script[data-goatcounter]");
+    var gcBase = gcScript ? gcScript.getAttribute("data-goatcounter").replace(/\/count$/, "") : "";
+    var lang = document.documentElement.lang || "en";
+    var plural = window.Intl && Intl.PluralRules ? new Intl.PluralRules(lang) : null;
+    var number = window.Intl ? new Intl.NumberFormat(lang) : null;
+    var cache = {};
+    var countFor = function(path){
+      if(!cache[path]){
+        cache[path] = fetch(gcBase + "/counter/" + encodeURIComponent(path) + ".json")
+          .then(function(r){
+            if(r.status === 404) return 0;           // no visits recorded yet
+            if(!r.ok) throw new Error(r.status);
+            return r.json().then(function(d){ return parseInt(String(d.count).replace(/\D/g, ""), 10) || 0; });
+          });
+      }
+      return cache[path];
+    };
+
+    viewEls.forEach(function(el){
+      var label = el.querySelector("span");
+      var paths = (el.getAttribute("data-paths") || "").split(",").filter(Boolean);
+      if(!gcBase || !paths.length) return;
+      el.hidden = false;
+      el.classList.add("is-loading");
+      Promise.all(paths.map(countFor)).then(function(counts){
+        var total = counts.reduce(function(a, b){ return a + b; }, 0);
+        if(!total){ el.hidden = true; return; }
+        var form = plural ? plural.select(total) : (total === 1 ? "one" : "other");
+        var tpl = el.getAttribute("data-" + form) || el.getAttribute("data-other") || "{n}";
+        label.textContent = tpl.replace("{n}", number ? number.format(total) : total);
+        el.classList.remove("is-loading");
+      }).catch(function(){ el.hidden = true; });
+    });
+  }
+
+  /* ---------------- Blog: share ---------------- */
+  document.querySelectorAll("[data-share]").forEach(function(btn){
+    var status = btn.parentNode.querySelector(".share-status");
+    var timer;
+    var say = function(msg, isError){
+      if(!status) return;
+      status.textContent = msg;
+      status.classList.toggle("is-error", !!isError);
+      clearTimeout(timer);
+      timer = setTimeout(function(){ status.textContent = ""; }, 4000);
+    };
+    btn.addEventListener("click", function(){
+      var data = { title: btn.getAttribute("data-title") || document.title, url: location.href.split("#")[0] };
+      if(navigator.share){
+        navigator.share(data).catch(function(err){
+          if(err && err.name !== "AbortError") say(btn.getAttribute("data-msg-error"), true);
+        });
+        return;
+      }
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(data.url).then(function(){
+          say(btn.getAttribute("data-msg-copied"));
+        }, function(){ say(btn.getAttribute("data-msg-error"), true); });
+        return;
+      }
+      say(btn.getAttribute("data-msg-error"), true);
+    });
+  });
+
   /* ---------------- Charts ----------------
      Each chart reads its rows from the table inside the same <figure>,
      so the table view and the plot can never disagree. */
@@ -428,7 +499,7 @@
     if(lastTrigger) lastTrigger.focus();
   }
 
-  document.querySelectorAll(".media-item[data-full]").forEach(function(btn){
+  document.querySelectorAll("button[data-full]").forEach(function(btn){
     btn.addEventListener("click", function(){ openLightbox(btn); });
   });
   lightboxClose.addEventListener("click", closeLightbox);
