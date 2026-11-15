@@ -1,8 +1,8 @@
 ---
 title: Meeting Dr. Jeremy Lipman of Cleveland Clinic
 date: 2026-10-30
-cover: asking-question.jpg
-cover_alt: Asadbek Sultonov asking a question during Dr. Jeremy Lipman's lecture
+cover: with-dr-lipman.jpg
+cover_alt: Selfie of Asadbek Sultonov with Dr. Jeremy Lipman after the lecture
 summary: A lecture on surgical education by Dr. Jeremy Lipman of Cleveland Clinic, on how assessment drives learning and what entrustable professional activities are.
 ---
 On 30 October 2026 I attended a lecture by [Dr. Jeremy Lipman](https://my.clevelandclinic.org/staff/21240-jeremy-lipman), a colorectal surgeon at Cleveland Clinic. He is also the clinic's Director of Graduate Medical Education, so he spoke from deep experience of how surgeons are trained.
@@ -20,4 +20,8 @@ A large part of the talk was about entrustable professional activities, or EPAs.
 
 ## Asking my question
 
-I took the chance to ask Dr. Lipman a question during the discussion. Talking directly with someone who leads graduate medical education at one of the world's top clinics was a highlight for me as a young doctor. It gave me a clearer idea of how training is structured and how I can make the most of my own.
+I took the chance to ask Dr. Lipman a question during the discussion.
+
+![Asadbek Sultonov asking a question during Dr. Jeremy Lipman's lecture](asking-question.jpg "Asking my question during the discussion")
+
+Talking directly with someone who leads graduate medical education at one of the world's top clinics was a highlight for me as a young doctor. It gave me a clearer idea of how training is structured and how I can make the most of my own.

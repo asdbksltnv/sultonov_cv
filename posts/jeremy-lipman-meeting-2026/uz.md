@@ -1,6 +1,6 @@
 ---
 title: Cleveland Clinicdan doktor Jeremy Lipman bilan uchrashuv
-cover_alt: Asadbek Sultonov doktor Jeremy Lipmanning maʼruzasida savol bermoqda
+cover_alt: Asadbek Sultonovning maʼruzadan keyin doktor Jeremy Lipman bilan selfisi
 summary: Cleveland Clinicdan doktor Jeremy Lipmanning jarrohlik taʼlimi haqidagi maʼruzasi: baholash oʻqishni qanday yoʻnaltiradi va ishonib topshiriladigan kasbiy faoliyatlar nima.
 ---
 2026 yil 30 oktyabrda Cleveland Clinic kolorektal jarrohi [doktor Jeremy Lipman](https://my.clevelandclinic.org/staff/21240-jeremy-lipman)ning maʼruzasida qatnashdim. U klinikada diplomdan keyingi tibbiy taʼlimga ham rahbarlik qiladi, shuning uchun jarrohlarni tayyorlash boʻyicha katta tajribasi asosida gapirdi.
@@ -18,4 +18,8 @@ Maʼruzaning katta qismi ishonib topshiriladigan kasbiy faoliyatlar (EPA) haqida
 
 ## Mening savolim
 
-Muhokama paytida doktor Lipmanga savol berdim. Dunyoning eng yaxshi klinikalaridan birida diplomdan keyingi taʼlimga rahbarlik qiladigan inson bilan bevosita suhbatlashish yosh shifokor sifatida men uchun juda qimmatli boʻldi. Tayyorgarlik qanday tuzilgani va oʻz taʼlimimdan qanday qilib maksimal foyda olishimni aniqroq tushundim.
+Muhokama paytida doktor Lipmanga savol berdim.
+
+![Asadbek Sultonov doktor Jeremy Lipmanning maʼruzasida savol bermoqda](asking-question.jpg "Muhokama paytida savol bermoqdaman")
+
+Dunyoning eng yaxshi klinikalaridan birida diplomdan keyingi taʼlimga rahbarlik qiladigan inson bilan bevosita suhbatlashish yosh shifokor sifatida men uchun juda qimmatli boʻldi. Tayyorgarlik qanday tuzilgani va oʻz taʼlimimdan qanday qilib maksimal foyda olishimni aniqroq tushundim.
