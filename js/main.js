@@ -25,7 +25,9 @@
       navPanel.setAttribute("aria-hidden", open ? "false" : "true");
       if("inert" in navPanel) navPanel.inert = !open;
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      navToggle.setAttribute("aria-label", open
+        ? (navToggle.getAttribute("data-label-close") || "Close menu")
+        : (navToggle.getAttribute("data-label-open") || "Open menu"));
       document.body.classList.toggle("menu-open", open);
       if(open){
         var first = navPanel.querySelector("a");
@@ -46,7 +48,8 @@
       if(e.key === "Escape" && navPanel.classList.contains("is-open")) setNav(false, true);
     });
     window.addEventListener("resize", function(){
-      if(window.innerWidth > 960 && navPanel.classList.contains("is-open")) setNav(false, false);
+      // the toggle is hidden by CSS once the inline nav fits again
+      if(navPanel.classList.contains("is-open") && getComputedStyle(navToggle).display === "none") setNav(false, false);
     });
   }
 
@@ -146,16 +149,17 @@
       clearTimeout(clearTimer);
       clearTimer = setTimeout(function(){ copyStatus.textContent = ""; }, 4000);
     };
+    var msg = function(name, fallback){ return copyBtn.getAttribute("data-msg-" + name) || fallback; };
     copyBtn.addEventListener("click", function(){
       var email = copyBtn.getAttribute("data-email");
       if(!navigator.clipboard || !window.isSecureContext){
-        report("Copy is not available in this browser. Select the address above instead.", true);
+        report(msg("unavailable", "Copy is not available in this browser. Select the address above instead."), true);
         return;
       }
       navigator.clipboard.writeText(email).then(function(){
-        report("Email address copied.");
+        report(msg("ok", "Email address copied."));
       }, function(){
-        report("Copy failed. Select the address above instead.", true);
+        report(msg("error", "Copy failed. Select the address above instead."), true);
       });
     });
   }
@@ -256,13 +260,13 @@
     var x0 = 2019, x1 = Math.max(2027, Math.ceil(nowYear));
     var scale = function(v){ return (v - x0) / (x1 - x0) * W; };
 
-    var svg = svgEl("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "group", "aria-label": "Timeline of roles from 2019 to today" });
+    var svg = svgEl("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "group", "aria-label": plot.getAttribute("data-label") || "Timeline of roles from 2019 to today" });
     var plotBottom = top + rows.length * rowH;
     yearTicks(svg, x0, x1, top - 8, plotBottom, 40, scale);
 
     var nx = scale(nowYear);
     svgEl("line", { x1: nx, x2: nx, y1: top - 8, y2: plotBottom, "class": "now-line" }, svg);
-    textEl(svg, nx, top - 12, "Today", "now-lbl", nx > W - 40 ? "end" : "middle");
+    textEl(svg, nx, top - 12, plot.getAttribute("data-today") || "Today", "now-lbl", nx > W - 40 ? "end" : "middle");
 
     rows.forEach(function(r, i){
       var y = top + i * rowH;
@@ -296,7 +300,9 @@
       };
     });
 
-    var lanes = ["Publications", "Presentations", "Awards", "Exams & credentials"];
+    // lane keys match each row's data-lane; labels are what the chart shows
+    var lanes = (plot.getAttribute("data-lanes") || "Publications|Presentations|Awards|Exams & credentials").split("|");
+    var laneLabels = (plot.getAttribute("data-lane-labels") || lanes.join("|")).split("|");
     var W = plot.clientWidth;
     var narrow = W < 520;
     var labelW = narrow ? 0 : 176;
@@ -306,7 +312,7 @@
     var pad = 12;
     var scale = function(v){ return labelW + pad + (v - x0) / (x1 - x0) * (W - labelW - pad * 2); };
 
-    var svg = svgEl("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "group", "aria-label": "Milestones by type from 2023 to 2026" });
+    var svg = svgEl("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "group", "aria-label": plot.getAttribute("data-label") || "Milestones by type from 2023 to 2026" });
     var plotBottom = top + lanes.length * laneH;
 
     for(var yr = x0; yr <= x1; yr++){
@@ -318,10 +324,11 @@
       var y = top + li * laneH;
       var cy = narrow ? y + 36 : y + laneH / 2;
       var count = items.filter(function(it){ return it.lane === lane; }).length;
+      var label = laneLabels[li] || lane;
       if(narrow){
-        textEl(svg, scale(x0), y + 16, lane + "  " + count, "lbl-sub");
+        textEl(svg, scale(x0), y + 16, label + "  " + count, "lbl-sub");
       } else {
-        textEl(svg, 0, cy + 5, lane, "lbl");
+        textEl(svg, 0, cy + 5, label, "lbl");
         textEl(svg, labelW - 8, cy + 4, String(count), "lbl-sub", "end");
       }
       svgEl("line", { x1: scale(x0), x2: scale(x1), y1: cy, y2: cy, "class": "grid" }, svg);

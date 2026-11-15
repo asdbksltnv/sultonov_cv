@@ -11,9 +11,14 @@
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://asadbeksultonov.com/">
+<link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/">
+<link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/">
+<link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Asadbek Sultonov">
 <meta property="og:title" content="Asadbek Sultonov · Orthopedic surgery resident and clinical AI researcher">
 <meta property="og:description" content="PGY2 orthopedic surgery resident at Akfa Medline University Hospital. Clinical work, applied AI research, publications and awards.">
@@ -88,8 +93,13 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="gallery.html">Gallery</a></li>
     </ul>
+    <div class="lang-switch caption-3" role="group" aria-label="Language">
+      <a href="./" data-lang="en" hreflang="en" lang="en" aria-label="English" aria-current="true">EN</a>
+      <a href="uz/" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha">UZ</a>
+      <a href="ru/" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
+    </div>
     <a href="#contact" class="btn btn-primary btn-sm nav-cta">Contact</a>
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu" aria-expanded="false" aria-controls="navPanel">
       <span></span><span></span>
     </button>
   </nav>
@@ -105,6 +115,11 @@
     <li><a href="gallery.html">Gallery</a></li>
   </ul>
   <a href="#contact" class="btn btn-primary">Contact</a>
+  <div class="lang-switch lang-switch-lg button-sm" role="group" aria-label="Language">
+    <a href="./" data-lang="en" hreflang="en" lang="en" aria-label="English" aria-current="true">EN</a>
+    <a href="uz/" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha">UZ</a>
+    <a href="ru/" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
+  </div>
 </div>
 
 <main id="main">
@@ -119,7 +134,7 @@
           <div class="hero-actions">
             <a href="mailto:asadbeksltnv90@gmail.com" class="btn btn-primary" data-goatcounter-click="email-hero" data-goatcounter-title="Email me (hero button)">
               <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
-              Email me
+              <span>Email me</span>
             </a>
           </div>
           <ul class="hero-proof caption-1" aria-label="Highlights">
@@ -132,7 +147,7 @@
           <img src="assets/img/gallery/gallery-portrait.jpg" alt="Portrait of Asadbek Sultonov in scrubs with a stethoscope" width="853" height="1280" fetchpriority="high">
           <figcaption class="caption-1">
             <svg class="icon icon-sm" aria-hidden="true"><use href="#i-map-pin"/></svg>
-            Akfa Medline University Hospital, Tashkent
+            <span>Akfa Medline University Hospital, Tashkent</span>
           </figcaption>
         </figure>
       </div>
@@ -227,7 +242,7 @@
             <li><i class="key key-bar key-muted"></i>Completed</li>
           </ul>
         </div>
-        <div class="chart-plot is-loading" data-chart="career" data-source="careerData"></div>
+        <div class="chart-plot is-loading" data-chart="career" data-source="careerData" data-label="Timeline of roles from 2019 to today" data-today="Today"></div>
         <details class="chart-table">
           <summary>View as table</summary>
           <table id="careerData">
@@ -469,7 +484,7 @@
             <li><i class="key key-dot"></i>Milestone</li>
           </ul>
         </div>
-        <div class="chart-plot is-loading" data-chart="milestones" data-source="milestoneData"></div>
+        <div class="chart-plot is-loading" data-chart="milestones" data-source="milestoneData" data-label="Milestones by type from 2023 to 2026" data-lanes="Publications|Presentations|Awards|Exams &amp; credentials" data-lane-labels="Publications|Presentations|Awards|Exams &amp; credentials"></div>
         <details class="chart-table">
           <summary>View as table</summary>
           <table id="milestoneData">
@@ -624,11 +639,11 @@
         <div class="contact-actions">
           <a href="mailto:asadbeksltnv90@gmail.com" class="btn btn-inverted" data-goatcounter-click="email-contact" data-goatcounter-title="Email me (contact section)">
             <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
-            Email me
+            <span>Email me</span>
           </a>
-          <button type="button" class="btn btn-outline-inverted" id="copyEmail" data-email="asadbeksltnv90@gmail.com">
+          <button type="button" class="btn btn-outline-inverted" id="copyEmail" data-email="asadbeksltnv90@gmail.com" data-msg-ok="Email address copied." data-msg-error="Copy failed. Select the address above instead." data-msg-unavailable="Copy is not available in this browser. Select the address above instead.">
             <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
-            Copy address
+            <span>Copy address</span>
           </button>
         </div>
         <p class="caption-4 mono contact-address">asadbeksltnv90@gmail.com</p>
@@ -645,11 +660,11 @@
     <div class="footer-links caption-1">
       <a href="gallery.html">
         <svg class="icon icon-sm" aria-hidden="true"><use href="#i-images"/></svg>
-        Gallery
+        <span>Gallery</span>
       </a>
       <a href="#top">
         <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up"/></svg>
-        Back to top
+        <span>Back to top</span>
       </a>
     </div>
   </div>
