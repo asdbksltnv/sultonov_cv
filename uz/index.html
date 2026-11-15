@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add("js");</script>
+<script>(function(h){if(/^#(about|experience|research|achievements|skills|contact)$/.test(h))location.replace(h.slice(1)+".html");})(location.hash);</script>
 <title>Asadbek Sultonov · Ortopediya ordinatori va klinik sunʼiy intellekt tadqiqotchisi</title>
-<meta name="description" content="Asadbek Sultonov – Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori. Suyak regeneratsiyasi boʻyicha maqolalar muallifi, tizza osteoartritini baholovchi chuqur oʻrganish modelini ishlab chiqmoqda.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Asadbek Sultonov – Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori. Suyak regeneratsiyasi va tizza osteoartriti uchun AI boʻyicha tadqiqotlar.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Asadbek Sultonov">
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)">
@@ -51,23 +52,61 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Asadbek Sultonov",
-  "url": "https://asadbeksultonov.com/",
-  "image": "https://asadbeksultonov.com/assets/img/profile.png",
-  "jobTitle": "Orthopedic Surgery Resident (PGY-2)",
-  "email": "mailto:asadbeksltnv90@gmail.com",
-  "worksFor": {
-    "@type": "Hospital",
-    "name": "Akfa Medline University Hospital",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" }
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Central Asian University",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" }
-  },
-  "knowsLanguage": ["Uzbek", "English", "Russian", "German"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://asadbeksultonov.com/#website",
+      "url": "https://asadbeksultonov.com/uz/",
+      "name": "Asadbek Sultonov",
+      "inLanguage": "uz",
+      "publisher": {
+        "@id": "https://asadbeksultonov.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://asadbeksultonov.com/#person",
+      "name": "Asadbek Sultonov",
+      "url": "https://asadbeksultonov.com/uz/",
+      "image": "https://asadbeksultonov.com/assets/img/gallery/portrait-suit.jpg",
+      "jobTitle": "Orthopedic Surgery Resident (PGY-2)",
+      "email": "mailto:asadbeksltnv90@gmail.com",
+      "description": "PGY2 orthopedic surgery resident at Akfa Medline University Hospital in Tashkent with interests in arthroplasty, arthroscopy and AI in orthopedics.",
+      "worksFor": {
+        "@type": "Hospital",
+        "name": "Akfa Medline University Hospital",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tashkent",
+          "addressCountry": "UZ"
+        }
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Central Asian University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tashkent",
+          "addressCountry": "UZ"
+        }
+      },
+      "knowsAbout": [
+        "Orthopedic surgery",
+        "Trauma",
+        "Arthroplasty",
+        "Arthroscopy",
+        "Evidence based medicine",
+        "Knee osteoarthritis",
+        "Deep learning in medical imaging"
+      ],
+      "knowsLanguage": [
+        "Uzbek",
+        "English",
+        "Russian",
+        "German"
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -78,6 +117,8 @@
   <symbol id="i-envelope" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol>
   <symbol id="i-arrow-up" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol>
   <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
   <symbol id="i-copy" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol>
   <symbol id="i-article" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></symbol>
@@ -88,16 +129,16 @@
 
 <header class="nav">
   <nav class="nav-bar" aria-label="Asosiy menyu">
-    <a href="#top" class="brand" aria-label="Asadbek Sultonov, yuqoriga">
+    <a href="./" class="brand" aria-label="Asadbek Sultonov, bosh sahifa">
       <span class="brand-mark" aria-hidden="true"><img src="../assets/img/brand/mark.png" alt="" width="32" height="32"></span>
       <span class="brand-name">Asadbek Sultonov</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">Men haqimda</a></li>
-      <li><a href="#experience">Tajriba</a></li>
-      <li><a href="#research">Tadqiqotlar</a></li>
-      <li><a href="#achievements">Yutuqlar</a></li>
-      <li><a href="#skills">Koʻnikmalar</a></li>
+      <li><a href="about.html">Men haqimda</a></li>
+      <li><a href="experience.html">Tajriba</a></li>
+      <li><a href="research.html">Tadqiqotlar</a></li>
+      <li><a href="achievements.html">Yutuqlar</a></li>
+      <li><a href="skills.html">Koʻnikmalar</a></li>
       <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="lang-switch caption-3" role="group" aria-label="Til">
@@ -105,7 +146,7 @@
       <a href="./" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha" aria-current="true">UZ</a>
       <a href="../ru/" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
     </div>
-    <a href="#contact" class="btn btn-primary btn-sm nav-cta">Aloqa</a>
+    <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Aloqa</a>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Menyuni ochish" data-label-open="Menyuni ochish" data-label-close="Menyuni yopish" aria-expanded="false" aria-controls="navPanel">
       <span></span><span></span>
     </button>
@@ -114,19 +155,19 @@
 
 <div class="nav-panel" id="navPanel" aria-hidden="true">
   <ul>
-    <li><a href="#about">Men haqimda</a></li>
-    <li><a href="#experience">Tajriba</a></li>
-    <li><a href="#research">Tadqiqotlar</a></li>
-    <li><a href="#achievements">Yutuqlar</a></li>
-    <li><a href="#skills">Koʻnikmalar</a></li>
+    <li><a href="about.html">Men haqimda</a></li>
+    <li><a href="experience.html">Tajriba</a></li>
+    <li><a href="research.html">Tadqiqotlar</a></li>
+    <li><a href="achievements.html">Yutuqlar</a></li>
+    <li><a href="skills.html">Koʻnikmalar</a></li>
     <li><a href="blog/">Blog</a></li>
   </ul>
-  <a href="#contact" class="btn btn-primary">Aloqa</a>
+  <a href="contact.html" class="btn btn-primary">Aloqa</a>
   <div class="lang-switch lang-switch-lg button-sm" role="group" aria-label="Til">
-    <a href="../" data-lang="en" hreflang="en" lang="en" aria-label="English">EN</a>
-    <a href="./" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha" aria-current="true">UZ</a>
-    <a href="../ru/" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
-  </div>
+      <a href="../" data-lang="en" hreflang="en" lang="en" aria-label="English">EN</a>
+      <a href="./" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha" aria-current="true">UZ</a>
+      <a href="../ru/" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
+    </div>
 </div>
 
 <main id="main">
@@ -169,476 +210,26 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
+  <!-- PAGES -->
+  <section class="section" aria-labelledby="exploreTitle">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="heading-3">Klinik tayyorgarlik, ilmiy tadqiqot va oʻqitish</h2>
+        <h2 class="heading-3" id="exploreTitle">Faoliyatim bilan tanishing</h2>
+        <p class="body-7">Klinik tayyorgarlik, tadqiqotlar, mukofotlar va koʻnikmalar – har biri alohida sahifada.</p>
       </div>
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="body-7">Men Akfa Medline University Hospital klinikasida ikkinchi yil ortopediya ordinatoriman. Travmatologiya, ortopediya, dalillarga asoslangan tibbiyot va klinik tadqiqotlarga katta qiziqishim bor. Jurnal klublarini tayyorlayman, ilmiy adabiyotlarni tahlil qilaman, bemorlar va shifoxona sayti uchun oʻquv materiallari yozaman.</p>
-          <p class="body-3">Konferensiyalar tashkil qilish, ilmiy maʼlumotlar bilan ishlash va tadqiqot uchun Python kodi yozish boʻyicha amaliy tajribam bor. Bu ish endi amaliy mashinaviy oʻrganishga kengaydi, jumladan tizza osteoartritini avtomatik baholovchi kalibrlangan chuqur oʻrganish modeliga. Maqsadim klinik amaliyot, ilmiy tadqiqot va tibbiy taʼlimni birlashtirgan akademik faoliyat.</p>
-          <ul class="chip-row" aria-label="Qiziqishlar">
-            <li class="chip">Travmatologiya va ortopediya</li>
-            <li class="chip">Dalillarga asoslangan tibbiyot</li>
-            <li class="chip">Artroplastika va artroskopiya</li>
-            <li class="chip">PubMed va NEJM boʻyicha izlanish</li>
-            <li class="chip">Amaliy AI va chuqur oʻrganish</li>
-            <li class="chip">Tibbiy Telegram botlar</li>
-            <li class="chip">Maʼlumotlarni vizuallashtirish</li>
-          </ul>
-        </div>
-
-        <div class="about-side">
-          <div class="card reveal">
-            <h3 class="title-2 card-title">Taʼlim</h3>
-            <dl class="edu divided">
-              <div>
-                <dt class="caption-5 mono">2019 – 2025</dt>
-                <dd class="body-6"><strong>Tibbiyot doktori (MD)</strong><span>Central Asian University, Toshkent · GPA 3.81</span></dd>
-              </div>
-              <div>
-                <dt class="caption-5 mono">2008 – 2019</dt>
-                <dd class="body-6"><strong>Maktab</strong><span>1-maktab, Andijon shahri</span></dd>
-              </div>
-            </dl>
-          </div>
-          <div class="card reveal">
-            <h3 class="title-2 card-title">Tillar</h3>
-            <ul class="lang-list divided">
-              <li><span class="body-5">Oʻzbek</span><span class="meter" role="img" aria-label="Ona tili, 5 dan 5" data-level="5"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Ona tili</span></li>
-              <li><span class="body-5">Ingliz</span><span class="meter" role="img" aria-label="Yuqori, 5 dan 4" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Yuqori</span></li>
-              <li><span class="body-5">Rus</span><span class="meter" role="img" aria-label="Yuqori, 5 dan 4" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Yuqori</span></li>
-              <li><span class="body-5">Nemis</span><span class="meter" role="img" aria-label="Boshlangʻich, 5 dan 2" data-level="2"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Boshlangʻich</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TAGLINE REVEAL -->
-  <section class="tagline" aria-label="Yondashuv">
-    <div class="container">
-      <p class="heading-2 tagline-text" data-tagline>
-        <span class="line">Avvalo shifokor,</span>
-        <span class="line">tadqiqot esa odatim.</span>
-        <span class="line">Travmatologiya, dalillar</span>
-        <span class="line">va klinik AI kesishgan joyda ishlayman.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Klinik va kasbiy yoʻl</h2>
-        <p class="body-7">2019 yildan beri tibbiyot taʼlimi, klinik ish, ilmiy tadqiqot va oʻqitish. Bugun ulardan uchtasi parallel davom etmoqda.</p>
-      </div>
-
-      <figure class="card chart reveal" aria-labelledby="careerTitle">
-        <div class="chart-head">
-          <div>
-            <h3 class="title-2" id="careerTitle">Lavozimlar xronologiyasi, 2019 yildan bugungacha</h3>
-            <p class="body-6">Sanalarni koʻrish uchun ustunlar ustiga olib boring yoki Tab tugmasini bosing.</p>
-          </div>
-          <ul class="chart-legend caption-2" aria-hidden="true">
-            <li><i class="key key-bar"></i>Davom etmoqda</li>
-            <li><i class="key key-bar key-muted"></i>Yakunlangan</li>
-          </ul>
-        </div>
-        <div class="chart-plot is-loading" data-chart="career" data-source="careerData" data-label="2019 yildan bugungacha lavozimlar xronologiyasi" data-today="Bugun"></div>
-        <details class="chart-table">
-          <summary>Jadval koʻrinishida</summary>
-          <table id="careerData">
-            <thead><tr><th scope="col">Lavozim</th><th scope="col">Tashkilot</th><th scope="col">Sanalar</th></tr></thead>
-            <tbody>
-              <tr data-start="2019-09" data-end="2025-07"><td>MD talabasi</td><td>Central Asian University</td><td>2019 – 2025</td></tr>
-              <tr data-start="2022-09" data-end="now"><td>Oʻqituvchi</td><td>Muzaffar Online Education</td><td>sen 2022 – hozirgacha</td></tr>
-              <tr data-start="2024-06" data-end="2024-09"><td>Shifokor yordamchisi</td><td>Neuronet Ultra</td><td>iyun – avg 2024</td></tr>
-              <tr data-start="2025-04" data-end="2025-06"><td>Call markaz operatori</td><td>CAU Pulse</td><td>apr – may 2025</td></tr>
-              <tr data-start="2025-04" data-end="now"><td>Ilmiy yordamchi</td><td>Akfa Medline</td><td>apr 2025 – hozirgacha</td></tr>
-              <tr data-start="2025-09" data-end="now"><td>Ortopediya ordinatori</td><td>Akfa Medline University Hospital</td><td>2025 – hozirgacha</td></tr>
-            </tbody>
-          </table>
-        </details>
-      </figure>
-
-      <ol class="roles">
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">2025 – hozirgacha</span>
-            <span class="badge">Hozirgi</span>
-          </div>
-          <div>
-            <h3 class="title-1">Ortopediya ordinatori, ikkinchi yil</h3>
-            <p class="body-6 role-org">Akfa Medline University Hospital, Toshkent</p>
-            <ul class="bullets body-6">
-              <li>Nazorat ostida statsionar, ambulator va operatsion ortopedik yordamda ishtirok etaman.</li>
-              <li>Klinik baholash, perioperatsion jarayon, hujjatlashtirish va bemorlarni oʻqitishda yordam beraman.</li>
-              <li>Travmatologiya, artroplastika, artroskopiya va dalillarga asoslangan ortopedik amaliyotga yoʻnalgan qiziqishlarimni rivojlantirmoqdaman.</li>
-              <li>AI asosidagi jadval tuzish va ish jarayoni vositalari yordamida shifoxona faoliyatini rejalashtirishni optimallashtirishga hissa qoʻshdim.</li>
-              <li>Tizza osteoartritini avtomatik baholash uchun kalibrlangan chuqur oʻrganish modelini ishlab chiqmoqdaman; ish 2026 yilgi AAHKS yillik yigʻilishida poster sifatida qabul qilindi.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">apr 2025 – hozirgacha</span>
-          </div>
-          <div>
-            <h3 class="title-1">Ilmiy yordamchi</h3>
-            <p class="body-6 role-org">Akfa Medline, Toshkent</p>
-            <ul class="bullets body-6">
-              <li>Jurnal klubi mashgʻulotlari uchun PubMed va Google Scholarda adabiyot sharhlarini tayyorlayman.</li>
-              <li>Bemorlar uchun oʻquv materiallari, jumladan jarrohlik haqidagi maʼlumot broshyuralarini yozaman.</li>
-              <li>Akfa Medline saytida tibbiy maqolalar va maʼrifiy kontent eʼlon qilaman.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">sen 2022 – hozirgacha</span>
-          </div>
-          <div>
-            <h3 class="title-1">Oʻqituvchi</h3>
-            <p class="body-6 role-org">Muzaffar Online Education, Andijon</p>
-            <ul class="bullets body-6">
-              <li>Oʻzbekistondagi eng yirik ingliz tili oʻrganish platformalaridan biriga asos solishda ishtirok etdim.</li>
-              <li>Talabalar bilan bevosita ishlayman va ularning yozma ishlariga tizimli fikr bildiraman.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">apr – may 2025</span>
-          </div>
-          <div>
-            <h3 class="title-1">Call markaz operatori</h3>
-            <p class="body-6 role-org">CAU Pulse, Toshkent</p>
-            <ul class="bullets body-6">
-              <li>Jamoa bilan birga qoʻngʻiroqlarga ishlov berish jarayonlari va xizmat sifatini yaxshiladim.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">iyun – avg 2024</span>
-          </div>
-          <div>
-            <h3 class="title-1">Shifokor yordamchisi</h3>
-            <p class="body-6 role-org">Neuronet Ultra, Andijon</p>
-            <ul class="bullets body-6">
-              <li>Tashxis va davolashni rejalashtirish uchun nazorat ostida bemorlarni koʻrikdan oʻtkazdim.</li>
-              <li>Bel ogʻrigʻi boʻlgan bemorlarni davolash va dori vositalarini qoʻllashda yordam berdim.</li>
-              <li>Bemorlar maʼlumotlarini boshqarish platformasini yaratdim.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Ilmiy tadqiqotlar va ilmiy ishlar</h2>
-        <p class="body-7">Ikkita chop etilgan maqola, uchta konferensiya maʼruzasi va klinik savollardan kelib chiqqan amaliy AI ishlari.</p>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Nashrlar <span class="caption-2">2</span></h3>
-        <div class="stack">
-          <article class="card card-lg paper reveal">
-            <div class="meta-row">
-              <span class="badge">Chop etilgan maqola</span>
-              <span class="caption-1 text-secondary">Q1 jurnal</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">avg 2026</span>
-            </div>
-            <h4 class="heading-6 paper-title">Piezoelectric Biomaterials for Bone Regeneration: Mechanistic Insights and Preclinical Evidence. A Systematic Review of In Vitro and In Vivo Studies</h4>
-            <p class="body-6 authors">13 muallif, jumladan Asadbek Sultonov, Nozimjon Tuygunov, Akbarjon Mirzayev, Matluba Akbarali kizi Mirzaeva va James Tsoi</p>
-            <p class="journal">
-              <span class="body-5">Biomedical Materials &amp; Devices</span>
-              <a class="doi caption-4 mono text-link" href="https://doi.org/10.1007/s44174-026-00757-3" target="_blank" rel="noopener" data-goatcounter-click="paper-doi" data-goatcounter-title="Publication DOI link">
-                DOI 10.1007/s44174-026-00757-3
-                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                <span class="visually-hidden">(yangi oynada ochiladi)</span>
-              </a>
-            </p>
-          </article>
-          <article class="card paper reveal">
-            <div class="meta-row">
-              <span class="badge">Chop etilgan maqola</span>
-            </div>
-            <h4 class="title-1">Assessing medication adherence and identifying barriers to adherence among patients with type 2 diabetes mellitus in Uzbekistan</h4>
-            <p class="body-6 authors">Asadbek Sultonov, Mukhammadbektosh Khaydarov, Malika Oblokulova, Zulaykho Shamansurova, Zamira Khalimova</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Konferensiya maʼruzalari <span class="caption-2">3</span></h3>
-        <div class="bento">
-          <article class="card card-lg reveal">
-            <div class="meta-row">
-              <span class="badge">ePoster</span>
-              <span class="caption-1 text-secondary">AAHKS 2026</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">noy 2026</span>
-            </div>
-            <h4 class="heading-6">Transfer Learning for Automated KL Grading of Knee Osteoarthritis: A Calibrated Deep Learning Study</h4>
-            <p class="body-6 desc">A574 tezisi, AAHKS 2026 yillik yigʻilishi, 5–8 noyabr, Gaylord Texan Resort &amp; Convention Center, Grapevine, Texas. Audio va video yozuvli ePoster sifatida taqdim etildi.</p>
-            <div class="ratio" role="img" aria-label="2 400 dan ortiq yuborilgan tezisdan 355 ta poster tanlandi, qabul darajasi 15 foizdan past">
-              <p class="ratio-figure"><span class="heading-4 mono">&lt;15%</span><span class="caption-1 text-secondary">qabul darajasi</span></p>
-              <div class="ratio-bar"><span style="--pct:14.8%"></span></div>
-              <div class="ratio-labels caption-2">
-                <span><b>355</b> ta poster tanlandi</span>
-                <span><b>2 400+</b> tezis yuborildi</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="meta-row">
-              <span class="badge">Ogʻzaki maʼruza</span>
-              <span class="caption-1 text-secondary">Safar granti</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">okt 2025</span>
-            </div>
-            <h4 class="title-1">Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases</h4>
-            <p class="body-6 desc">O-087 tezisi, podium sessiyasi 8: Pediatriya, KUA 2025, COEX, Seul, 2025 yil 23 oktabr. Tibbiyot talabasi sifatida yuborilgan va ogʻzaki maʼruzaga qabul qilingan. KUA safar grantiga sazovor boʻldim va toshkentlik endourolog Dr. Azimdjon Tursunkulov bilan birga qatnashdim.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="meta-row">
-              <span class="badge">Poster</span>
-            </div>
-            <h4 class="title-1">Telemedicine in the Treatment and Control of Diabetes</h4>
-            <p class="body-6 desc">Central Asian Universityda endokrinologiya konferensiyasida taqdim etilgan.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Amaliy AI loyihalari</h3>
-        <div class="grid-2">
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Chuqur oʻrganish</span></div>
-            <h4 class="title-1">Tizza osteoartritini KL shkalasi boʻyicha avtomatik baholash</h4>
-            <p class="body-6 desc">Oddiy rentgenogrammalar boʻyicha tizza osteoartriti ogʻirligini Kellgren va Lawrence shkalasida baholaydigan transfer learning modelini oʻqitdim va kalibrladim. AAHKS 2026 tezisi aynan shu ishga asoslangan.</p>
-          </article>
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Operatsion boshqaruv</span></div>
-            <h4 class="title-1">AI yordamida faoliyatni rejalashtirish</h4>
-            <p class="body-6 desc">Akfa Medline University Hospitalda AI asosidagi jadval tuzish va ish jarayoni vositalari yordamida klinik faoliyatni rejalashtirishni optimallashtirishga yordam berdim.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Innovatsiyalar va imtihonlar</h3>
-        <div class="grid-2">
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Guruh innovatsion loyihasi</span></div>
-            <h4 class="title-1">Dori qabul qilish intizomini yaxshilash uchun Telegram botlar va 3D printerda bosilgan dori qutilari</h4>
-            <p class="body-6 desc">Guruh rahbari. AKFA MEDINNOVA Expo 2023 da oltin medal.</p>
-          </article>
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Imtihon</span></div>
-            <h4 class="title-1">USMLE Step 1 topshirilgan</h4>
-            <p class="body-6 desc">Imtihon sanasi: 2024 yil 3 sentyabr</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Darsdan tashqari va tashkiliy faoliyat</h3>
-        <div class="card reveal">
-          <dl class="side-list divided">
-            <div><dt class="title-3">CAEC25 kongressi</dt><dd class="body-6">Veb sayt boshqaruvi, shifokorlarni roʻyxatga olishda yordam, dastur broshyurasi va logotip dizaynida koʻmak.</dd></div>
-            <div><dt class="title-3">Endokrinologiya markazi</dt><dd class="body-6">Koʻngilli tibbiy tarjimon va klinik holatlar taqdimotchisi.</dd></div>
-            <div><dt class="title-3">“Oddiy Talaba”</dt><dd class="body-6">Koʻngillilar tashkilotida intervyuer va SMM menejer.</dd></div>
-            <div><dt class="title-3">Harvard Business Case Competition</dt><dd class="body-6">Ishtirok etdim va yarim finalga chiqdim.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Mukofotlar va sertifikatlar</h2>
-        <p class="body-7">2023 yildan beri toʻrtta tanlov mukofoti, shuningdek AHA reanimatsiya sertifikatlari va uzluksiz tibbiy taʼlim.</p>
-      </div>
-
-      <figure class="card chart reveal" aria-labelledby="recordTitle">
-        <div class="chart-head">
-          <div>
-            <h3 class="title-2" id="recordTitle">Muhim voqealar, 2023–2026</h3>
-            <p class="body-6">Mukofotlar, maʼruzalar, nashrlar va sertifikatlar oylar boʻyicha.</p>
-          </div>
-          <ul class="chart-legend caption-2" aria-hidden="true">
-            <li><i class="key key-dot"></i>Voqea</li>
-          </ul>
-        </div>
-        <div class="chart-plot is-loading" data-chart="milestones" data-source="milestoneData" data-label="2023–2026 yillardagi voqealar turlari boʻyicha" data-lanes="Publications|Presentations|Awards|Exams &amp; credentials" data-lane-labels="Nashrlar|Maʼruzalar|Mukofotlar|Imtihon va sertifikatlar"></div>
-        <details class="chart-table">
-          <summary>Jadval koʻrinishida</summary>
-          <table id="milestoneData">
-            <thead><tr><th scope="col">Sana</th><th scope="col">Turi</th><th scope="col">Voqea</th></tr></thead>
-            <tbody>
-              <tr data-date="2023-06" data-lane="Awards"><td>2023</td><td>Mukofot</td><td>Oltin medal, AKFA MEDINNOVA Expo</td></tr>
-              <tr data-date="2023-12" data-lane="Awards"><td>dek 2023</td><td>Mukofot</td><td>3-oʻrin, Samarkand-2020 olimpiadasi (nevrologiya)</td></tr>
-              <tr data-date="2024-09" data-lane="Exams &amp; credentials"><td>sen 2024</td><td>Imtihon</td><td>USMLE Step 1 topshirilgan</td></tr>
-              <tr data-date="2024-10" data-lane="Awards"><td>okt 2024</td><td>Mukofot</td><td>1-oʻrin, Medicine of the Future 2024</td></tr>
-              <tr data-date="2024-12" data-lane="Awards"><td>dek 2024</td><td>Mukofot</td><td>1-oʻrin, Samarkand-2020 olimpiadasi (nevrologiya)</td></tr>
-              <tr data-date="2025-05" data-lane="Exams &amp; credentials"><td>may 2025</td><td>Sertifikat</td><td>AHA ACLS va BLS provayderi</td></tr>
-              <tr data-date="2025-10" data-lane="Presentations"><td>okt 2025</td><td>Maʼruza</td><td>Ogʻzaki maʼruza, KUA 2025, Seul</td></tr>
-              <tr data-date="2025-10" data-lane="Exams &amp; credentials"><td>okt 2025</td><td>Sertifikat</td><td>UpToDate CME, AMA PRA 1 toifa</td></tr>
-              <tr data-date="2026-08" data-lane="Publications"><td>avg 2026</td><td>Nashr</td><td>Q1 tizimli sharh, Biomedical Materials &amp; Devices</td></tr>
-              <tr data-date="2026-11" data-lane="Presentations"><td>noy 2026</td><td>Maʼruza</td><td>ePoster, AAHKS 2026 yillik yigʻilishi</td></tr>
-            </tbody>
-          </table>
-        </details>
-      </figure>
-
-      <ol class="awards">
-        <li class="card award reveal">
-          <span class="heading-4 place">I</span>
-          <div>
-            <h3 class="title-2">Samarkand-2020 olimpiadasi (nevrologiya)</h3>
-            <p class="body-6">Tibbiyot talabalarining V xalqaro olimpiadasi, Samarqand davlat tibbiyot universiteti</p>
-            <span class="caption-5 mono year">dek 2024</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">I</span>
-          <div>
-            <h3 class="title-2">“Medicine of the Future 2024” tibbiyot olimpiadasi</h3>
-            <p class="body-6">Central Asian University</p>
-            <span class="caption-5 mono year">okt 2024</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">III</span>
-          <div>
-            <h3 class="title-2">Samarkand-2020 olimpiadasi (nevrologiya)</h3>
-            <p class="body-6">Tibbiyot talabalarining IV xalqaro olimpiadasi, Samarqand davlat tibbiyot universiteti</p>
-            <span class="caption-5 mono year">dek 2023</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">Oltin</span>
-          <div>
-            <h3 class="title-2">AKFA MEDINNOVA Expo 2023</h3>
-            <p class="body-6">Eng yaxshi ilmiy loyiha va poster, guruh rahbari sifatida</p>
-            <span class="caption-5 mono year">2023</span>
-          </div>
-        </li>
-      </ol>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Sertifikatlar <span class="caption-2">7</span></h3>
-        <div class="media-grid cert-grid">
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-samarkand-1st.jpg" data-caption="I darajali diplom, 1-oʻrin, tibbiyot talabalarining V xalqaro olimpiadasi “Samarkand-2020”, 2024 yil 13–14 dekabr">
-            <span class="media-frame"><img src="../assets/img/cert-samarkand-1st.jpg" alt="Tibbiyot talabalarining V xalqaro olimpiadasi 1-oʻrin diplomi, Samarqand 2024" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Samarqand olimpiadasi, 1-oʻrin</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-medicine-future.jpg" data-caption="Sertifikat, “Medicine of the Future 2024” tibbiyot olimpiadasi, Central Asian University, Toshkent, 2024 yil 26–27 oktabr">
-            <span class="media-frame"><img src="../assets/img/cert-medicine-future.jpg" alt="Central Asian Universitydagi Medicine of the Future 2024 olimpiadasi sertifikati" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">Medicine of the Future 2024</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-samarkand-3rd.jpg" data-caption="III darajali diplom, 3-oʻrin, tibbiyot talabalarining IV xalqaro olimpiadasi “Samarkand-2020”, 2023 yil 15–16 dekabr">
-            <span class="media-frame"><img src="../assets/img/cert-samarkand-3rd.jpg" alt="Tibbiyot talabalarining IV xalqaro olimpiadasi 3-oʻrin diplomi, Samarqand 2023" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Samarqand olimpiadasi, 3-oʻrin</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-medinnova-gold.jpg" data-caption="Oltin medal, AKFA MEDINNOVA Expo 2023, Telegram botlar va 3D printerda bosilgan dori qutilari boʻyicha guruh loyihasi">
-            <span class="media-frame"><img src="../assets/img/cert-medinnova-gold.jpg" alt="AKFA Medinnova Expo 2023 loyihalar tanlovi oltin medal sertifikati" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">AKFA Medinnova, oltin medal</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-healthcare-future.jpg" data-caption="Sertifikat, “Healthcare of the Future” xalqaro tibbiy konferensiyasi (12 soat), Central Asian University, Toshkent, 2024 yil 25–26 oktabr">
-            <span class="media-frame"><img src="../assets/img/cert-healthcare-future.jpg" alt="Healthcare of the Future tibbiy konferensiyasida ishtirok sertifikati" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Healthcare of the Future</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-acls.jpg" data-caption="AHA kengaytirilgan kardioreanimatsiya (ACLS) provayderi, 2025 yil 19 mayda berilgan, 2027 yil mayigacha amal qiladi">
-            <span class="media-frame"><img src="../assets/img/cert-acls.jpg" alt="American Heart Association ACLS provayderi sertifikati" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">AHA ACLS provayderi</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-bls.jpg" data-caption="AHA asosiy reanimatsiya (BLS) provayderi, 2025 yil 14 mayda berilgan, 2027 yil mayigacha amal qiladi">
-            <span class="media-frame"><img src="../assets/img/cert-bls.jpg" alt="American Heart Association BLS provayderi sertifikati" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">AHA BLS provayderi</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Boshqa oʻquv kurslari</h3>
-        <div class="card reveal">
-          <ul class="cred-list body-6">
-            <li>Meta-analysis Academy bitiruvchisi</li>
-            <li>Introduction to Machine Learning kursi, SoloLearn</li>
-            <li>UpToDate CME, AMA PRA 1 toifa krediti, okt 2025</li>
-            <li>“Healthcare of the Future” konferensiyasi (12 soat), CAU 2024</li>
-            <li>Healio va Cleveland Clinic vebinarlarida muntazam ishtirok</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Koʻnikmalar</h2>
-        <p class="body-7">Boʻlimda, kutubxonada va kompyuter oldida foydalanadigan koʻnikmalarim.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="card reveal">
-          <h3 class="title-2 card-title">Klinik</h3>
-          <ul class="skill-list divided body-6">
-            <li>Bemorlar bilan muloqot</li>
-            <li>Klinik kommunikatsiya</li>
-            <li>Dalillarga asoslangan tibbiyot</li>
-            <li>Perioperatsion hujjatlashtirish</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3 class="title-2 card-title">Ilmiy</h3>
-          <ul class="skill-list divided body-6">
-            <li>Adabiyot sharhi (PubMed, Google Scholar)</li>
-            <li>Meta tahlil</li>
-            <li>Maʼlumotlarni vizuallashtirish</li>
-            <li>Jurnal klubiga tayyorgarlik</li>
-          </ul>
-        </div>
-        <div class="card wide reveal">
-          <h3 class="title-2 card-title">Texnik</h3>
-          <ul class="chip-row">
-            <li class="chip">Python</li>
-            <li class="chip">NumPy</li>
-            <li class="chip">SciPy</li>
-            <li class="chip">Pandas</li>
-            <li class="chip">Statistik dasturlar</li>
-            <li class="chip">Canva dizayn</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="page-links">
+        <li class="reveal"><a class="card page-link" href="about.html"><h3 class="title-1">Men haqimda</h3><span class="body-6">Tarjimai hol, taʼlim va ish tillarim.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="experience.html"><h3 class="title-1">Tajriba</h3><span class="body-6">2019 yildan buyon ordinatura, ilmiy ish va oʻqituvchilik.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="research.html"><h3 class="title-1">Tadqiqotlar</h3><span class="body-6">Nashrlar, konferensiyalardagi maʼruzalar va amaliy AI loyihalari.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="achievements.html"><h3 class="title-1">Yutuqlar</h3><span class="body-6">Olimpiada mukofotlari, sertifikatlar va hayotni qoʻllab-quvvatlash guvohnomalari.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="skills.html"><h3 class="title-1">Koʻnikmalar</h3><span class="body-6">Klinik, ilmiy va texnik koʻnikmalar.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="blog/"><h3 class="title-1">Blog</h3><span class="body-6">Konferensiyalar, klinik tayyorgarlik va tibbiy faoliyatimdagi lahzalar.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      </ul>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
+  <section class="section">
     <div class="container">
       <div class="contact-panel reveal">
         <h2 class="heading-3">Ilmiy hamkorlik va klinik loyihalar uchun ochiqman</h2>
@@ -648,13 +239,11 @@
             <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
             <span>Menga yozing</span>
           </a>
-          <button type="button" class="btn btn-outline-inverted" id="copyEmail" data-email="asadbeksltnv90@gmail.com" data-msg-ok="Email manzil nusxalandi." data-msg-error="Nusxalab boʻlmadi. Yuqoridagi manzilni qoʻlda belgilang." data-msg-unavailable="Bu brauzerda nusxalash imkoni yoʻq. Yuqoridagi manzilni qoʻlda belgilang.">
-            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
-            <span>Manzilni nusxalash</span>
-          </button>
+          <a href="contact.html" class="btn btn-outline-inverted">
+            <span>Aloqa maʼlumotlari</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
         </div>
-        <p class="caption-4 mono contact-address">asadbeksltnv90@gmail.com</p>
-        <p class="caption-1 contact-status" id="copyStatus" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -676,18 +265,6 @@
     </div>
   </div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Rasmni koʻrish" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Yopish">
-    <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
-  </button>
-  <figure>
-    <img id="lightboxImg" alt="">
-    <video id="lightboxVideo" controls playsinline hidden></video>
-    <figcaption id="lightboxCaption"></figcaption>
-  </figure>
-</div>
 
 <script src="../js/main.js"></script>
 </body>

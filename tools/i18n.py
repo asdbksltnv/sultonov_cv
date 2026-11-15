@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build the Uzbek (uz/) and Russian (ru/) pages from the English source.
+"""Build the Uzbek (uz/) and Russian (ru/) pages from the English pages.
 
-The English homepage (index.html) is the single source of truth.
-After editing them, run from the site folder:
+tools/pages.py builds the English pages (index.html, about.html, ...) from
+src/, and this script translates each of them. Edit src/, then run from the
+site folder:
 
-    python3 tools/i18n.py
+    python3 tools/build.py
 
 Every English string below must still be found in the source pages, and the
 script stops with an error if one is missing, so a translation can never
@@ -20,19 +21,105 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES = ["index.html"]  # the blog has its own builder: tools/blog.py
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pages  # noqa: E402
+
+PAGES = [p["file"] for p in pages.PAGES]  # the blog has its own builder: tools/blog.py
 LANGS = {"uz": "uz_UZ", "ru": "ru_RU"}
 BASE = "https://asadbeksultonov.com/"
 
+# Page names, used in the menu cards, previous/next links and breadcrumbs.
+NAMES = [
+    ("Home", "Bosh sahifa", "Главная"),
+    ("About", "Men haqimda", "Обо мне"),
+    ("Experience", "Tajriba", "Опыт"),
+    ("Research", "Tadqiqotlar", "Исследования"),
+    ("Achievements", "Yutuqlar", "Достижения"),
+    ("Skills", "Koʻnikmalar", "Навыки"),
+    ("Contact", "Aloqa", "Контакты"),
+    ("Blog", "Blog", "Блог"),
+]
+
 # (English, Uzbek, Russian). Longer, more specific strings come first.
 T = [
+    # ---------- page titles and descriptions ----------
+    ("About Asadbek Sultonov · Orthopedic surgery resident in Tashkent",
+     "Asadbek Sultonov haqida · Toshkentdagi ortopediya ordinatori",
+     "Об Асадбеке Султонове · ординатор по ортопедии в Ташкенте"),
+    ("Asadbek Sultonov, PGY2 orthopedic surgery resident at Akfa Medline University Hospital in Tashkent: trauma, arthroplasty, arthroscopy and clinical AI.",
+     "Asadbek Sultonov – Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori: travmatologiya, artroplastika, artroskopiya va klinik AI.",
+     "Асадбек Султонов – ординатор по ортопедии в Akfa Medline University Hospital, Ташкент: травматология, артропластика, артроскопия и клинический ИИ."),
+    ("Clinical experience · Asadbek Sultonov",
+     "Klinik tajriba · Asadbek Sultonov",
+     "Клинический опыт · Асадбек Султонов"),
+    ("The clinical and professional path of Asadbek Sultonov: orthopedic surgery residency and research at Akfa Medline, teaching, and earlier clinical roles since 2019.",
+     "Asadbek Sultonovning klinik va kasbiy yoʻli: Akfa Medlineda ortopediya ordinaturasi va ilmiy ish, oʻqituvchilik hamda 2019 yildan buyongi klinik lavozimlar.",
+     "Клинический и профессиональный путь Асадбека Султонова: ординатура по ортопедии и исследования в Akfa Medline, преподавание и клиническая работа с 2019 года."),
+    ("Research and publications · Asadbek Sultonov",
+     "Tadqiqotlar va nashrlar · Asadbek Sultonov",
+     "Исследования и публикации · Асадбек Султонов"),
+    ("Publications, conference talks and applied AI research by Asadbek Sultonov, including a Q1 systematic review and an AAHKS 2026 ePoster.",
+     "Asadbek Sultonovning nashrlari, maʼruzalari va amaliy AI tadqiqotlari, jumladan Q1 jurnaldagi tizimli sharh va AAHKS 2026 ePosteri.",
+     "Публикации, доклады и прикладные исследования ИИ Асадбека Султонова, включая систематический обзор в журнале Q1 и ePoster на AAHKS 2026."),
+    ("Awards and certifications · Asadbek Sultonov",
+     "Mukofotlar va sertifikatlar · Asadbek Sultonov",
+     "Награды и сертификаты · Асадбек Султонов"),
+    ("Medical olympiad awards, the AKFA MEDINNOVA gold medal, USMLE Step 1, AHA ACLS and BLS certification and continuing medical education of Asadbek Sultonov.",
+     "Asadbek Sultonovning tibbiyot olimpiadalaridagi mukofotlari, AKFA MEDINNOVA oltin medali, USMLE Step 1, AHA ACLS va BLS sertifikatlari hamda uzluksiz tibbiy taʼlimi.",
+     "Награды медицинских олимпиад, золотая медаль AKFA MEDINNOVA, USMLE Step 1, сертификаты AHA ACLS и BLS и непрерывное медицинское образование Асадбека Султонова."),
+    ("Skills · Asadbek Sultonov",
+     "Koʻnikmalar · Asadbek Sultonov",
+     "Навыки · Асадбек Султонов"),
+    ("Clinical, research and technical skills of Asadbek Sultonov, from evidence based medicine and meta-analysis to data analysis in Python.",
+     "Asadbek Sultonovning klinik, ilmiy va texnik koʻnikmalari: dalillarga asoslangan tibbiyot va meta-tahlildan Pythonda maʼlumotlar tahliligacha.",
+     "Клинические, исследовательские и технические навыки Асадбека Султонова: от доказательной медицины и метаанализа до анализа данных на Python."),
+    ("Contact · Asadbek Sultonov",
+     "Aloqa · Asadbek Sultonov",
+     "Контакты · Асадбек Султонов"),
+    ("Contact Asadbek Sultonov, orthopedic surgery resident at Akfa Medline University Hospital in Tashkent, about research collaborations and clinical projects.",
+     "Ilmiy hamkorlik va klinik loyihalar boʻyicha Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori Asadbek Sultonov bilan bogʻlaning.",
+     "Свяжитесь с Асадбеком Султоновым, ординатором по ортопедии в Akfa Medline University Hospital в Ташкенте, по вопросам научного сотрудничества и клинических проектов."),
+
+    # ---------- page headers, home page cards, previous/next ----------
+    ("Who I am, where I trained and the languages I work in.",
+     "Men kimman, qayerda taʼlim olganman va qaysi tillarda ishlayman.",
+     "Кто я, где учился и на каких языках работаю."),
+    ("<h1 class=\"heading-2 hero-title\">Get in touch</h1>",
+     "<h1 class=\"heading-2 hero-title\">Bogʻlanish</h1>",
+     "<h1 class=\"heading-2 hero-title\">Связаться со мной</h1>"),
+    ("Email is the best way to reach me. I'm based at Akfa Medline University Hospital in Tashkent, Uzbekistan.",
+     "Men bilan bogʻlanishning eng yaxshi yoʻli – elektron pochta. Toshkentdagi Akfa Medline University Hospitalda ishlayman.",
+     "Лучше всего писать мне на электронную почту. Я работаю в Akfa Medline University Hospital в Ташкенте."),
+    ("Explore my work", "Faoliyatim bilan tanishing", "Моя работа"),
+    ("Clinical training, research, awards and skills, each on its own page.",
+     "Klinik tayyorgarlik, tadqiqotlar, mukofotlar va koʻnikmalar – har biri alohida sahifada.",
+     "Клиническая подготовка, исследования, награды и навыки – каждая тема на отдельной странице."),
+    ("Background, education and the languages I work in.", "Tarjimai hol, taʼlim va ish tillarim.", "Биография, образование и языки, на которых я работаю."),
+    ("Residency, research and teaching roles since 2019.", "2019 yildan buyon ordinatura, ilmiy ish va oʻqituvchilik.", "Ординатура, исследования и преподавание с 2019 года."),
+    ("Publications, conference presentations and applied AI projects.", "Nashrlar, konferensiyalardagi maʼruzalar va amaliy AI loyihalari.", "Публикации, доклады на конференциях и прикладные проекты ИИ."),
+    ("Olympiad awards, certificates and life support credentials.", "Olimpiada mukofotlari, sertifikatlar va hayotni qoʻllab-quvvatlash guvohnomalari.", "Награды олимпиад, сертификаты и удостоверения по реанимации."),
+    ("Clinical, research and technical skills.", "Klinik, ilmiy va texnik koʻnikmalar.", "Клинические, исследовательские и технические навыки."),
+    ("Conferences, clinical training and moments from my medical career.", "Konferensiyalar, klinik tayyorgarlik va tibbiy faoliyatimdagi lahzalar.", "Конференции, клиническая подготовка и моменты из моей медицинской карьеры."),
+    ("<span>Contact details</span>", "<span>Aloqa maʼlumotlari</span>", "<span>Контакты</span>"),
+    ('aria-label="More pages"', 'aria-label="Boshqa sahifalar"', 'aria-label="Другие страницы"'),
+    ('</svg>Previous</span>', '</svg>Oldingi</span>', '</svg>Назад</span>'),
+    ('>Next<svg', '>Keyingi<svg', '>Далее<svg'),
+] + [
+    (pat % n[0], pat % n[1], pat % n[2])
+    for pat, names in (
+        ('<span class="title-3">%s</span>', NAMES),                        # previous/next links
+        ('<h3 class="title-1">%s</h3>', [n for n in NAMES if n[0] not in ("Home", "Contact")]),  # home page cards
+        ('"name": "%s"', NAMES[:7]),                                         # breadcrumbs
+    )
+    for n in names
+] + [
     # ---------- head ----------
     ("Orthopedic surgery resident and clinical AI researcher",
      "Ortopediya ordinatori va klinik sunʼiy intellekt tadqiqotchisi",
      "Ординатор по ортопедии и исследователь в области клинического ИИ"),
-    ("Asadbek Sultonov is a PGY2 orthopedic surgery resident at Akfa Medline University Hospital in Tashkent, publishing on bone regeneration and building a calibrated deep learning model for knee osteoarthritis grading.",
-     "Asadbek Sultonov – Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori. Suyak regeneratsiyasi boʻyicha maqolalar muallifi, tizza osteoartritini baholovchi chuqur oʻrganish modelini ishlab chiqmoqda.",
-     "Асадбек Султонов – ординатор по ортопедии в Akfa Medline University Hospital в Ташкенте. Автор публикаций о регенерации кости, разрабатывает модель глубокого обучения для оценки остеоартрита коленного сустава."),
+    ("Asadbek Sultonov, PGY2 orthopedic surgery resident at Akfa Medline University Hospital in Tashkent, researching bone regeneration and AI for knee osteoarthritis.",
+     "Asadbek Sultonov – Toshkentdagi Akfa Medline University Hospital ortopediya ordinatori. Suyak regeneratsiyasi va tizza osteoartriti uchun AI boʻyicha tadqiqotlar.",
+     "Асадбек Султонов – ординатор по ортопедии в Akfa Medline University Hospital в Ташкенте. Исследует регенерацию кости и ИИ для оценки остеоартрита колена."),
     ("PGY2 orthopedic surgery resident at Akfa Medline University Hospital. Clinical work, applied AI research, publications and awards.",
      "Akfa Medline University Hospital ortopediya ordinatori. Klinik ish, amaliy AI tadqiqotlari, nashrlar va mukofotlar.",
      "Ординатор по ортопедии в Akfa Medline University Hospital. Клиническая работа, прикладные исследования ИИ, публикации и награды."),
@@ -43,7 +130,7 @@ T = [
     # ---------- navigation and shared UI ----------
     (">Skip to content<", ">Asosiy matnga oʻtish<", ">Перейти к содержанию<"),
     ('aria-label="Main"', 'aria-label="Asosiy menyu"', 'aria-label="Основное меню"'),
-    ('aria-label="Asadbek Sultonov, back to top"', 'aria-label="Asadbek Sultonov, yuqoriga"', 'aria-label="Asadbek Sultonov, наверх"'),
+    ('aria-label="Asadbek Sultonov, home"', 'aria-label="Asadbek Sultonov, bosh sahifa"', 'aria-label="Asadbek Sultonov, главная"'),
     ('aria-label="Language"', 'aria-label="Til"', 'aria-label="Язык"'),
     ('aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"',
      'aria-label="Menyuni ochish" data-label-open="Menyuni ochish" data-label-close="Menyuni yopish"',
@@ -97,7 +184,7 @@ T = [
     (">Applied AI and deep learning<", ">Amaliy AI va chuqur oʻrganish<", ">Прикладной ИИ и глубокое обучение<"),
     (">Medical Telegram bots<", ">Tibbiy Telegram botlar<", ">Медицинские боты в Telegram<"),
     (">Data visualization<", ">Maʼlumotlarni vizuallashtirish<", ">Визуализация данных<"),
-    (">Education</h3>", ">Taʼlim</h3>", ">Образование</h3>"),
+    (">Education</h2>", ">Taʼlim</h2>", ">Образование</h2>"),
     ("Doctor of Medicine (MD)", "Tibbiyot doktori (MD)", "Доктор медицины (MD)"),
     ("Central Asian University, Tashkent · GPA 3.81", "Central Asian University, Toshkent · GPA 3.81", "Central Asian University, Ташкент · GPA 3.81"),
     ("<strong>High school</strong>", "<strong>Maktab</strong>", "<strong>Школа</strong>"),
@@ -159,7 +246,7 @@ T = [
     ("Developing a calibrated deep learning model for automated knee osteoarthritis grading, accepted as a poster at the 2026 AAHKS Annual Meeting.",
      "Tizza osteoartritini avtomatik baholash uchun kalibrlangan chuqur oʻrganish modelini ishlab chiqmoqdaman; ish 2026 yilgi AAHKS yillik yigʻilishida poster sifatida qabul qilindi.",
      "Разрабатываю калиброванную модель глубокого обучения для автоматической оценки остеоартрита коленного сустава; работа принята в виде постера на ежегодном собрании AAHKS 2026."),
-    (">Research assistant</h3>", ">Ilmiy yordamchi</h3>", ">Научный ассистент</h3>"),
+    (">Research assistant</h2>", ">Ilmiy yordamchi</h2>", ">Научный ассистент</h2>"),
     ("Akfa Medline, Tashkent", "Akfa Medline, Toshkent", "Akfa Medline, Ташкент"),
     ("Run literature reviews on PubMed and Google Scholar for journal club sessions.",
      "Jurnal klubi mashgʻulotlari uchun PubMed va Google Scholarda adabiyot sharhlarini tayyorlayman.",
@@ -170,7 +257,7 @@ T = [
     ("Publish medical articles and educational content on the Akfa Medline website.",
      "Akfa Medline saytida tibbiy maqolalar va maʼrifiy kontent eʼlon qilaman.",
      "Публикую медицинские статьи и образовательные материалы на сайте Akfa Medline."),
-    (">Teacher</h3>", ">Oʻqituvchi</h3>", ">Преподаватель</h3>"),
+    (">Teacher</h2>", ">Oʻqituvchi</h2>", ">Преподаватель</h2>"),
     ("Muzaffar Online Education, Andijan", "Muzaffar Online Education, Andijon", "Muzaffar Online Education, Андижан"),
     ("Helped cofound one of the largest English learning platforms in Uzbekistan.",
      "Oʻzbekistondagi eng yirik ingliz tili oʻrganish platformalaridan biriga asos solishda ishtirok etdim.",
@@ -178,12 +265,12 @@ T = [
     ("Work with students directly and give structured feedback on their writing.",
      "Talabalar bilan bevosita ishlayman va ularning yozma ishlariga tizimli fikr bildiraman.",
      "Работаю со студентами напрямую и даю структурированную обратную связь по их письменным работам."),
-    (">Call centre agent</h3>", ">Call markaz operatori</h3>", ">Оператор call центра</h3>"),
+    (">Call centre agent</h2>", ">Call markaz operatori</h2>", ">Оператор call центра</h2>"),
     ("CAU Pulse, Tashkent", "CAU Pulse, Toshkent", "CAU Pulse, Ташкент"),
     ("Worked with the team to improve call handling processes and service quality.",
      "Jamoa bilan birga qoʻngʻiroqlarga ishlov berish jarayonlari va xizmat sifatini yaxshiladim.",
      "Вместе с командой улучшал обработку звонков и качество обслуживания."),
-    (">Physician assistant</h3>", ">Shifokor yordamchisi</h3>", ">Ассистент врача</h3>"),
+    (">Physician assistant</h2>", ">Shifokor yordamchisi</h2>", ">Ассистент врача</h2>"),
     ("Neuronet Ultra, Andijan", "Neuronet Ultra, Andijon", "Neuronet Ultra, Андижан"),
     ("Carried out supervised patient assessments to support diagnosis and treatment planning.",
      "Tashxis va davolashni rejalashtirish uchun nazorat ostida bemorlarni koʻrikdan oʻtkazdim.",
@@ -202,11 +289,11 @@ T = [
      "Две опубликованные статьи, три доклада на конференциях и прикладные проекты ИИ, выросшие из клинических вопросов."),
     ('reveal">Publications <span', 'reveal">Nashrlar <span', 'reveal">Публикации <span'),
     ('reveal">Conference presentations <span', 'reveal">Konferensiya maʼruzalari <span', 'reveal">Доклады на конференциях <span'),
-    ('reveal">Applied AI projects</h3>', 'reveal">Amaliy AI loyihalari</h3>', 'reveal">Прикладные проекты ИИ</h3>'),
-    ('reveal">Innovation and examinations</h3>', 'reveal">Innovatsiyalar va imtihonlar</h3>', 'reveal">Инновации и экзамены</h3>'),
-    ('reveal">Extracurricular and organizing</h3>', 'reveal">Darsdan tashqari va tashkiliy faoliyat</h3>', 'reveal">Внеучебная и организационная деятельность</h3>'),
+    ('reveal">Applied AI projects</h2>', 'reveal">Amaliy AI loyihalari</h2>', 'reveal">Прикладные проекты ИИ</h2>'),
+    ('reveal">Innovation and examinations</h2>', 'reveal">Innovatsiyalar va imtihonlar</h2>', 'reveal">Инновации и экзамены</h2>'),
+    ('reveal">Extracurricular and organizing</h2>', 'reveal">Darsdan tashqari va tashkiliy faoliyat</h2>', 'reveal">Внеучебная и организационная деятельность</h2>'),
     ('reveal">Certificates <span', 'reveal">Sertifikatlar <span', 'reveal">Сертификаты <span'),
-    ('reveal">Other training</h3>', 'reveal">Boshqa oʻquv kurslari</h3>', 'reveal">Другое обучение</h3>'),
+    ('reveal">Other training</h2>', 'reveal">Boshqa oʻquv kurslari</h2>', 'reveal">Другое обучение</h2>'),
     ('"badge">Published paper<', '"badge">Chop etilgan maqola<', '"badge">Опубликованная статья<'),
     (">Q1 journal<", ">Q1 jurnal<", ">Журнал Q1<"),
     ('"badge">Oral presentation<', '"badge">Ogʻzaki maʼruza<', '"badge">Устный доклад<'),
@@ -290,7 +377,7 @@ T = [
     ('place">1st<', 'place">I<', 'place">I<'),
     ('place">3rd<', 'place">III<', 'place">III<'),
     ('place">Gold<', 'place">Oltin<', 'place">Золото<'),
-    (">Samarkand-2020 Olympiad (Neurology)</h3>", ">Samarkand-2020 olimpiadasi (nevrologiya)</h3>", ">Олимпиада Samarkand-2020 (неврология)</h3>"),
+    (">Samarkand-2020 Olympiad (Neurology)</h2>", ">Samarkand-2020 olimpiadasi (nevrologiya)</h2>", ">Олимпиада Samarkand-2020 (неврология)</h2>"),
     # IV before V: "V International..." is a substring of "IV International..."
     ("IV International Olympiad for Medical Students, Samarkand State Medical University",
      "Tibbiyot talabalarining IV xalqaro olimpiadasi, Samarqand davlat tibbiyot universiteti",
@@ -298,7 +385,7 @@ T = [
     (">V International Olympiad for Medical Students, Samarkand State Medical University",
      ">Tibbiyot talabalarining V xalqaro olimpiadasi, Samarqand davlat tibbiyot universiteti",
      ">V Международная олимпиада студентов медицинских вузов, Самаркандский государственный медицинский университет"),
-    ("Medical Olympiad “Medicine of the Future 2024”</h3>", "“Medicine of the Future 2024” tibbiyot olimpiadasi</h3>", "Медицинская олимпиада «Medicine of the Future 2024»</h3>"),
+    ("Medical Olympiad “Medicine of the Future 2024”</h2>", "“Medicine of the Future 2024” tibbiyot olimpiadasi</h2>", "Медицинская олимпиада «Medicine of the Future 2024»</h2>"),
     ("Best science project and poster, as group leader", "Eng yaxshi ilmiy loyiha va poster, guruh rahbari sifatida", "Лучший научный проект и постер, в роли руководителя группы"),
     ("Diploma I, 1st place, V International Olympiad of Medical Students “Samarkand-2020”, December 13 to 14, 2024",
      "I darajali diplom, 1-oʻrin, tibbiyot talabalarining V xalqaro olimpiadasi “Samarkand-2020”, 2024 yil 13–14 dekabr",
@@ -354,9 +441,9 @@ T = [
     ("What I use on the ward, in the library and at the keyboard.",
      "Boʻlimda, kutubxonada va kompyuter oldida foydalanadigan koʻnikmalarim.",
      "То, чем я пользуюсь в отделении, в библиотеке и за клавиатурой."),
-    (">Clinical</h3>", ">Klinik</h3>", ">Клинические</h3>"),
-    (">Research</h3>", ">Ilmiy</h3>", ">Исследовательские</h3>"),
-    (">Technical</h3>", ">Texnik</h3>", ">Технические</h3>"),
+    (">Clinical</h2>", ">Klinik</h2>", ">Клинические</h2>"),
+    (">Research</h2>", ">Ilmiy</h2>", ">Исследовательские</h2>"),
+    (">Technical</h2>", ">Texnik</h2>", ">Технические</h2>"),
     (">Patient interaction<", ">Bemorlar bilan muloqot<", ">Работа с пациентами<"),
     (">Clinical communication<", ">Klinik kommunikatsiya<", ">Клиническая коммуникация<"),
     (">Perioperative documentation<", ">Perioperatsion hujjatlashtirish<", ">Периоперационная документация<"),
@@ -417,6 +504,13 @@ def translate(src, page, lang):
     tail = "" if page == "index.html" else page
     for attr in ('<link rel="canonical" href="', '<meta property="og:url" content="'):
         out = out.replace(attr + BASE + tail + '"', attr + BASE + lang + "/" + tail + '"', 1)
+
+    # structured data: page URLs in this language (ids with # stay shared)
+    def localize_ld(m):
+        block = re.sub(r'"%s((?:[a-z-]+\.html)?)"' % re.escape(BASE), lambda u: '"%s%s/%s"' % (BASE, lang, u.group(1)), m.group(0))
+        return block.replace('"inLanguage": "en"', '"inLanguage": "%s"' % lang)
+    out = re.sub(r'<script type="application/ld\+json">.*?</script>', localize_ld, out, flags=re.S)
+    out = re.sub(r"<!-- Generated by tools/pages\.py[^\n]*-->\n", "", out, count=1)
 
     # assets live one folder up
     out = re.sub(r'((?:src|href|data-full|data-video)=")(?=(?:assets|css|js)/)', r"\1../", out)

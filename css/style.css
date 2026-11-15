@@ -984,6 +984,25 @@ html:not(.js) .chart-table{ display: block; }
 .page-hero .hero-sub{ margin-top: var(--s-200); }
 .page-hero .caption-1{ margin-top: var(--s-300); color: var(--text-tertiary); display: inline-flex; align-items: center; gap: var(--s-75); }
 
+/* ---------- Section pages ---------- */
+.section.page-body, .section.page-pager{ padding-top: 0; }
+.page-links{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-200); }
+.page-links li{ display: flex; }
+.page-link{
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-75);
+  width: 100%;
+  transition: background-color var(--dur-fast) var(--ease), transform var(--dur) var(--ease);
+}
+.page-link:hover{ background: var(--surface-subtle); }
+.page-link:active{ transform: scale(0.98); }
+.page-link .body-6{ color: var(--text-secondary); }
+.page-link .icon{ margin-top: auto; padding-top: var(--s-100); box-sizing: content-box; color: var(--text-primary); transition: transform var(--dur) var(--ease); }
+.page-link:hover .icon{ transform: translateX(var(--s-50)); }
+@media (max-width: 960px){ .page-links{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px){ .page-links{ grid-template-columns: 1fr; } }
+
 /* ---------- Blog: list ---------- */
 .blog-list{ padding-top: 0; }
 .post-featured{ margin-bottom: var(--s-200); }

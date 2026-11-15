@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add("js");</script>
+<script>(function(h){if(/^#(about|experience|research|achievements|skills|contact)$/.test(h))location.replace(h.slice(1)+".html");})(location.hash);</script>
 <title>Asadbek Sultonov · Ординатор по ортопедии и исследователь в области клинического ИИ</title>
-<meta name="description" content="Асадбек Султонов – ординатор по ортопедии в Akfa Medline University Hospital в Ташкенте. Автор публикаций о регенерации кости, разрабатывает модель глубокого обучения для оценки остеоартрита коленного сустава.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Асадбек Султонов – ординатор по ортопедии в Akfa Medline University Hospital в Ташкенте. Исследует регенерацию кости и ИИ для оценки остеоартрита колена.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Asadbek Sultonov">
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)">
@@ -51,23 +52,61 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Asadbek Sultonov",
-  "url": "https://asadbeksultonov.com/",
-  "image": "https://asadbeksultonov.com/assets/img/profile.png",
-  "jobTitle": "Orthopedic Surgery Resident (PGY-2)",
-  "email": "mailto:asadbeksltnv90@gmail.com",
-  "worksFor": {
-    "@type": "Hospital",
-    "name": "Akfa Medline University Hospital",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" }
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Central Asian University",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" }
-  },
-  "knowsLanguage": ["Uzbek", "English", "Russian", "German"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://asadbeksultonov.com/#website",
+      "url": "https://asadbeksultonov.com/ru/",
+      "name": "Asadbek Sultonov",
+      "inLanguage": "ru",
+      "publisher": {
+        "@id": "https://asadbeksultonov.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://asadbeksultonov.com/#person",
+      "name": "Asadbek Sultonov",
+      "url": "https://asadbeksultonov.com/ru/",
+      "image": "https://asadbeksultonov.com/assets/img/gallery/portrait-suit.jpg",
+      "jobTitle": "Orthopedic Surgery Resident (PGY-2)",
+      "email": "mailto:asadbeksltnv90@gmail.com",
+      "description": "PGY2 orthopedic surgery resident at Akfa Medline University Hospital in Tashkent with interests in arthroplasty, arthroscopy and AI in orthopedics.",
+      "worksFor": {
+        "@type": "Hospital",
+        "name": "Akfa Medline University Hospital",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tashkent",
+          "addressCountry": "UZ"
+        }
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Central Asian University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tashkent",
+          "addressCountry": "UZ"
+        }
+      },
+      "knowsAbout": [
+        "Orthopedic surgery",
+        "Trauma",
+        "Arthroplasty",
+        "Arthroscopy",
+        "Evidence based medicine",
+        "Knee osteoarthritis",
+        "Deep learning in medical imaging"
+      ],
+      "knowsLanguage": [
+        "Uzbek",
+        "English",
+        "Russian",
+        "German"
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -78,6 +117,8 @@
   <symbol id="i-envelope" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol>
   <symbol id="i-arrow-up" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol>
   <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
   <symbol id="i-copy" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol>
   <symbol id="i-article" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></symbol>
@@ -88,16 +129,16 @@
 
 <header class="nav">
   <nav class="nav-bar" aria-label="Основное меню">
-    <a href="#top" class="brand" aria-label="Asadbek Sultonov, наверх">
+    <a href="./" class="brand" aria-label="Asadbek Sultonov, главная">
       <span class="brand-mark" aria-hidden="true"><img src="../assets/img/brand/mark.png" alt="" width="32" height="32"></span>
       <span class="brand-name">Asadbek Sultonov</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">Обо мне</a></li>
-      <li><a href="#experience">Опыт</a></li>
-      <li><a href="#research">Исследования</a></li>
-      <li><a href="#achievements">Достижения</a></li>
-      <li><a href="#skills">Навыки</a></li>
+      <li><a href="about.html">Обо мне</a></li>
+      <li><a href="experience.html">Опыт</a></li>
+      <li><a href="research.html">Исследования</a></li>
+      <li><a href="achievements.html">Достижения</a></li>
+      <li><a href="skills.html">Навыки</a></li>
       <li><a href="blog/">Блог</a></li>
     </ul>
     <div class="lang-switch caption-3" role="group" aria-label="Язык">
@@ -105,7 +146,7 @@
       <a href="../uz/" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha">UZ</a>
       <a href="./" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
     </div>
-    <a href="#contact" class="btn btn-primary btn-sm nav-cta">Контакты</a>
+    <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Контакты</a>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Открыть меню" data-label-open="Открыть меню" data-label-close="Закрыть меню" aria-expanded="false" aria-controls="navPanel">
       <span></span><span></span>
     </button>
@@ -114,19 +155,19 @@
 
 <div class="nav-panel" id="navPanel" aria-hidden="true">
   <ul>
-    <li><a href="#about">Обо мне</a></li>
-    <li><a href="#experience">Опыт</a></li>
-    <li><a href="#research">Исследования</a></li>
-    <li><a href="#achievements">Достижения</a></li>
-    <li><a href="#skills">Навыки</a></li>
+    <li><a href="about.html">Обо мне</a></li>
+    <li><a href="experience.html">Опыт</a></li>
+    <li><a href="research.html">Исследования</a></li>
+    <li><a href="achievements.html">Достижения</a></li>
+    <li><a href="skills.html">Навыки</a></li>
     <li><a href="blog/">Блог</a></li>
   </ul>
-  <a href="#contact" class="btn btn-primary">Контакты</a>
+  <a href="contact.html" class="btn btn-primary">Контакты</a>
   <div class="lang-switch lang-switch-lg button-sm" role="group" aria-label="Язык">
-    <a href="../" data-lang="en" hreflang="en" lang="en" aria-label="English">EN</a>
-    <a href="../uz/" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha">UZ</a>
-    <a href="./" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
-  </div>
+      <a href="../" data-lang="en" hreflang="en" lang="en" aria-label="English">EN</a>
+      <a href="../uz/" data-lang="uz" hreflang="uz" lang="uz" aria-label="Oʻzbekcha">UZ</a>
+      <a href="./" data-lang="ru" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
+    </div>
 </div>
 
 <main id="main">
@@ -169,476 +210,26 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
+  <!-- PAGES -->
+  <section class="section" aria-labelledby="exploreTitle">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="heading-3">Клиническая подготовка, исследования и преподавание</h2>
+        <h2 class="heading-3" id="exploreTitle">Моя работа</h2>
+        <p class="body-7">Клиническая подготовка, исследования, награды и навыки – каждая тема на отдельной странице.</p>
       </div>
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="body-7">Я ординатор второго года по ортопедии в Akfa Medline University Hospital. Меня особенно интересуют травматология, ортопедия, доказательная медицина и клинические исследования. Готовлю журнальные клубы, анализирую научную литературу и пишу образовательные материалы для пациентов и для сайта больницы.</p>
-          <p class="body-3">Также у меня есть практический опыт организации конференций, работы с исследовательскими данными и написания кода на Python для научных задач. Сейчас эта работа включает прикладное машинное обучение, в том числе калиброванную модель глубокого обучения для автоматической оценки остеоартрита коленного сустава. Моя цель – академическая карьера, которая объединяет клиническую практику, исследования и медицинское образование.</p>
-          <ul class="chip-row" aria-label="Интересы">
-            <li class="chip">Травматология и ортопедия</li>
-            <li class="chip">Доказательная медицина</li>
-            <li class="chip">Артропластика и артроскопия</li>
-            <li class="chip">Работа с PubMed и NEJM</li>
-            <li class="chip">Прикладной ИИ и глубокое обучение</li>
-            <li class="chip">Медицинские боты в Telegram</li>
-            <li class="chip">Визуализация данных</li>
-          </ul>
-        </div>
-
-        <div class="about-side">
-          <div class="card reveal">
-            <h3 class="title-2 card-title">Образование</h3>
-            <dl class="edu divided">
-              <div>
-                <dt class="caption-5 mono">2019 – 2025</dt>
-                <dd class="body-6"><strong>Доктор медицины (MD)</strong><span>Central Asian University, Ташкент · GPA 3.81</span></dd>
-              </div>
-              <div>
-                <dt class="caption-5 mono">2008 – 2019</dt>
-                <dd class="body-6"><strong>Школа</strong><span>Школа №1, Андижан</span></dd>
-              </div>
-            </dl>
-          </div>
-          <div class="card reveal">
-            <h3 class="title-2 card-title">Языки</h3>
-            <ul class="lang-list divided">
-              <li><span class="body-5">Узбекский</span><span class="meter" role="img" aria-label="Родной, 5 из 5" data-level="5"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Родной</span></li>
-              <li><span class="body-5">Английский</span><span class="meter" role="img" aria-label="Продвинутый, 4 из 5" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Продвинутый</span></li>
-              <li><span class="body-5">Русский</span><span class="meter" role="img" aria-label="Продвинутый, 4 из 5" data-level="4"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Продвинутый</span></li>
-              <li><span class="body-5">Немецкий</span><span class="meter" role="img" aria-label="Базовый, 2 из 5" data-level="2"><i></i><i></i><i></i><i></i><i></i></span><span class="caption-2 lang-level">Базовый</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TAGLINE REVEAL -->
-  <section class="tagline" aria-label="Подход">
-    <div class="container">
-      <p class="heading-2 tagline-text" data-tagline>
-        <span class="line">Прежде всего врач,</span>
-        <span class="line">исследователь по привычке.</span>
-        <span class="line">Работаю на стыке травматологии,</span>
-        <span class="line">доказательной медицины и клинического ИИ.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Клинический и профессиональный путь</h2>
-        <p class="body-7">Медицинский университет, клиническая работа, исследования и преподавание с 2019 года. Сейчас три из этих ролей идут параллельно.</p>
-      </div>
-
-      <figure class="card chart reveal" aria-labelledby="careerTitle">
-        <div class="chart-head">
-          <div>
-            <h3 class="title-2" id="careerTitle">Роли во времени, с 2019 года по сегодня</h3>
-            <p class="body-6">Наведите курсор или нажмите Tab, чтобы увидеть даты.</p>
-          </div>
-          <ul class="chart-legend caption-2" aria-hidden="true">
-            <li><i class="key key-bar"></i>Текущие</li>
-            <li><i class="key key-bar key-muted"></i>Завершённые</li>
-          </ul>
-        </div>
-        <div class="chart-plot is-loading" data-chart="career" data-source="careerData" data-label="Хронология ролей с 2019 года по сегодня" data-today="Сегодня"></div>
-        <details class="chart-table">
-          <summary>Показать таблицей</summary>
-          <table id="careerData">
-            <thead><tr><th scope="col">Роль</th><th scope="col">Организация</th><th scope="col">Даты</th></tr></thead>
-            <tbody>
-              <tr data-start="2019-09" data-end="2025-07"><td>Студент медицинского факультета</td><td>Central Asian University</td><td>2019 – 2025</td></tr>
-              <tr data-start="2022-09" data-end="now"><td>Преподаватель</td><td>Muzaffar Online Education</td><td>сен 2022 – сейчас</td></tr>
-              <tr data-start="2024-06" data-end="2024-09"><td>Ассистент врача</td><td>Neuronet Ultra</td><td>июн – авг 2024</td></tr>
-              <tr data-start="2025-04" data-end="2025-06"><td>Оператор call центра</td><td>CAU Pulse</td><td>апр – май 2025</td></tr>
-              <tr data-start="2025-04" data-end="now"><td>Научный ассистент</td><td>Akfa Medline</td><td>апр 2025 – сейчас</td></tr>
-              <tr data-start="2025-09" data-end="now"><td>Ординатор по ортопедии</td><td>Akfa Medline University Hospital</td><td>2025 – сейчас</td></tr>
-            </tbody>
-          </table>
-        </details>
-      </figure>
-
-      <ol class="roles">
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">2025 – сейчас</span>
-            <span class="badge">Текущая</span>
-          </div>
-          <div>
-            <h3 class="title-1">Ординатор по ортопедии, второй год</h3>
-            <p class="body-6 role-org">Akfa Medline University Hospital, Ташкент</p>
-            <ul class="bullets body-6">
-              <li>Участвую в стационарной, амбулаторной и оперативной ортопедической помощи под руководством наставников.</li>
-              <li>Помогаю с клинической оценкой, периоперационным процессом, документацией и обучением пациентов.</li>
-              <li>Развиваю профильные интересы в травматологии, артропластике, артроскопии и доказательной ортопедической практике.</li>
-              <li>Помог оптимизировать планирование работы больницы с помощью инструментов ИИ для расписания и рабочих процессов.</li>
-              <li>Разрабатываю калиброванную модель глубокого обучения для автоматической оценки остеоартрита коленного сустава; работа принята в виде постера на ежегодном собрании AAHKS 2026.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">апр 2025 – сейчас</span>
-          </div>
-          <div>
-            <h3 class="title-1">Научный ассистент</h3>
-            <p class="body-6 role-org">Akfa Medline, Ташкент</p>
-            <ul class="bullets body-6">
-              <li>Провожу обзоры литературы в PubMed и Google Scholar для журнальных клубов.</li>
-              <li>Пишу обучающие материалы для пациентов, в том числе информационные брошюры об операциях.</li>
-              <li>Публикую медицинские статьи и образовательные материалы на сайте Akfa Medline.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">сен 2022 – сейчас</span>
-          </div>
-          <div>
-            <h3 class="title-1">Преподаватель</h3>
-            <p class="body-6 role-org">Muzaffar Online Education, Андижан</p>
-            <ul class="bullets body-6">
-              <li>Участвовал в создании одной из крупнейших платформ для изучения английского языка в Узбекистане.</li>
-              <li>Работаю со студентами напрямую и даю структурированную обратную связь по их письменным работам.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">апр – май 2025</span>
-          </div>
-          <div>
-            <h3 class="title-1">Оператор call центра</h3>
-            <p class="body-6 role-org">CAU Pulse, Ташкент</p>
-            <ul class="bullets body-6">
-              <li>Вместе с командой улучшал обработку звонков и качество обслуживания.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="card role reveal">
-          <div class="role-date">
-            <span class="caption-5 mono">июн – авг 2024</span>
-          </div>
-          <div>
-            <h3 class="title-1">Ассистент врача</h3>
-            <p class="body-6 role-org">Neuronet Ultra, Андижан</p>
-            <ul class="bullets body-6">
-              <li>Под руководством врача проводил осмотр пациентов для диагностики и планирования лечения.</li>
-              <li>Помогал в ведении пациентов с болью в спине и во введении лекарственных препаратов.</li>
-              <li>Создал платформу для ведения медицинских записей пациентов.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Исследования и научная работа</h2>
-        <p class="body-7">Две опубликованные статьи, три доклада на конференциях и прикладные проекты ИИ, выросшие из клинических вопросов.</p>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Публикации <span class="caption-2">2</span></h3>
-        <div class="stack">
-          <article class="card card-lg paper reveal">
-            <div class="meta-row">
-              <span class="badge">Опубликованная статья</span>
-              <span class="caption-1 text-secondary">Журнал Q1</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">авг 2026</span>
-            </div>
-            <h4 class="heading-6 paper-title">Piezoelectric Biomaterials for Bone Regeneration: Mechanistic Insights and Preclinical Evidence. A Systematic Review of In Vitro and In Vivo Studies</h4>
-            <p class="body-6 authors">13 авторов, в том числе Asadbek Sultonov, Nozimjon Tuygunov, Akbarjon Mirzayev, Matluba Akbarali kizi Mirzaeva и James Tsoi</p>
-            <p class="journal">
-              <span class="body-5">Biomedical Materials &amp; Devices</span>
-              <a class="doi caption-4 mono text-link" href="https://doi.org/10.1007/s44174-026-00757-3" target="_blank" rel="noopener" data-goatcounter-click="paper-doi" data-goatcounter-title="Publication DOI link">
-                DOI 10.1007/s44174-026-00757-3
-                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                <span class="visually-hidden">(откроется в новой вкладке)</span>
-              </a>
-            </p>
-          </article>
-          <article class="card paper reveal">
-            <div class="meta-row">
-              <span class="badge">Опубликованная статья</span>
-            </div>
-            <h4 class="title-1">Assessing medication adherence and identifying barriers to adherence among patients with type 2 diabetes mellitus in Uzbekistan</h4>
-            <p class="body-6 authors">Asadbek Sultonov, Mukhammadbektosh Khaydarov, Malika Oblokulova, Zulaykho Shamansurova, Zamira Khalimova</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Доклады на конференциях <span class="caption-2">3</span></h3>
-        <div class="bento">
-          <article class="card card-lg reveal">
-            <div class="meta-row">
-              <span class="badge">ePoster</span>
-              <span class="caption-1 text-secondary">AAHKS 2026</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">ноя 2026</span>
-            </div>
-            <h4 class="heading-6">Transfer Learning for Automated KL Grading of Knee Osteoarthritis: A Calibrated Deep Learning Study</h4>
-            <p class="body-6 desc">Тезис A574, ежегодное собрание AAHKS 2026, 5–8 ноября, Gaylord Texan Resort &amp; Convention Center, Грейпвайн, Техас. Представлен как ePoster с аудио и видеозаписью.</p>
-            <div class="ratio" role="img" aria-label="Из более чем 2 400 поданных тезисов отобрано 355 постеров, доля принятых менее 15 процентов">
-              <p class="ratio-figure"><span class="heading-4 mono">&lt;15%</span><span class="caption-1 text-secondary">доля принятых</span></p>
-              <div class="ratio-bar"><span style="--pct:14.8%"></span></div>
-              <div class="ratio-labels caption-2">
-                <span><b>355</b> постеров отобрано</span>
-                <span><b>2 400+</b> тезисов подано</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="meta-row">
-              <span class="badge">Устный доклад</span>
-              <span class="caption-1 text-secondary">Грант на поездку</span>
-              <span class="sep" aria-hidden="true">·</span>
-              <span class="caption-5 mono text-tertiary">окт 2025</span>
-            </div>
-            <h4 class="title-1">Pediatric Supine Mini-PCNL: Clinical Outcomes and Lessons from 64 Cases</h4>
-            <p class="body-6 desc">Тезис O-087, подиумная сессия 8: педиатрия, KUA 2025, COEX, Сеул, 23 октября 2025 года. Подан в статусе студента медицинского факультета и принят для устного доклада. Получил грант KUA на поездку и участвовал вместе с доктором Азимджоном Турсункуловым, эндоурологом из Ташкента.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="meta-row">
-              <span class="badge">Постер</span>
-            </div>
-            <h4 class="title-1">Telemedicine in the Treatment and Control of Diabetes</h4>
-            <p class="body-6 desc">Представлен на конференции по эндокринологии в Central Asian University.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Прикладные проекты ИИ</h3>
-        <div class="grid-2">
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Глубокое обучение</span></div>
-            <h4 class="title-1">Автоматическая оценка остеоартрита коленного сустава по шкале KL</h4>
-            <p class="body-6 desc">Обучил и откалибровал модель на основе transfer learning, которая оценивает тяжесть остеоартрита коленного сустава по шкале Kellgren и Lawrence на обычных рентгенограммах. Именно эта работа легла в основу тезиса AAHKS 2026.</p>
-          </article>
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Операционное управление</span></div>
-            <h4 class="title-1">Планирование работы с помощью ИИ</h4>
-            <p class="body-6 desc">Помог оптимизировать планирование клинической работы в Akfa Medline University Hospital с помощью инструментов ИИ для расписания и рабочих процессов.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Инновации и экзамены</h3>
-        <div class="grid-2">
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Групповой инновационный проект</span></div>
-            <h4 class="title-1">Telegram боты и таблетницы, напечатанные на 3D принтере, для повышения приверженности лечению</h4>
-            <p class="body-6 desc">Руководитель группы. Золотая медаль на AKFA MEDINNOVA Expo 2023.</p>
-          </article>
-          <article class="card reveal">
-            <div class="meta-row"><span class="badge">Экзамен</span></div>
-            <h4 class="title-1">USMLE Step 1 сдан</h4>
-            <p class="body-6 desc">Дата экзамена: 3 сентября 2024 года</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Внеучебная и организационная деятельность</h3>
-        <div class="card reveal">
-          <dl class="side-list divided">
-            <div><dt class="title-3">Конгресс CAEC25</dt><dd class="body-6">Управление сайтом, помощь в регистрации врачей, программная брошюра и помощь с дизайном логотипа.</dd></div>
-            <div><dt class="title-3">Центр эндокринологии</dt><dd class="body-6">Волонтёр: медицинский переводчик и докладчик клинических случаев.</dd></div>
-            <div><dt class="title-3">“Oddiy Talaba”</dt><dd class="body-6">Интервьюер и SMM менеджер в волонтёрской организации.</dd></div>
-            <div><dt class="title-3">Harvard Business Case Competition</dt><dd class="body-6">Участвовал и вышел в полуфинал.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Награды и сертификаты</h2>
-        <p class="body-7">Четыре награды конкурсов с 2023 года, а также сертификаты AHA по реанимации и непрерывное медицинское образование.</p>
-      </div>
-
-      <figure class="card chart reveal" aria-labelledby="recordTitle">
-        <div class="chart-head">
-          <div>
-            <h3 class="title-2" id="recordTitle">Ключевые события, 2023–2026</h3>
-            <p class="body-6">Награды, доклады, публикации и сертификаты по месяцам.</p>
-          </div>
-          <ul class="chart-legend caption-2" aria-hidden="true">
-            <li><i class="key key-dot"></i>Событие</li>
-          </ul>
-        </div>
-        <div class="chart-plot is-loading" data-chart="milestones" data-source="milestoneData" data-label="События по типам, 2023–2026" data-lanes="Publications|Presentations|Awards|Exams &amp; credentials" data-lane-labels="Публикации|Доклады|Награды|Экзамены и сертификаты"></div>
-        <details class="chart-table">
-          <summary>Показать таблицей</summary>
-          <table id="milestoneData">
-            <thead><tr><th scope="col">Дата</th><th scope="col">Тип</th><th scope="col">Событие</th></tr></thead>
-            <tbody>
-              <tr data-date="2023-06" data-lane="Awards"><td>2023</td><td>Награда</td><td>Золотая медаль, AKFA MEDINNOVA Expo</td></tr>
-              <tr data-date="2023-12" data-lane="Awards"><td>дек 2023</td><td>Награда</td><td>3 место, олимпиада Samarkand-2020 (неврология)</td></tr>
-              <tr data-date="2024-09" data-lane="Exams &amp; credentials"><td>сен 2024</td><td>Экзамен</td><td>USMLE Step 1 сдан</td></tr>
-              <tr data-date="2024-10" data-lane="Awards"><td>окт 2024</td><td>Награда</td><td>1 место, Medicine of the Future 2024</td></tr>
-              <tr data-date="2024-12" data-lane="Awards"><td>дек 2024</td><td>Награда</td><td>1 место, олимпиада Samarkand-2020 (неврология)</td></tr>
-              <tr data-date="2025-05" data-lane="Exams &amp; credentials"><td>май 2025</td><td>Сертификат</td><td>Провайдер AHA ACLS и BLS</td></tr>
-              <tr data-date="2025-10" data-lane="Presentations"><td>окт 2025</td><td>Доклад</td><td>Устный доклад, KUA 2025, Сеул</td></tr>
-              <tr data-date="2025-10" data-lane="Exams &amp; credentials"><td>окт 2025</td><td>Сертификат</td><td>UpToDate CME, AMA PRA категории 1</td></tr>
-              <tr data-date="2026-08" data-lane="Publications"><td>авг 2026</td><td>Публикация</td><td>Систематический обзор Q1, Biomedical Materials &amp; Devices</td></tr>
-              <tr data-date="2026-11" data-lane="Presentations"><td>ноя 2026</td><td>Доклад</td><td>ePoster, ежегодное собрание AAHKS 2026</td></tr>
-            </tbody>
-          </table>
-        </details>
-      </figure>
-
-      <ol class="awards">
-        <li class="card award reveal">
-          <span class="heading-4 place">I</span>
-          <div>
-            <h3 class="title-2">Олимпиада Samarkand-2020 (неврология)</h3>
-            <p class="body-6">V Международная олимпиада студентов медицинских вузов, Самаркандский государственный медицинский университет</p>
-            <span class="caption-5 mono year">дек 2024</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">I</span>
-          <div>
-            <h3 class="title-2">Медицинская олимпиада «Medicine of the Future 2024»</h3>
-            <p class="body-6">Central Asian University</p>
-            <span class="caption-5 mono year">окт 2024</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">III</span>
-          <div>
-            <h3 class="title-2">Олимпиада Samarkand-2020 (неврология)</h3>
-            <p class="body-6">IV Международная олимпиада студентов медицинских вузов, Самаркандский государственный медицинский университет</p>
-            <span class="caption-5 mono year">дек 2023</span>
-          </div>
-        </li>
-        <li class="card award reveal">
-          <span class="heading-4 place">Золото</span>
-          <div>
-            <h3 class="title-2">AKFA MEDINNOVA Expo 2023</h3>
-            <p class="body-6">Лучший научный проект и постер, в роли руководителя группы</p>
-            <span class="caption-5 mono year">2023</span>
-          </div>
-        </li>
-      </ol>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Сертификаты <span class="caption-2">7</span></h3>
-        <div class="media-grid cert-grid">
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-samarkand-1st.jpg" data-caption="Диплом I степени, 1 место, V Международная олимпиада студентов медицинских вузов «Samarkand-2020», 13–14 декабря 2024 года">
-            <span class="media-frame"><img src="../assets/img/cert-samarkand-1st.jpg" alt="Диплом за первое место на V Международной олимпиаде студентов медицинских вузов, Самарканд 2024" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Олимпиада в Самарканде, 1 место</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-medicine-future.jpg" data-caption="Сертификат, медицинская олимпиада «Medicine of the Future 2024», Central Asian University, Ташкент, 26–27 октября 2024 года">
-            <span class="media-frame"><img src="../assets/img/cert-medicine-future.jpg" alt="Сертификат олимпиады Medicine of the Future 2024 в Central Asian University" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">Medicine of the Future 2024</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-samarkand-3rd.jpg" data-caption="Диплом III степени, 3 место, IV Международная олимпиада студентов медицинских вузов «Samarkand-2020», 15–16 декабря 2023 года">
-            <span class="media-frame"><img src="../assets/img/cert-samarkand-3rd.jpg" alt="Диплом за третье место на IV Международной олимпиаде студентов медицинских вузов, Самарканд 2023" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Олимпиада в Самарканде, 3 место</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-medinnova-gold.jpg" data-caption="Золотая медаль, AKFA MEDINNOVA Expo 2023, групповой проект о Telegram ботах и таблетницах, напечатанных на 3D принтере">
-            <span class="media-frame"><img src="../assets/img/cert-medinnova-gold.jpg" alt="Сертификат золотой медали за проект, AKFA Medinnova Expo 2023" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">AKFA Medinnova, золотая медаль</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-healthcare-future.jpg" data-caption="Сертификат, международная медицинская конференция «Healthcare of the Future» (12 часов), Central Asian University, Ташкент, 25–26 октября 2024 года">
-            <span class="media-frame"><img src="../assets/img/cert-healthcare-future.jpg" alt="Сертификат участника медицинской конференции Healthcare of the Future" loading="lazy" decoding="async" width="1400" height="988"></span>
-            <span class="body-5">Healthcare of the Future</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-acls.jpg" data-caption="Провайдер AHA по расширенной кардиореанимации (ACLS), выдан 19 мая 2025 года, действителен до мая 2027 года">
-            <span class="media-frame"><img src="../assets/img/cert-acls.jpg" alt="Сертификат провайдера ACLS, American Heart Association" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">Провайдер AHA ACLS</span>
-          </button>
-          <button type="button" class="media-item reveal" data-full="../assets/img/cert-bls.jpg" data-caption="Провайдер AHA по базовой реанимации (BLS), выдан 14 мая 2025 года, действителен до мая 2027 года">
-            <span class="media-frame"><img src="../assets/img/cert-bls.jpg" alt="Сертификат провайдера BLS, American Heart Association" loading="lazy" decoding="async" width="988" height="1400"></span>
-            <span class="body-5">Провайдер AHA BLS</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3 class="title-2 group-title reveal">Другое обучение</h3>
-        <div class="card reveal">
-          <ul class="cred-list body-6">
-            <li>Выпускник Meta-analysis Academy</li>
-            <li>Курс Introduction to Machine Learning, SoloLearn</li>
-            <li>UpToDate CME, кредит AMA PRA категории 1, окт 2025</li>
-            <li>Конференция «Healthcare of the Future» (12 часов), CAU 2024</li>
-            <li>Регулярное участие в вебинарах Healio и Cleveland Clinic</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="heading-3">Навыки</h2>
-        <p class="body-7">То, чем я пользуюсь в отделении, в библиотеке и за клавиатурой.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="card reveal">
-          <h3 class="title-2 card-title">Клинические</h3>
-          <ul class="skill-list divided body-6">
-            <li>Работа с пациентами</li>
-            <li>Клиническая коммуникация</li>
-            <li>Доказательная медицина</li>
-            <li>Периоперационная документация</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3 class="title-2 card-title">Исследовательские</h3>
-          <ul class="skill-list divided body-6">
-            <li>Обзор литературы (PubMed, Google Scholar)</li>
-            <li>Метаанализ</li>
-            <li>Визуализация данных</li>
-            <li>Подготовка журнальных клубов</li>
-          </ul>
-        </div>
-        <div class="card wide reveal">
-          <h3 class="title-2 card-title">Технические</h3>
-          <ul class="chip-row">
-            <li class="chip">Python</li>
-            <li class="chip">NumPy</li>
-            <li class="chip">SciPy</li>
-            <li class="chip">Pandas</li>
-            <li class="chip">Статистическое ПО</li>
-            <li class="chip">Дизайн в Canva</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="page-links">
+        <li class="reveal"><a class="card page-link" href="about.html"><h3 class="title-1">Обо мне</h3><span class="body-6">Биография, образование и языки, на которых я работаю.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="experience.html"><h3 class="title-1">Опыт</h3><span class="body-6">Ординатура, исследования и преподавание с 2019 года.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="research.html"><h3 class="title-1">Исследования</h3><span class="body-6">Публикации, доклады на конференциях и прикладные проекты ИИ.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="achievements.html"><h3 class="title-1">Достижения</h3><span class="body-6">Награды олимпиад, сертификаты и удостоверения по реанимации.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="skills.html"><h3 class="title-1">Навыки</h3><span class="body-6">Клинические, исследовательские и технические навыки.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li class="reveal"><a class="card page-link" href="blog/"><h3 class="title-1">Блог</h3><span class="body-6">Конференции, клиническая подготовка и моменты из моей медицинской карьеры.</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      </ul>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
+  <section class="section">
     <div class="container">
       <div class="contact-panel reveal">
         <h2 class="heading-3">Открыт к научному сотрудничеству и клиническим проектам</h2>
@@ -648,13 +239,11 @@
             <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
             <span>Написать мне</span>
           </a>
-          <button type="button" class="btn btn-outline-inverted" id="copyEmail" data-email="asadbeksltnv90@gmail.com" data-msg-ok="Адрес почты скопирован." data-msg-error="Не удалось скопировать. Выделите адрес выше вручную." data-msg-unavailable="В этом браузере копирование недоступно. Выделите адрес выше вручную.">
-            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
-            <span>Скопировать адрес</span>
-          </button>
+          <a href="contact.html" class="btn btn-outline-inverted">
+            <span>Контакты</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
         </div>
-        <p class="caption-4 mono contact-address">asadbeksltnv90@gmail.com</p>
-        <p class="caption-1 contact-status" id="copyStatus" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -676,18 +265,6 @@
     </div>
   </div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Закрыть">
-    <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
-  </button>
-  <figure>
-    <img id="lightboxImg" alt="">
-    <video id="lightboxVideo" controls playsinline hidden></video>
-    <figcaption id="lightboxCaption"></figcaption>
-  </figure>
-</div>
 
 <script src="../js/main.js"></script>
 </body>

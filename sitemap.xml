@@ -4,7 +4,6 @@
   <url>
     <loc>https://asadbeksultonov.com/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/"/>
@@ -13,7 +12,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/"/>
@@ -22,16 +20,158 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/"/>
   </url>
   <url>
+    <loc>https://asadbeksultonov.com/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/experience.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/experience.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/experience.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/experience.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/experience.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/experience.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/research.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/research.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/research.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/research.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/research.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/research.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/research.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/research.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/research.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/research.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/research.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/research.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/achievements.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/achievements.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/achievements.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/achievements.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/achievements.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/achievements.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/skills.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/skills.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/skills.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/skills.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/skills.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/skills.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/contact.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/uz/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/contact.html"/>
+  </url>
+  <url>
+    <loc>https://asadbeksultonov.com/ru/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asadbeksultonov.com/contact.html"/>
+  </url>
+  <url>
     <loc>https://asadbeksultonov.com/blog/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/"/>
@@ -40,7 +180,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/"/>
@@ -49,7 +188,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/"/>
@@ -58,7 +196,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/samarkand-marathon-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/samarkand-marathon-2026.html"/>
@@ -67,7 +204,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/samarkand-marathon-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/samarkand-marathon-2026.html"/>
@@ -76,7 +212,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/samarkand-marathon-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/samarkand-marathon-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/samarkand-marathon-2026.html"/>
@@ -85,7 +220,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/jeremy-lipman-meeting-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/jeremy-lipman-meeting-2026.html"/>
@@ -94,7 +228,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/jeremy-lipman-meeting-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/jeremy-lipman-meeting-2026.html"/>
@@ -103,7 +236,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/jeremy-lipman-meeting-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/jeremy-lipman-meeting-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/jeremy-lipman-meeting-2026.html"/>
@@ -112,7 +244,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/traumatology-orthopedics-conference-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/traumatology-orthopedics-conference-2026.html"/>
@@ -121,7 +252,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/traumatology-orthopedics-conference-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/traumatology-orthopedics-conference-2026.html"/>
@@ -130,7 +260,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/traumatology-orthopedics-conference-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/traumatology-orthopedics-conference-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/traumatology-orthopedics-conference-2026.html"/>
@@ -139,7 +268,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/cleveland-clinic-ceo-visit-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cleveland-clinic-ceo-visit-2026.html"/>
@@ -148,7 +276,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/cleveland-clinic-ceo-visit-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cleveland-clinic-ceo-visit-2026.html"/>
@@ -157,7 +284,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/cleveland-clinic-ceo-visit-2026.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cleveland-clinic-ceo-visit-2026.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cleveland-clinic-ceo-visit-2026.html"/>
@@ -166,7 +292,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/kua-2025-seoul.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/kua-2025-seoul.html"/>
@@ -175,7 +300,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/kua-2025-seoul.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/kua-2025-seoul.html"/>
@@ -184,7 +308,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/kua-2025-seoul.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/kua-2025-seoul.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/kua-2025-seoul.html"/>
@@ -193,7 +316,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/robotic-surgery-training.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/robotic-surgery-training.html"/>
@@ -202,7 +324,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/robotic-surgery-training.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/robotic-surgery-training.html"/>
@@ -211,7 +332,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/robotic-surgery-training.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/robotic-surgery-training.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/robotic-surgery-training.html"/>
@@ -220,7 +340,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/md-graduation-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/md-graduation-2025.html"/>
@@ -229,7 +348,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/md-graduation-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/md-graduation-2025.html"/>
@@ -238,7 +356,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/md-graduation-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/md-graduation-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/md-graduation-2025.html"/>
@@ -247,7 +364,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/caec25-tashkent.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/caec25-tashkent.html"/>
@@ -256,7 +372,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/caec25-tashkent.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/caec25-tashkent.html"/>
@@ -265,7 +380,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/caec25-tashkent.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/caec25-tashkent.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/caec25-tashkent.html"/>
@@ -274,7 +388,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/cau-tech-summit-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cau-tech-summit-2025.html"/>
@@ -283,7 +396,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/cau-tech-summit-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cau-tech-summit-2025.html"/>
@@ -292,7 +404,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/cau-tech-summit-2025.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/cau-tech-summit-2025.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/cau-tech-summit-2025.html"/>
@@ -301,7 +412,6 @@
   <url>
     <loc>https://asadbeksultonov.com/blog/anesthesiology-rotation.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/anesthesiology-rotation.html"/>
@@ -310,7 +420,6 @@
   <url>
     <loc>https://asadbeksultonov.com/uz/blog/anesthesiology-rotation.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/anesthesiology-rotation.html"/>
@@ -319,7 +428,6 @@
   <url>
     <loc>https://asadbeksultonov.com/ru/blog/anesthesiology-rotation.html</loc>
     <lastmod>2026-11-15</lastmod>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asadbeksultonov.com/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://asadbeksultonov.com/uz/blog/anesthesiology-rotation.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://asadbeksultonov.com/ru/blog/anesthesiology-rotation.html"/>

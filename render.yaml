@@ -11,7 +11,75 @@ services:
       - path: /*
         name: X-Content-Type-Options
         value: nosniff
+    # No catch-all rewrite: unknown addresses get 404.html with a real 404 status,
+    # so search engines don't index every typo as a copy of the home page.
     routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+      - type: redirect
+        source: /blog
+        destination: /blog/
+      - type: redirect
+        source: /uz
+        destination: /uz/
+      - type: redirect
+        source: /ru
+        destination: /ru/
+      - type: redirect
+        source: /uz/blog
+        destination: /uz/blog/
+      - type: redirect
+        source: /ru/blog
+        destination: /ru/blog/
+      - type: redirect
+        source: /about
+        destination: /about.html
+      - type: redirect
+        source: /experience
+        destination: /experience.html
+      - type: redirect
+        source: /research
+        destination: /research.html
+      - type: redirect
+        source: /achievements
+        destination: /achievements.html
+      - type: redirect
+        source: /skills
+        destination: /skills.html
+      - type: redirect
+        source: /contact
+        destination: /contact.html
+      - type: redirect
+        source: /uz/about
+        destination: /uz/about.html
+      - type: redirect
+        source: /uz/experience
+        destination: /uz/experience.html
+      - type: redirect
+        source: /uz/research
+        destination: /uz/research.html
+      - type: redirect
+        source: /uz/achievements
+        destination: /uz/achievements.html
+      - type: redirect
+        source: /uz/skills
+        destination: /uz/skills.html
+      - type: redirect
+        source: /uz/contact
+        destination: /uz/contact.html
+      - type: redirect
+        source: /ru/about
+        destination: /ru/about.html
+      - type: redirect
+        source: /ru/experience
+        destination: /ru/experience.html
+      - type: redirect
+        source: /ru/research
+        destination: /ru/research.html
+      - type: redirect
+        source: /ru/achievements
+        destination: /ru/achievements.html
+      - type: redirect
+        source: /ru/skills
+        destination: /ru/skills.html
+      - type: redirect
+        source: /ru/contact
+        destination: /ru/contact.html
